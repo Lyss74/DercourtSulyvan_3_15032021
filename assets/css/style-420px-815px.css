@@ -1,0 +1,42 @@
+
+@media screen and (max-width: 525px) {   
+    section {
+        width: 100%;
+    }
+
+    body > header {
+        background-color: cyan;
+    }
+
+    body > main {
+        margin: 0%;
+        padding: 0%;
+        background-color: lightcoral;
+    }
+
+    body > footer { background-color: lightskyblue;
+    }
+
+}
+
+
+
+@media screen and (min-width: 525px) and (max-width: 815px) {  
+    section {
+        width: 100%;
+    }
+    
+    body > header {
+        background-color: cyan;
+    }
+
+    body > main {
+        margin: 0%;
+        padding: 0%;
+        background-color: lightcoral;
+    }
+
+    body > footer { background-color: lightskyblue;
+    }
+
+}
