@@ -1,42 +1,136 @@
 
 @media screen and (max-width: 525px) {   
+    
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
     section {
         width: 100%;
     }
 
-    body > header {
+    header {
         background-color: cyan;
     }
 
-    body > main {
+    main {
         margin: 0%;
         padding: 0%;
         background-color: lightcoral;
     }
 
-    body > footer { background-color: lightskyblue;
+    footer { background-color: lightskyblue;
     }
 
+
+    .flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .row {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+    .column {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .wrap {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+    .between {
+        -ms-flex-line-pack: justify;
+            align-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    .around {
+        -ms-flex-line-pack: distribute;
+            align-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    }
+    .align-center {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }	
+    
 }
 
 
 
 @media screen and (min-width: 525px) and (max-width: 815px) {  
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
     section {
         width: 100%;
     }
-    
-    body > header {
+
+    header {
         background-color: cyan;
     }
 
-    body > main {
+    main {
         margin: 0%;
         padding: 0%;
         background-color: lightcoral;
     }
 
-    body > footer { background-color: lightskyblue;
+    footer { background-color: lightskyblue;
     }
 
+    .flex {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    .row {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+    }
+    .column {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
+    .wrap {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+    .between {
+        -ms-flex-line-pack: justify;
+            align-content: space-between;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+    }
+    .around {
+        -ms-flex-line-pack: distribute;
+            align-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    }
+    .align-center {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+    }	
+    
 }
