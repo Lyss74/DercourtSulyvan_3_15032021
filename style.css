@@ -1,114 +1,189 @@
+.PROD {
+  background-color: yellow;
+}
+
+/*
+./dart-sass/sass sass/style.scss style.css --watch
+*/
+/* FONT-FACE */
+@font-face {
+  font-family: "robotoregular";
+  src: url("./assets/font/roboto/Roboto-Regular-webfont.eot");
+  src: url("./assets/font/roboto/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./assets/font/roboto/Roboto-Regular-webfont.woff") format("woff"), url("./assets/font/roboto/Roboto-Regular-webfont.ttf") format("truetype"), url("./assets/font/roboto/Roboto-Regular-webfont.svg#robotoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "shrikhandregular";
+  src: url("./assets/font/shrikhand/shrikhand-regular-webfont.eot");
+  src: url("./assets/font/shrikhand/shrikhand-regular-webfont.eot?#iefix") format("embedded-opentype"), url("./assets/font/shrikhand/shrikhand-regular-webfont.woff2") format("woff2"), url("./assets/font/shrikhand/shrikhand-regular-webfont.woff") format("woff"), url("./assets/font/shrikhand/shrikhand-regular-webfont.ttf") format("truetype"), url("./assets/font/shrikhand/shrikhand-regular-webfont.svg#shrikhandregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* FONT */
+/* COLOR */
+/* BOX-SIZE */
+/*  generic-flex   */
+/* generic-text */
+body {
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "shrikhandregular", Arial, sans-serif;
+}
+
+p, b, a, li, span, button {
+  font-family: "robotoregular", Helvetica, sans-serif;
+}
+
+/*  generic-picture   */
+img {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*  generic-resp-size   */
+ul, section, img {
+  width: 100%;
+}
+
+/*  generic-margin-base   */
+header, footer, body, ul, figure {
+  margin: 0%;
+  padding: 0%;
+}
+
+/*  generic-style   */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+}
+
+/* function */
+/* REM-COVERTER
+/* values : 
+/* numeric $size, $base use default size
+/* call : {
+    property css: rem(5)
+    }
+*/
+/* TEXT-ALIGN
+/* values :
+/* left ,right, center, start, end *...
+/* call : 
+    @include text-()
+    @include text-(left)
+*/
+/* DISPLAY
+/* values : 
+/* flex, block, *...,
+/* call : 
+    @include display()
+    @include display(block)
+*/
+/* FLEX-DIRECTION 
+/* values :
+/* row, row-reverse, column, column-reverse
+/* call : 
+    @include flex-()
+    @include display(column)
+*/
+/* FLEX-WRAP 
+/* values :
+/* wrap, nowrap, wrap-reverse
+/* call : 
+    @include wrap()
+    @include wrap(wrap-reverse)
+*/
+/* FLEX-SPACE
+values : 
+$between,
+$around,
+$evenly
+/* call : 
+    @include space-()
+    @include space-($around)
+*/
+/* ALIGN-ITEMS
+/* values :
+/* flex-start, flex-end, center, baseline, stretch
+/* call : 
+    @include flex-align()
+    @include flex-align(flex-end)
+*/
+/* FLEX-FLOW
+/* values :
+/* row wrap;
+/* row-reverse wrap;
+/* row-reverse wrap-reverse;
+/* column wrap;
+/* column-reverse wrap;
+/* column wrap-reverse;
+/* column-reverse wrap-reverse;
+/* call : 
+    @include flex-flow()
+    @include flex-flow(column-reverse wrap-reverse)
+*/
+/* SIMPLE-FLEX
+/* values : 
+call :
+        @include simple-flex(column, wrap-reverse, $around, start);
+*/
+/*  FLEX-AUTO
+comment : just add this values in child-box -> "flex: 1 1 auto;"
+/* values : 
+wrap, nowrap,
+$between, $around
+call :
+        @include flex-auto(column, row, wrap-reverse, $around);
+        .child-box {
+            flex: 1 1 auto;
+        }
+*/
+/* RESPONSE LAYOUT 
+/* values : 
+/* desktop, mobile, mobile-p, tablet, tablet-p
+call :
+    @include respond(desktop)
+     { 
+        @include flex-(row);
+        }; -> change the flex-direction
+*/
 @media screen and (max-width: 525px) {
-  .PROD {
-    background-color: yellow;
-  }
-
-  /*  STYLE   */
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  /* TEXT */
-  body {
-    text-align: center;
-  }
-
-  .text-start {
-    text-align: left;
-  }
-
-  /*  picture   */
-  img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  /*  resp-size   */
-  ul, section {
-    width: 100%;
-  }
-
-  .fa-mobile-alt {
-    width: 1.5rem;
-  }
-
-  /*  margin-base   */
-  header, footer, body, ul, figure {
-    margin: 0%;
-    padding: 0%;
-  }
-
-  .fa-bars {
-    margin-left: -15%;
-  }
-
-  /*  generic-flex   */
-  .flex {
+  .header-box .ul-in-box {
     display: flex;
-  }
-
-  .row {
-    flex-direction: row;
-  }
-
-  .column {
     flex-direction: column;
-  }
-
-  .wrap {
-    flex-wrap: wrap;
-  }
-
-  .between {
-    align-content: space-between;
-    justify-content: space-between;
-  }
-
-  .around {
-    align-content: space-around;
-    justify-content: space-around;
-  }
-
-  .align-start {
-    align-items: start;
-  }
-
-  .align-center {
-    align-items: center;
-  }
-
-  .header-box {
-    margin-top: 3%;
-    margin-bottom: 2%;
-  }
-
-  .ul-in-box {
+    align-content: none;
+    justify-content: none;
+    flex-wrap: nowrap;
+    align-items: none;
+    box-sizing: border-box;
     background-color: #f6f6f6;
   }
-
-  .image-box {
+  .header-box .ul-in-box .image-box {
     background-color: white;
   }
-
-  .location-box {
+  .header-box .ul-in-box .logo {
+    max-height: 50%;
+    max-width: 50%;
+  }
+  .header-box .ul-in-box .location-box {
     background-color: #eaeaea;
   }
-
-  .in-box {
-    width: 45%;
+  .header-box .ul-in-box .fa-map-marker-alt {
+    margin-right: 0.8333333333rem;
   }
-
-  .launch-box {
+  .header-box .ul-in-box .launch-box {
     margin-bottom: 5%;
   }
-
-  .btn-explore {
+  .header-box .ul-in-box .btn-explore {
     font-size: 1em;
     color: #fff;
     background: linear-gradient(#FF79DA, #9356DC);
@@ -119,65 +194,118 @@
     margin: 3% 0 8% 0;
   }
 
+  main {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: none;
+    box-sizing: border-box;
+  }
+
   .running-box {
     height: 15rem;
-    margin-bottom: 40%;
   }
-
-  .ul-running {
-    height: 18rem;
+  .running-box .title-running {
+    text-align: start;
   }
-
-  .operation-card {
+  .running-box .ul-running {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  .running-box .ul-running .operation-card {
+    display: flex;
+    flex-direction: row;
+    align-content: none;
+    justify-content: none;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-sizing: border-box;
     background-color: #f6f6f6;
-    height: 4.7rem;
+    height: 4.8rem;
     width: 90%;
     border-radius: 30px;
     box-shadow: 0px 3px 8px #cfcfcf;
   }
-
-  .ennumerate {
+  .running-box .ul-running .ennumerate {
     background-color: #9356DC;
     border-radius: 20px;
-    color: white;
     text-align: center;
+    color: white;
     padding: 5px 10px;
     margin-left: -10px;
     margin-right: 5%;
   }
-
-  .running-icon {
+  .running-box .ul-running .running-icon {
+    display: flex;
+    flex-direction: row;
+    align-content: none;
+    justify-content: none;
+    flex-wrap: nowrap;
+    align-items: none;
+    box-sizing: border-box;
+    width: 1.5rem;
     margin-right: 5%;
   }
 
-  .title-restaurant {
-    margin-top: 15%;
+  .operation-card {
+    flex: 1 1 auto;
   }
 
   .restaurant-list-box {
+    display: flex;
+    flex-direction: column;
+    align-content: none;
+    justify-content: none;
+    flex-wrap: nowrap;
+    align-items: none;
+    box-sizing: border-box;
     background-color: #f6f6f6;
   }
-
-  .ul-restaurant-list {
+  .restaurant-list-box .title-restaurant {
+    text-align: start;
+    margin-top: 15%;
+  }
+  .restaurant-list-box .ul-restaurant-list {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-sizing: border-box;
     height: 77rem;
   }
-
-  .pos {
-    background-color: burlywood;
+  .restaurant-list-box .ul-restaurant-list .pos {
+    background-color: white;
     width: 90%;
   }
-
-  .img {
+  .restaurant-list-box .ul-restaurant-list .pos .love-place {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: none;
+    box-sizing: border-box;
+  }
+  .restaurant-list-box .ul-restaurant-list .pos .img {
     width: 100%;
     height: 200px;
     border: 3px solid white;
     border-radius: 20px 20px 0 0;
   }
-
-  .name-card {
+  .restaurant-list-box .ul-restaurant-list .pos .name-card {
+    text-align: start;
     background-color: white;
-    border: 3px solid white;
     border-radius: 0 0 20px 20px;
+    border: 3px solid white;
     height: 70px;
     width: 100%;
   }
@@ -185,65 +313,32 @@
   .footer-box {
     background-color: #353535;
   }
-}
-@media screen and (min-width: 525px) and (max-width: 815px) {
-  /*  STYLE   */
-  a {
-    text-decoration: none;
-    color: black;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  /*  picture   */
-  img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  /*  section-size   */
-  section {
-    width: 100%;
-  }
-
-  /*  margin-base   */
-  header, footer, body {
-    margin: 0%;
-    padding: 0%;
-  }
-
-  /*  generic-flex   */
-  .flex {
+  .footer-box .footer {
     display: flex;
-  }
-
-  .row {
-    flex-direction: row;
-  }
-
-  .column {
     flex-direction: column;
+    align-content: none;
+    justify-content: none;
+    flex-wrap: nowrap;
+    align-items: none;
+    box-sizing: border-box;
   }
-
-  .wrap {
-    flex-wrap: wrap;
-  }
-
-  .between {
-    align-content: space-between;
-    justify-content: space-between;
-  }
-
-  .around {
-    align-content: space-around;
-    justify-content: space-around;
-  }
-
-  .align-center {
+  .footer-box .footer .title, .footer-box .footer .add-restaurant,
+.footer-box .footer .partner, .footer-box .footer .cgv, .footer-box .footer .contact {
+    display: flex;
+    flex-direction: row;
+    align-content: none;
+    justify-content: none;
+    flex-wrap: nowrap;
     align-items: center;
+    box-sizing: border-box;
+    color: white;
+    width: 16.6666666667rem;
+    padding: 0.1666666667rem;
+    margin-left: 5%;
+  }
+  .footer-box .fa-utensils,
+.footer-box .fa-hands-helping {
+    margin-right: 5%;
   }
 }
 

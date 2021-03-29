@@ -1,0 +1,167 @@
+/////////////////////* DYNAMIC CONFIG *////////////////////// 
+/* TEXT-ALIGN
+/* values :
+/* left ,right, center, start, end *...
+/* call : 
+    @include text-()
+    @include text-(left)
+*/
+@mixin text-($align: center) {
+    text-align: $align;
+}
+
+/* DISPLAY
+/* values : 
+/* flex, block, *...,
+/* call : 
+    @include display()
+    @include display(block)
+*/
+@mixin display($type: flex) {
+    display: $type;
+}
+
+/* FLEX-DIRECTION 
+/* values :
+/* row, row-reverse, column, column-reverse
+/* call : 
+    @include flex-()
+    @include display(column)
+*/
+@mixin flex-($direction: row) {
+    flex-direction: $direction;
+}
+
+/* FLEX-WRAP 
+/* values :
+/* wrap, nowrap, wrap-reverse
+/* call : 
+    @include wrap()
+    @include wrap(wrap-reverse)
+*/
+@mixin wrap($values: wrap) {
+    flex-wrap: $values;
+}
+
+/* FLEX-SPACE
+values : 
+$between,
+$around,
+$evenly
+/* call : 
+    @include space-()
+    @include space-($around)
+*/
+@mixin space-($value: $between) {
+    align-content: $value; 
+    justify-content: $value;   
+}
+
+/* ALIGN-ITEMS
+/* values :
+/* flex-start, flex-end, center, baseline, stretch
+/* call : 
+    @include flex-align()
+    @include flex-align(flex-end)
+*/
+@mixin align-($items: start) {
+    align-items: $items;   
+}
+
+/* FLEX-FLOW
+/* values :
+/* row wrap;
+/* row-reverse wrap;
+/* row-reverse wrap-reverse;
+/* column wrap;
+/* column-reverse wrap;
+/* column wrap-reverse;
+/* column-reverse wrap-reverse;
+/* call : 
+    @include flex-flow()
+    @include flex-flow(column-reverse wrap-reverse)
+*/
+@mixin flex-flow($values: row wrap) {
+    flex-flow: $values;   
+}
+
+/* SIMPLE-FLEX
+/* values : 
+call :
+        @include simple-flex(column, wrap-reverse, $around, start);
+*/
+@mixin simple-flex($direction, $wrap, $between, $items) { 
+    @include display; 
+    @include flex-($direction);
+    @include space-($between);
+    @include wrap($wrap);
+    @include align-($items);
+    box-sizing: border-box;
+}
+
+/*  FLEX-AUTO
+comment : just add this values in child-box -> "flex: 1 1 auto;"
+/* values : 
+wrap, nowrap,
+$between, $around
+call :
+        @include flex-auto(column, row, wrap-reverse, $around);
+        .child-box {
+            flex: 1 1 auto;
+        }
+*/
+@mixin flex-auto($direction-1, $direction-2, $wrap, $between) { 
+    @include display; 
+    @include flex-($direction-1);
+    @include respond(mobile-p); 
+    @include respond(tablet-p);
+    @include respond(desktop)
+     { 
+        @include flex-($direction-2);
+        };
+    @include wrap($wrap);
+    @include space-($between);
+}
+
+/* RESPONSE LAYOUT 
+/* values : 
+/* desktop, mobile, mobile-p, tablet, tablet-p
+call :
+    @include respond(desktop)
+     { 
+        @include flex-(row);
+        }; -> change the flex-direction
+*/
+@mixin respond($breakpoint) {
+    @if $breakpoint==desktop {
+        @media only screen and (min-width: 1200px) and (max-width: 1400px) {  
+            @content;
+            }
+    }
+    @if $breakpoint==mobile {
+        // here `laptop` is the value of $breakpoint
+        // when call laptop, we mean the following piece of code        
+        @media only screen and (max-width: 525px) {
+            @content;
+            }
+    }
+    @if $breakpoint==mobile-p {
+        @media only screen and (min-width: 525px) and (max-width: 815px) {
+            @content;
+            }
+    }
+
+    @if $breakpoint==tablet {
+        @media only screen and (min-width: 815px) and (max-width: 1030px) {   
+            @content;
+            }
+    }
+    @if $breakpoint==tablet-p {  
+        @media only screen and (min-width: 1030px) and (max-width: 1200px) {  
+            @content;
+            }
+    }
+}
+
+
+
