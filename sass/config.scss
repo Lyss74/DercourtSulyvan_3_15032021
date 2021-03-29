@@ -1,0 +1,70 @@
+.PROD {background-color: yellow;} 
+/*
+./dart-sass/sass sass/style.scss style.css --watch
+*/
+/////////////////////* CONSTANT *////////////////////////
+/* FONT-FACE */
+@font-face {
+    font-family: 'robotoregular';
+    src: url('./assets/font/roboto/Roboto-Regular-webfont.eot');
+    src: url('./assets/font/roboto/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+            url('./assets/font/roboto/Roboto-Regular-webfont.woff') format('woff'),
+            url('./assets/font/roboto/Roboto-Regular-webfont.ttf') format('truetype'),
+            url('./assets/font/roboto/Roboto-Regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+    
+@font-face {
+    font-family: 'shrikhandregular';
+    src: url('./assets/font/shrikhand/shrikhand-regular-webfont.eot');
+    src: url('./assets/font/shrikhand/shrikhand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('./assets/font/shrikhand/shrikhand-regular-webfont.woff2') format('woff2'),
+        url('./assets/font/shrikhand/shrikhand-regular-webfont.woff') format('woff'),
+        url('./assets/font/shrikhand/shrikhand-regular-webfont.ttf') format('truetype'),
+        url('./assets/font/shrikhand/shrikhand-regular-webfont.svg#shrikhandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+/* FONT */
+$FONT-TITLE: 'shrikhandregular';     
+$FONT-TEXT: 'robotoregular';        
+$BASE-FONT-SIZE : 12px!default;
+
+/* COLOR */
+$PRIMARY: #9356DC;
+$SECONDARY: #FF79DA;  
+$TERTIARY: #99E2D0; 
+$QUATERNARY:  #353535;
+
+/* BOX-SIZE */
+$FULL: 100%!default;
+
+/////////////////////* CONSTANT -END- *////////////////////
+
+/////////////////////* DYNAMIC CONFIG *//////////////////// 
+/*  generic-flex   */
+$around: space-around; 
+$between: space-between;   
+$evenly: space-evenly;
+
+/* generic-text */
+body {text-align: center; }
+h1, h2, h3, h4, h5, h6 {font-family: $FONT-TITLE, Arial, sans-serif; }
+p, b , a, li, span, button {font-family: $FONT-TEXT, Helvetica, sans-serif; }
+
+/*  generic-picture   */
+img {max-height: $FULL; max-width: $FULL; width: $FULL; object-fit: cover; }
+
+/*  generic-resp-size   */
+ul, section, img {width: $FULL; }
+
+/*  generic-margin-base   */
+header, footer, body, ul, figure {margin: 0%; padding: 0%; }
+
+/*  generic-style   */
+a {text-decoration: none; color: black; }
+ul {list-style: none; }		
+/////////////////////* DYNAMIC CONFIG -END- */////////////////// 
+
