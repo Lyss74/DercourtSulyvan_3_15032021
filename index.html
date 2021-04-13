@@ -20,10 +20,10 @@
 	<body>
 
 		<header>
-			<section class="header-box">
-				<ul class="ul-in-box">
+			<section class="header-box ">
+				<ul class="ul-in-box flex column">
 
-					<li class="image-box">
+					<li class="image-box 	flex around">
 						<a href="">
 							<img class="logo" 
 								 src="./assets/images/icon/ohmyfood@2x.svg"
@@ -31,12 +31,14 @@
 						</a>		
 					</li> 
 
-					<li class="location-box">
-						<p class="in-box"> 
+
+					<li class="location-box 	flex around">
+						<p class="in-box 	flex around"> 
 							<i class="fas fa-map-marker-alt"></i>
 							Paris, Belleville
 						</p>	
 					</li>
+					
 
 					<li class="title-1-box">
 						<h1>
@@ -45,6 +47,7 @@
 						</h1>
 					</li>
 
+
 					<li class="title-2-box">
 						<p>
 							Découvrez des restaurants d'exception, <br class="jump-line">
@@ -52,11 +55,13 @@
 						</p>
 					</li>
 
+
 					<li  class="launch-box">
 						<button class="btn-explore">
 							Explorer nos restaurants
 						</button>		
 					</li>
+
 
 				</ul>
 			</section>
@@ -64,14 +69,14 @@
 		</header> 
 		
 
-		<main">
+		<main class="flex column between">
 
 			<section class="running-box">
-				<h3 class="title-running">
+				<h3 class="title-running 	text-start">
 					Fonctionnement
 				</h3>
-				<ul class="ul-running">
-					<li class="operation-card">
+				<ul class="ul-running 	flex column around align-center">
+					<li class="operation-card 	flex row align-center">
 						<p class="ennumerate">
 							1
 						</p>
@@ -82,7 +87,7 @@
 							Choisissez un restaurant 
 						</b>
 					</li>
-					<li class="operation-card">
+					<li class="operation-card 	flex row align-center">
 						<p class="ennumerate">
 							2 
 						</p>
@@ -94,7 +99,7 @@
 							Composez votre menu 
 						</b>
 					</li>
-					<li class="operation-card">
+					<li class="operation-card 	flex row align-center">
 						<p class="ennumerate">
 							3
 						</p>
@@ -110,19 +115,19 @@
 
 
 			<section class="restaurant-list-box">
-				<h3 class="title-restaurant">
+				<h3 class="title-restaurant text-start">
 					Restaurants
 				</h3>		
-				<ul class="ul-restaurant-list">
+				<ul class="ul-restaurant-list flex column between align-center">
 					<li class=pos>
 						<figure class=" ">
 							<img class="img" src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" 
 								 alt="">
-							<figcaption class="name-card">
+							<figcaption class="name-card text-start">
 								<h4>
 									La palette du goût
 								</h4>
-								<p class="love-place">									
+								<p class="flex row between">									
 									Ménilmontant
 									<i class="far fa-heart"></i>
 								</p>
@@ -135,11 +140,11 @@
 						<figure>
 							<img class="img" src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" 
 								 alt="">
-							<figcaption class="name-card">
+							<figcaption class="name-card text-start">
 								<h4>
 									La note enchantée
 								</h4>
-								<p class="love-place">									
+								<p class="flex row between">									
 									Charonne
 									<i class="far fa-heart"></i>
 								</p>
@@ -152,11 +157,11 @@
 						<figure>
 							<img class="img" src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" 
 								 alt="">
-							<figcaption class="name-card">
+							<figcaption class="name-card text-start">
 								<h4>
 									À la française
 								</h4>
-								<p class="love-place">									
+								<p class="flex row between">									
 									Cité Rouge
 									<i class="far fa-heart"></i>
 								</p>
@@ -169,11 +174,11 @@
 						<figure>
 							<img class="img" src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" 
 								 alt="">
-							<figcaption class="name-card">
+							<figcaption class="name-card text-start">
 								<h4>
 									Le délice des sens
 								</h4>
-								<p class="love-place">									
+								<p class="flex row between">									
 									Folie-Méricourt
 									<i class="far fa-heart"></i>
 								</p>
@@ -189,11 +194,11 @@
 		<footer>
 
 			<section class="footer-box">
-				<ul class="footer">
+				<ul>
 					<li>
-						<h2 class="title">
+						<h3 class="title text-start">
 							ohmyfood
-						</h2>		
+						</h3>		
 					</li>
 
 
