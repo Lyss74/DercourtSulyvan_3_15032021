@@ -1,0 +1,19 @@
+/* function */
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+/* REM-COVERTER
+/* values : 
+/* numeric $size, $base use default size
+/* call : {
+    property css: rem(5)
+    }
+*/
+@function rem($size, $base: $BASE-FONT-SIZE) {
+    @return 1rem * $size / strip-unit($base);
+}
+// rem(75, 100)

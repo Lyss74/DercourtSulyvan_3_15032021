@@ -1,5 +1,5 @@
-/vscode
-/idea
-/dart-sass
-/sass
-.*pptx
+vscode/*
+idea/*
+dart-sass/*
+style.css.map
+*.pptx

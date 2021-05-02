@@ -4,13 +4,7 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-						<!--		CONFIGURATION CSS DESKTOP			-->
-		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-						<!--		CONFIGURATION CSS MOBILE 420PX AND 815PX			-->
-		<link rel="stylesheet" type="text/css" href="./assets/css/style-420px-815px.css">
-				<!--		CONFIGURATION CSS PADLE 1024PX AND1500PX			-->
-		<link rel="stylesheet" type="text/css" href="./assets/css/style-1024px-1500px.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href="./assets/images/logo/omf.png"  rel="shortcut icon"/>
 		<title>				
 			ohmyfood : omf 
@@ -20,222 +14,223 @@
 	<body>
 
 		<header>
-			<section class="header-box">
-				<ul>
-
-					<li>
-						<a href="">
-							<img class=" " 
-								 src="./assets/images/icon/ohmyfood@2x.svg"
-								 alt=" "/>
-						</a>		
-					</li> 
-
-					<br>
-
-					<li class="flex row">
-						<p> 
-							<i class="fas fa-map-marker-alt"></i>
-							Paris, Belleville
-						</p>	
-					</li>
-					
-					<br>
-
-					<li class="title-1">
-						<h1>
-							Réservez le menu qui<br>
-							vous convient 
-						</h1>
-					</li>
-
-					<br>
-
-					<li class="title-2">
-						<p>
-							Découvrez des restaurants d'exception,<br>
-							séléctionnés par nos soins.
-						</p>
-					</li>
-
-					<br>
-
-					<li  class="launch">
-						<button>
-							Explorer nos restaurants
-						</button>		
-					</li>
-
-					<br>
-
-				</ul>
-			</section>
+			<div class="header-logo-box">	 
+				<a href="">
+					<img class="header-logo" 		
+						 src="./assets/images/icon/ohmyfood@2x.svg"
+						 alt=" "/> 			 
+				</a>		
+			</div> 
 		</header> 
-		
-		<br>
 
+		<section class="section-home"> 	
+			<ul class="home-list">			 
+				<li class="background"> 		 
+					<p class="home-location"> 	
+						<i class="fas fa-map-marker-alt"></i> 		 
+						Paris, Belleville
+					</p>	
+				</li>
+
+				<li class="home-title-1"> 		 
+					<b class="reserve-title">
+						Réservez le menu qui <br class="jump-line">
+						vous convient 
+					</b>
+				</li>
+
+				<li class="discover">		 
+					<p>
+						Découvrez des restaurants d'exception, <br class="jump-line">
+						séléctionnés par nos soins.
+					</p>
+				</li>
+
+				<li class="btn-box">		 
+					<button class="btn-action">  
+						<b>Explorer nos restaurants</b>
+					</button>		
+				</li>
+			</ul>
+		</section>
+		
 		<main>
 
-			<section class="running">
-				<ul>
-					<li class="title">
-						<h3>
-							Fonctionnement
-						</h3>
+			<section class="section-runnig">   		 
+				<h3 class="part-title">			 
+					Fonctionnement
+				</h3>
+				<ul class="runnig-list"> 			 
+					<li class="runnig-card">		 
+						<p class="runnig-card-ennum">		 
+							1
+						</p>
+						<p class="runnig-card-icon"> 	 
+							<i class="fas fa-mobile-alt"></i>
+						</p>
+						<b class="running-card-text">
+							Choisissez un restaurant 
+						</b>
 					</li>
-					<li class="flex row between">
-						1
-						<i class="fas fa-mobile-alt"></i>
-						Choisissez un restaurant 
+					<li class="runnig-card">		 
+						<p class="runnig-card-ennum">		 
+							2 
+						</p>
+						<p class="runnig-card-icon"> 	 
+							<i class="fas fa-list" id="liste"></i>
+						</p>
+						<b class="running-card-text">
+							Composez votre menu 
+						</b>
 					</li>
-					<li class="flex row between">
-						2
-						<i class="fas fa-ellipsis-v"></i>
-						<i class="fas fa-bars"></i>
-						Composez votre menu 
-					</li>
-					<li class="flex row between">
-						3
-						<i class="fas fa-store"></i>
-						Dégustez au restaurant
+					<li class="runnig-card">		 
+						<p class="runnig-card-ennum">		 
+							3
+						</p>
+						<p class="runnig-card-icon"> 
+							<i class="fas fa-store"></i>
+						</p>
+						<b class="running-card-text">
+							Dégustez au restaurant
+						</b>
 					</li>
 				</ul>
-
 			</section>
 
-			<br>
 
-			<section class="restaurant-list">
-				<ul>
-					<li>
-						<h3 class="title">
-							Restaurants
-						</h3>		
-					</li>
-
-					<br>
-
-					<li>
-						<figure class="pos-1">
-							<img class="" src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" 
-								 alt="">
-							<figcaption>
-								<h4>
+			<section class="section-restaurant-display"> 
+				<h3 class="part-title">			 
+					Restaurants
+				</h3>		
+				<ul class="restaurant-list"> 
+					<li class="restaurant-pos"> 
+						<figure>
+							<div>
+								<b class="restaurant-new">Nouveau</b>
+								<img class="restaurant-img" src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" 
+									alt=""> 
+							</div>
+							<figcaption class="insert"> 
+								<b class="restaurant-name">
 									La palette du goût
-								</h4>
-								<p class="flex row between">									
+								</b>
+								<p class="restaurant-location"> 						
 									Ménilmontant
-									<i class="far fa-heart"></i>
 								</p>
+								<div class="fa-heart-box">
+									<i class="far fa-heart"></i>
+								</div>
 							</figcaption>
 						</figure>		
 					</li>
 
-					<br>
 
-					<li>
-						<figure class="pos-2">
-							<img class="" src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" 
-								 alt="">
-							<figcaption>
-								<h4>
+					<li class="restaurant-pos">				 
+						<figure>
+							<div>
+								<b class="restaurant-new">Nouveau</b>
+								<img class="restaurant-img" src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" 
+									alt="">			 
+							</div>
+							<figcaption class="insert"> 
+								<b class="restaurant-name">
 									La note enchantée
-								</h4>
-								<p class="flex row between">									
+								</b>
+								<p class="restaurant-location">	 							
 									Charonne
-									<i class="far fa-heart"></i>
 								</p>
+								<div class="fa-heart-box">
+									<i class="far fa-heart"></i>
+								</div>
 							</figcaption>
 						</figure>		
 					</li>
 
-					<br>
 
-					<li>
-						<figure class="pos-3">
-							<img class="" src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" 
-								 alt="">
-							<figcaption>
-								<h4>
+					<li class="restaurant-pos">	 
+						<figure>
+							<div>
+								<b class="restaurant-new">Nouveau</b>
+								<img class="restaurant-img" src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" 
+									alt=""> 
+							</div>
+							<figcaption class="insert"> 
+								<b class="restaurant-name">
 									À la française
-								</h4>
-								<p class="flex row between">									
+								</b>
+								<p class="restaurant-location">	 							
 									Cité Rouge
-									<i class="far fa-heart"></i>
 								</p>
+								<div class="fa-heart-box">
+									<i class="far fa-heart"></i>
+								</div>
 							</figcaption>
 						</figure>		
 					</li>
 
-					<br>
-
-					<li>
-						<figure class="pos-4">
-							<img class="" src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" 
-								 alt="">
-							<figcaption>
-								<h4>
+					<li class="restaurant-pos">	 
+						<figure>
+							<div>
+								<b class="restaurant-new">Nouveau</b>
+								<img class="restaurant-img" src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" 
+									alt=""> 
+							</div>
+							<figcaption class="insert"> 
+								<b class="restaurant-name">
 									Le délice des sens
 								</h4>
-								<p class="flex row between">									
+								<p class="restaurant-location">	 								
 									Folie-Méricourt
-									<i class="far fa-heart"></i>
 								</p>
+								<div class="fa-heart-box">
+									<i class="far fa-heart"></i>
+								</div>
 							</figcaption>
 						</figure>
 					</li>
 				</ul>
-
 			</section>		
+
 		</main>
 
-		<br>
 
 		<footer>
-
-			<section>
-				<ul>
+			<section class="section-footer">  
+				<h2 class="footer-title">	 
+					ohmyfood
+				</h2>		
+				<ul class="footer-list"> 
 					<li>
-						<h3 class="title">
-							ohmyfood
-						</h3>		
-					</li>
-
-					<br>
-
-					<li>
-						<a class="add-restaurant">
-							<i class="fas fa-utensils"></i>
-							<b>
+						<a class="footer-add">	 
+							<b class="footer-incon">
+								<i class="fas fa-utensils"></i>
 								Proposer un restaurant
 							</b> 
 						</a>
 					</li>
 
 					<li>
-						<a class="partner">
-							<i class="fas fa-hands-helping"></i>
-							<b>
+						<a class="footer-partner">		 
+							<b class="footer-incon">
+								<i class="fas fa-hands-helping"></i>
 								Devenir partenaire
 							</b> 
 						</a>
 					</li>
 
 					<li>
-						<a class="cgv">
+						<a class="footer-cgv">		 
 							Mention légales
 						</a>		
 					</li>
 					<li>
-						<a class="contact">
+						<a class="footer-contact">		 
 							Contact
 						</a>		
 					</li>
 				</ul>
-
 			</section>
+
 		</footer> 
-
 	</body>
-
 </html>
