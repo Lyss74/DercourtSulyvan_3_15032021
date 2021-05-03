@@ -1,160 +1,297 @@
-/////////////////////* START *////////////////////////
+/////////////////// ** IMPORT ** ////////////////
+@import 'import.scss';
 
-@import 'config.scss';
-@import 'function.scss';
-@import 'mixins.scss';
+/////////////////// ** START ** /////////////////
+@media only screen and (max-width: 425px) { 
 
-@media screen and (max-width: 525px) {   
+    //////// ** HEADER ** //////// 
+    .header-logo-box { 
+        padding: rem(10); 
+        width: 95%;
+        .header-logo {
+            max-height: 50%; 
+            max-width: 50%
+        }    
+    }
 
-//////// *HEADER* //////// 
-    .header-box {   
-    
-        .ul-in-box {
-            @include simple-flex(column, nowrap, none, none);
-            background-color: rgb(246, 246, 246); 
-            
-            .image-box {
-                background-color: white; 
-            }
-    
-            .logo {
-                max-height: 50%; 
-                max-width: 50%
-            }
-    
-            .location-box {
+    //////// ** SECTION home-box ** //////// 
+    .section-home {   
+        .home-list { 
+            @include simple-flex(column, nowrap);
+            background-color: rgb(234, 234, 234);
+            .background {
                 background-color: rgb(234, 234, 234);
+                border-top: 2px solid rgb(207, 207, 207);
+                box-shadow: inset 0px 0px 4px rgb(207 207 207);
+                padding: rem(25);
+            }
+            .home-location { 
+                background-color: rgb(234, 234, 234);
+                font-size: convert(14, pt, rem);
+                width: auto;
+                margin: auto;
+                .fa-map-marker-alt {
+                    margin-right: rem(15);
+                }
+            }
+            .home-title-1 {            
+                padding-top: rem(45) ;
+            }
+            .home-title-1, .discover, .btn-box {
+                background-color: map-get($base-color, $EXTRA-2);
+            }
+            .reserve-title {
+                font-size: convert(20, pt, rem); 
+            }
+            .discover{
+                font-size: convert(14, pt, rem);
             } 
-    
-            .fa-map-marker-alt {
-                margin-right: rem(10);
+
+        }
+
+    }
+
+    .btn-box{
+        padding-bottom: rem(45);
+        .btn-action  { 
+            background: linear-gradient( #FF79DA, #9356DC);
+            font-size: convert(12, pt, rem);
+            color: #fff;
+            border-radius: 50px;
+            box-shadow: 0px 8px 4px rgb(207 207 207);
+            margin: rem(5) rem(0) rem(10) rem(0); 
+            padding: rem(20) rem(35);
+            border: none;
+        } 
+    }
+    //////// ** SECTION running-box ** //////// 
+    .section-runnig {                 
+        @include simple-flex(column, nowrap);
+        @include space-($evenly);
+        .runnig-list { 
+            @include simple-flex(column, nowrap); 
+            @include space-($around);
+            @include align-();
+            height: rem(280);
+            .runnig-card {  
+                @include simple-flex(row, nowrap);
+                @include align-();
+                background-color: map-get($base-color, $EXTRA-2); 
+                margin: auto;
+                height: rem(75);
+                width: 85%;
+                border-radius: 30px;
+                box-shadow: 0px 3px 8px rgb(207 207 207);
             }
-    
-            .launch-box {
-                margin-bottom: 5%;
-            }
-    
-            .btn-explore {
-                font-size: 1em;
-                color: #fff;
-                background: linear-gradient( #FF79DA, #9356DC);
-                padding: 15px 15px;
-                border-radius: 50px;
-                border: none;
-                box-shadow: 0px 8px 4px rgb(207 207 207);
-                margin: 3% 0 8% 0 ;    
-            }    
-        }
-    }
-
-//////// *SECTION running-box* //////// 
-
-main {
-    @include simple-flex(column, nowrap, $between, none);
-}
-
-.running-box {
-    height: 15rem;
-
-    .title-running {
-        @include text-(start);
-    }
-    .ul-running { 
-        @include simple-flex(column, nowrap, $around, center); 
-
-        .operation-card {  
-            @include simple-flex(row, nowrap, none, center);
-            background-color: rgb(246, 246, 246);  
-            height: 4.8rem;
-            width: 90%;
-            border-radius: 30px;
-            box-shadow: 0px 3px 8px rgb(207 207 207);
-        }
-        .ennumerate {
-            background-color: #9356DC;
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-            padding: 5px 10px;
-            margin-left: -10px;
-            margin-right: 5%;
-        }
-        .running-icon {  
-            @include simple-flex(row, nowrap, none, none);
-            width: 1.5rem;
-            margin-right: 5%;
-        }
-    }
-}
-
-.operation-card {  
-    flex: 1 1 auto;
-}
-
-//////// *SECTION restaurant-list-box* //////// 
-.restaurant-list-box {
-    @include simple-flex(column, nowrap, none, none);
-    background-color: rgb(246, 246, 246); 
-
-    .title-restaurant {
-        @include text-(start);
-        margin-top: 15%;
-    }
-    .ul-restaurant-list {
-        @include simple-flex(column, nowrap, $between, center);
-        height: 77rem;
-
-        .pos {
-            background-color: white;
-            width: 90%;
-
-            .love-place {
-                @include simple-flex(row, nowrap, $between, none);
-            } 
-            .img {
-                width: 100%;
-                height: 200px;
-                border: 3px solid white;
-                border-radius: 20px 20px 0 0;
-            }
-            .name-card {
-                @include text-(start);
-                background-color: white;
-                border-radius: 0 0 20px 20px;
-                border: 3px solid white;
-                height: 70px;
-                width: 100%;
-            }    
-        }
-    }
-}
-    
-//////// *SECTION footer* //////// 
-    .footer-box {
-        background-color: #353535;
-
-        .footer {
-            @include simple-flex(column, nowrap, none, none);
-
-            .title, .add-restaurant,
-            .partner, .cgv, .contact 
-            {
-                @include simple-flex(row, nowrap, none, center); 
+            .runnig-card-ennum {
+                @include display;
+                background-color: $PRIMARY;
+                border-radius: 20px;
                 color: white;
-                width: rem(200);
-                padding: rem(2);
-                margin-left: 5%;
+                padding: 5px 10px;
+                margin-left: -10px;
+                margin-right: 5%;
+            }
+            .runnig-card-icon { 
+                @include simple-flex(row, nowrap);
+                margin-right: rem(20);
+                font-size: convert(20, px, rem);
+                .fa-store,
+                .fa-list,
+                .fa-mobile-alt {
+                    color: map-get($base-color, $QUATERNARY );
+                    &:hover {
+                        color: map-get($base-color, $PRIMARY );
+                    }
+                }
+            }
+            .running-card-text {
+                font-size: convert(14, pt, rem);
+                padding: rem(5)
             }
         }
-        .fa-utensils, 
-        .fa-hands-helping {
-            margin-right: 5%;
+    }
+    .part-title { 
+        font-size: convert(25, px, rem);
+        font-family: $FONT-TEXT;
+        margin-left: rem(20);
+        width: fit-content
+    }
+
+
+    //////// ** SECTION restaurant-list-box ** //////// 
+    .section-restaurant-display {
+        @include simple-flex(column, nowrap);
+        @include align-(start);
+        @include space-($around);
+        background-color: map-get($base-color, $EXTRA-2); 
+        margin-top: rem(50);
+        .restaurant-list {
+            @include simple-flex(column, nowrap);
+            @include space-($between);
+            @include align-();
+            .restaurant-pos {
+                margin: rem(10) 0 rem(10);
+                background-color: white;
+                border: 3px solid white;
+                border-radius: 0 0 20px 20px;
+                width: 90%;
+                .restaurant-new {  
+                    position: absolute;
+                    text-align: center;
+                    color: #39a98d;
+                    background-color: #99e2d0;
+                    width: rem(110);
+                    padding: rem(6);
+                    margin-left: rem(250);
+                    margin-top: rem(20);
+                }
+                .restaurant-img {
+                    border: 3px solid white;
+                    border-radius: 20px 20px 0 0;
+                    height: 200px;
+                    width: 100%;
+                }
+                .insert {
+                    @include text-(start);
+                    font-size: convert(20, px, rem);
+                    background-color: white;
+                    margin: rem(10) 0 rem(40) 0;
+                    padding-left: rem(25);
+
+                    .restaurant-location { 
+                        @include simple-flex(row, nowrap);
+                        @include space-($between);
+                        margin-top: rem(5);
+                    }
+                    .fa-heart-box {  background-color: yellow;
+                        width: fit-content;
+                        padding: rem(10);
+                        margin-left: rem(300);
+                        margin-top: -20%;
+                        .fa-heart {
+                            color: map-get($base-color, $PRIMARY);
+                            font-size: convert(25, px, rem);
+                            border-color: linear-gradient(map-get($base-color, $SECONDARY), map-get($base-color, $PRIMARY));
+                            &:hover {
+                                background: linear-gradient(map-get($base-color, $SECONDARY), map-get($base-color, $PRIMARY));
+                            }
+                        }
+                    }
+                }    
+            }
         }
     }
 
-}
-@media screen and (min-width: 525px) and (max-width: 815px) {  
+    //////// ** SECTION footer ** //////// 
+    .section-footer { 
+        background-color: map-get($base-color, $QUATERNARY);
+        padding-top: rem(30);
+        padding-bottom: rem(20);
+        .footer-title {
+            font-size: convert(30, px, rem);
+            @include text-(start);
+            color: white;
+            margin: rem(20);
+        }
+        .footer-list { 
+            @include simple-flex(column, nowrap);
+                font-size: convert(14, pt, rem);
+            width: fit-content;
+            margin: rem(20);
+            .footer-incon {
+                width: fit-content;
+                padding: rem(2);
+            }
+            .fa-utensils, 
+            .fa-hands-helping {  
+                width: rem(20)
+            }
+            .footer-add,.footer-partner, 
+            .footer-cgv, .footer-contact { 
+                @include simple-flex(row, nowrap); 
+                @include align-(start);
+                @include text-(start);
+                color: white;
+                padding: rem(2);
+            }
+        }
+    }
+
+
+
+    //////// ** RESTAURANT pages ** //////// 
+    .header-arrow { 
+        position: absolute; 
+        left: 3rem; 
+        top: 1.3rem;        
+        .fa-arrow-left {
+            font-size: 1.5rem;
+        }
+    }
+    .figure-style { 
+        @include simple-flex(row, nowrap); 
+        @include space-($between);
+        @include align-(center);
+        border-radius: 40px 40px 0 0; 
+        padding: 30px;
+        margin-top: -40px;   
+        .restaurant-name {
+            @include text-(left);
+            width: 100%;
+            margin-left: rem(-15);
+        }
+        .fa-heart-box {
+            width: rem(40);
+            .fa-heart {
+                font-size: 1.8rem;
+            }
+        }
+    }
+    //background-color: rgb(246, 246, 246);
+    .section-menu {
+        background-color: rgb(246, 246, 246);
+        .menu-title {
+            @include text-(start);
+            color: map-get($base-color, $QUATERNARY);
+            margin-top: rem(30);
+            margin-left: rem(15);
+        } 
+        .test {
+            position: relative;
+        }
+        .z-index-1 {
+        }
+        .test2 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgb(246, 246, 246);
+        }
+    }
+    .border {
+        width: 3.5rem;
+        height: 0.5rem;
+        border-bottom: 1mm solid map-get($base-color, $TERTIARY);            
+        margin-bottom: 0.5rem;
+    }
+    .main-list {  
+        @include simple-flex(column, nowrap); 
+        @include space-($between);
+        //@include align-(center);
+        .thumbnail-box { 
+            @include text-(start);
+            background-color: rgb(255, 255, 255);
+            border-radius: 15px;
+            box-shadow: 0px 3px 8px rgb(207 207 207);
+            margin: rem(8);
+            padding: rem(12);
+            .thumbnail {
+                @include simple-flex(row, nowrap); 
+                @include space-($between);
+            }
+        }    
+    }
 
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////
