@@ -5,8 +5,12 @@
   background-color: yellow;
 }
 
+.DISPLAY {
+  display: none;
+}
+
 /*
-./dart-sass/sass sass/style.scss style.css --watch
+./dart-sass/sass sass/style.scss style.css --watch 
 */
 /* FONT-FACE */
 @font-face {
@@ -51,10 +55,6 @@ ul {
 }
 
 /*  generic-resp-size   */
-ul, section {
-  width: 100%;
-}
-
 /*  generic-picture   */
 img {
   max-height: 100%;
@@ -110,25 +110,25 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 /* FLEX-FLOW */
 /* SIMPLE-FLEX */
 /*  FLEX-AUTO */
-@media only screen and (max-width: 525px) {
+@media only screen and (max-width: 455px) {
   .header-logo-box {
-    padding: 0.5rem;
+    padding: 1rem;
   }
   .header-logo-box .header-logo {
     max-height: 50%;
     max-width: 50%;
   }
 
+  .section-home {
+    background-color: #eaeaea;
+  }
   .section-home .home-list {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    flex: 0 0 auto;
-    background-color: #eaeaea;
   }
   .section-home .home-list .background {
-    background-color: #eaeaea;
     border-top: 2px solid #cfcfcf;
     box-shadow: inset 0px 0px 4px #cfcfcf;
     padding: 1.6666666667rem;
@@ -154,10 +154,11 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   .section-home .home-list .discover {
     font-size: 1.1666666667em;
   }
-  .section-home .home-list .btn-box {
+
+  .btn-box {
     padding-bottom: 3rem;
   }
-  .section-home .home-list .btn-box .btn-action {
+  .btn-box .btn-explore, .btn-box .btn-action {
     background: linear-gradient(#FF79DA, #9356DC);
     font-size: 1em;
     color: #fff;
@@ -166,14 +167,6 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     margin: 0.3333333333rem 0rem 0.6666666667rem 0rem;
     padding: 1.3333333333rem 2.3333333333rem;
     border: none;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    box-sizing: border-box;
-    flex: 1 1;
   }
 
   .section-runnig {
@@ -192,7 +185,6 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     align-content: space-around;
     justify-content: space-around;
     align-items: center;
-    flex: 0 0 auto;
     height: 18.6666666667rem;
   }
   .section-runnig .runnig-list .runnig-card {
@@ -201,7 +193,6 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     flex-wrap: nowrap;
     box-sizing: border-box;
     align-items: center;
-    flex: 0 0 auto;
     background-color: #f6f6f6;
     margin: auto;
     height: 5rem;
@@ -211,7 +202,6 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   }
   .section-runnig .runnig-list .runnig-card-ennum {
     display: flex;
-    flex: 0 0 auto;
     background-color: #9356DC;
     border-radius: 20px;
     color: white;
@@ -227,7 +217,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     margin-right: 1.3333333333rem;
     font-size: 1.25em;
   }
-  .section-runnig .runnig-list .runnig-card-icon .fa-store:hover {
+  .section-runnig .runnig-list .runnig-card-icon .fa-store,
+.section-runnig .runnig-list .runnig-card-icon .fa-list,
+.section-runnig .runnig-list .runnig-card-icon .fa-mobile-alt {
+    color: #353535;
+  }
+  .section-runnig .runnig-list .runnig-card-icon .fa-store:hover,
+.section-runnig .runnig-list .runnig-card-icon .fa-list:hover,
+.section-runnig .runnig-list .runnig-card-icon .fa-mobile-alt:hover {
     color: #9356DC;
   }
   .section-runnig .runnig-list .running-card-text {
@@ -250,7 +247,6 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     align-items: start;
     align-content: space-around;
     justify-content: space-around;
-    flex: 1 1 auto;
     background-color: #f6f6f6;
     margin-top: 3.3333333333rem;
   }
@@ -265,26 +261,25 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   }
   .section-restaurant-display .restaurant-list .restaurant-pos {
     margin: 0.6666666667rem 0 0.6666666667rem;
-    z-index: 50;
     background-color: white;
     border: 3px solid white;
     border-radius: 0 0 20px 20px;
     width: 90%;
   }
   .section-restaurant-display .restaurant-list .restaurant-pos .restaurant-new {
-    display: none;
     position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
     text-align: center;
     color: #39a98d;
     background-color: #99e2d0;
-    width: 7.3333333333rem;
-    padding: 0.4rem;
-    margin-left: 20.3333333333rem;
     margin-top: 1.3333333333rem;
-    z-index: 200;
+    margin-left: 11.3333333333rem;
+    padding: 0.4666666667rem;
   }
   .section-restaurant-display .restaurant-list .restaurant-pos .restaurant-img {
-    z-index: 50;
+    position: relative;
     border: 3px solid white;
     border-radius: 20px 20px 0 0;
     height: 200px;
@@ -294,7 +289,8 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     text-align: start;
     font-size: 1.25em;
     background-color: white;
-    padding-left: 0.6666666667rem;
+    margin: 0.6666666667rem 0 2.6666666667rem 0;
+    padding-left: 1.6666666667rem;
   }
   .section-restaurant-display .restaurant-list .restaurant-pos .insert .restaurant-location {
     display: flex;
@@ -303,44 +299,52 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     box-sizing: border-box;
     align-content: space-between;
     justify-content: space-between;
-    flex: 1 1 auto;
     margin-top: 0.3333333333rem;
   }
-  .section-restaurant-display .restaurant-list .restaurant-pos .insert .fa-heart-box {
-    display: none;
-    width: fit-content;
-    padding: 1rem;
-    margin-left: 22.3333333333rem;
+  .section-restaurant-display .restaurant-list .restaurant-pos .insert .restaurant-location .heart {
+    color: linear-gradient(#9356DC, #FF79DA);
   }
-  .section-restaurant-display .restaurant-list .restaurant-pos .insert .fa-heart-box .fa-heart {
-    font-size: 1.5625em;
-    margin: auto;
+  .section-restaurant-display .restaurant-list .restaurant-pos .insert .restaurant-location .heart-after {
+    color: rebeccapurple;
+    font-size: 1.4375em;
+    margin-right: 1.3333333333rem;
   }
 
+  /*                         .heart {
+                              font-size: convert(23, px, rem);
+                              margin-right: rem(20);   
+                              &:hover {
+                                  color: transparent;
+                                  background-color: $PRIMARY;
+                              }
+                          }
+
+                              .far:hover {
+          background-color: rebeccapurple;
+      }
+                          */
   .section-footer {
     background-color: #353535;
+    padding-top: 2rem;
+    padding-bottom: 1.3333333333rem;
   }
   .section-footer .footer-title {
     font-size: 1.875em;
     text-align: start;
     color: white;
-    padding: 2.3333333333rem 1.6666666667rem 0 1.5333333333rem;
+    margin-left: 1.3333333333rem;
   }
   .section-footer .footer-list {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    flex: 1 1 auto;
-  }
-  .section-footer .footer-list .footer-add {
-    width: 16.6666666667rem;
+    font-size: 1.1666666667em;
+    width: fit-content;
+    margin: 1.3333333333rem;
   }
   .section-footer .footer-list .footer-incon {
-    width: 13.3333333333rem;
-  }
-  .section-footer .footer-list .fa-utensils,
-.section-footer .footer-list .fa-hands-helping {
+    margin-right: 0.5333333333rem;
     width: 1.3333333333rem;
   }
   .section-footer .footer-list .footer-add, .section-footer .footer-list .footer-partner,
@@ -351,22 +355,22 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     box-sizing: border-box;
     align-items: start;
     text-align: start;
-    flex: 1 1 auto;
     color: white;
-    padding: 0.1333333333rem;
-    margin-left: 5%;
   }
 
   .header-arrow {
     position: absolute;
     left: 3rem;
-    top: 1rem;
+    top: 1.5rem;
   }
   .header-arrow .fa-arrow-left {
     font-size: 1.5rem;
   }
 
-  .figure-style {
+  .fig-menu {
+    position: relative;
+  }
+  .fig-menu .cap-menu {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -376,44 +380,80 @@ https://www.sitepoint.com/converting-typographic-units-sass/
     align-items: center;
     background-color: #f6f6f6;
     border-radius: 40px 40px 0 0;
+    position: absolute;
+    left: 0;
+    right: 0;
     padding: 30px;
     margin-top: -40px;
-    z-index: 100;
   }
-  .figure-style .fa-heart {
+  .fig-menu .cap-menu .restaurant-name {
+    text-align: left;
+    width: 100%;
+    margin-left: -1rem;
+  }
+  .fig-menu .cap-menu .fa-heart-box {
+    width: 2.6666666667rem;
+  }
+  .fig-menu .cap-menu .fa-heart-box .fa-heart {
     font-size: 1.8rem;
   }
 
   .section-menu {
-    background-color: red;
+    background-color: #f6f6f6;
   }
   .section-menu .menu-title {
     text-align: start;
     color: #353535;
+    margin-top: 2rem;
+    margin-left: 1rem;
   }
-  .section-menu .border {
-    width: 8rem;
+
+  .border {
+    width: 3.5rem;
     height: 0.5rem;
     border-bottom: 1mm solid #99E2D0;
     margin-bottom: 0.5rem;
   }
-  .section-menu .thumbnail-box {
+
+  .main-list {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    align-items: start;
+    align-content: space-between;
+    justify-content: space-between;
+  }
+  .main-list .thumbnail-box {
+    text-align: start;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 3px 8px #cfcfcf;
+    width: 95%;
+    margin: 0.5333333333rem;
+    padding: 0.8rem;
   }
-  .section-menu .thumbnail-box .thumbnail {
+  .main-list .thumbnail-box .thumbnail {
+    width: content;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
     align-content: space-between;
     justify-content: space-between;
+  }
+  .main-list .thumbnail-box .circle-box {
+    display: none;
+  }
+  .main-list .thumbnail-box .circle-box .check-circle {
+    font-size: 1.6666666667em;
+    background-color: lightgreen;
+    color: white;
+    border-radius: 0px 15px 15px 0;
+    padding: 1rem;
+  }
+
+  .btn-box .btn-action {
+    margin: 4rem 2rem 2rem 2rem;
   }
 }
 

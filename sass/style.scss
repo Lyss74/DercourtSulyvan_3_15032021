@@ -2,12 +2,11 @@
 @import 'import.scss';
 
 /////////////////// ** START ** /////////////////
-@media only screen and (max-width: 425px) { 
+@media only screen and (max-width: 455px) { 
 
     //////// ** HEADER ** //////// 
     .header-logo-box { 
-        padding: rem(10); 
-        width: 95%;
+        padding: rem(15); 
         .header-logo {
             max-height: 50%; 
             max-width: 50%
@@ -16,11 +15,10 @@
 
     //////// ** SECTION home-box ** //////// 
     .section-home {   
+        background-color: rgb(234, 234, 234);
         .home-list { 
             @include simple-flex(column, nowrap);
-            background-color: rgb(234, 234, 234);
             .background {
-                background-color: rgb(234, 234, 234);
                 border-top: 2px solid rgb(207, 207, 207);
                 box-shadow: inset 0px 0px 4px rgb(207 207 207);
                 padding: rem(25);
@@ -46,14 +44,12 @@
             .discover{
                 font-size: convert(14, pt, rem);
             } 
-
         }
-
     }
 
     .btn-box{
         padding-bottom: rem(45);
-        .btn-action  { 
+        .btn-explore  { 
             background: linear-gradient( #FF79DA, #9356DC);
             font-size: convert(12, pt, rem);
             color: #fff;
@@ -64,6 +60,7 @@
             border: none;
         } 
     }
+
     //////// ** SECTION running-box ** //////// 
     .section-runnig {                 
         @include simple-flex(column, nowrap);
@@ -111,11 +108,11 @@
             }
         }
     }
-    .part-title { 
+    .part-title {
         font-size: convert(25, px, rem);
         font-family: $FONT-TEXT;
         margin-left: rem(20);
-        width: fit-content
+        width: fit-content;
     }
 
 
@@ -136,17 +133,19 @@
                 border: 3px solid white;
                 border-radius: 0 0 20px 20px;
                 width: 90%;
-                .restaurant-new {  
+                .restaurant-new { 
                     position: absolute;
+                    top:0; right: 0; left: 0; 
+
                     text-align: center;
                     color: #39a98d;
                     background-color: #99e2d0;
-                    width: rem(110);
-                    padding: rem(6);
-                    margin-left: rem(250);
                     margin-top: rem(20);
+                    margin-left: rem(170);
+                    padding: rem(7);
                 }
                 .restaurant-img {
+                    position: relative;
                     border: 3px solid white;
                     border-radius: 20px 20px 0 0;
                     height: 200px;
@@ -158,97 +157,111 @@
                     background-color: white;
                     margin: rem(10) 0 rem(40) 0;
                     padding-left: rem(25);
-
                     .restaurant-location { 
                         @include simple-flex(row, nowrap);
                         @include space-($between);
                         margin-top: rem(5);
-                    }
-                    .fa-heart-box {  background-color: yellow;
-                        width: fit-content;
-                        padding: rem(10);
-                        margin-left: rem(300);
-                        margin-top: -20%;
-                        .fa-heart {
-                            color: map-get($base-color, $PRIMARY);
-                            font-size: convert(25, px, rem);
-                            border-color: linear-gradient(map-get($base-color, $SECONDARY), map-get($base-color, $PRIMARY));
-                            &:hover {
-                                background: linear-gradient(map-get($base-color, $SECONDARY), map-get($base-color, $PRIMARY));
-                            }
+
+                        .heart {
+                            color: linear-gradient( $PRIMARY, $SECONDARY);
                         }
+
+                        .heart-after { color: rebeccapurple; 
+                            font-size: convert(23, px, rem);
+                            margin-right: rem(20); 
+                        }
+
                     }
                 }    
             }
         }
     }
 
+    
+
+
+    /*                         .heart {
+                                font-size: convert(23, px, rem);
+                                margin-right: rem(20);   
+                                &:hover {
+                                    color: transparent;
+                                    background-color: $PRIMARY;
+                                }
+                            }
+
+                                .far:hover {
+            background-color: rebeccapurple;
+        }
+                            */
+
+
     //////// ** SECTION footer ** //////// 
-    .section-footer { 
+    .section-footer {  
         background-color: map-get($base-color, $QUATERNARY);
         padding-top: rem(30);
         padding-bottom: rem(20);
-        .footer-title {
+        .footer-title { 
             font-size: convert(30, px, rem);
             @include text-(start);
             color: white;
-            margin: rem(20);
+            margin-left: rem(20);
         }
-        .footer-list { 
+        .footer-list {
             @include simple-flex(column, nowrap);
-                font-size: convert(14, pt, rem);
+            font-size: convert(14, pt, rem);
             width: fit-content;
             margin: rem(20);
             .footer-incon {
-                width: fit-content;
-                padding: rem(2);
-            }
-            .fa-utensils, 
-            .fa-hands-helping {  
+                margin-right: rem(8);
                 width: rem(20)
+                
             }
             .footer-add,.footer-partner, 
             .footer-cgv, .footer-contact { 
                 @include simple-flex(row, nowrap); 
-                @include align-(start);
+                @include align-(start); 
                 @include text-(start);
                 color: white;
-                padding: rem(2);
+
             }
         }
     }
 
 
-
     //////// ** RESTAURANT pages ** //////// 
-    .header-arrow { 
+    .header-arrow {
         position: absolute; 
         left: 3rem; 
-        top: 1.3rem;        
+        top: 1.5rem;        
         .fa-arrow-left {
             font-size: 1.5rem;
         }
     }
-    .figure-style { 
-        @include simple-flex(row, nowrap); 
-        @include space-($between);
-        @include align-(center);
-        border-radius: 40px 40px 0 0; 
-        padding: 30px;
-        margin-top: -40px;   
-        .restaurant-name {
-            @include text-(left);
-            width: 100%;
-            margin-left: rem(-15);
-        }
-        .fa-heart-box {
-            width: rem(40);
-            .fa-heart {
-                font-size: 1.8rem;
+    .fig-menu {
+        position: relative;
+        .cap-menu { 
+            @include simple-flex(row, nowrap); 
+            @include space-($between);
+            @include align-(center);
+            background-color: rgb(246, 246, 246);
+            border-radius: 40px 40px 0 0; 
+            position: absolute;
+            left: 0; right: 0;
+            padding: 30px;
+            margin-top: -40px;   
+            .restaurant-name {
+                @include text-(left);
+                width: 100%;
+                margin-left: rem(-15);
+            }
+            .fa-heart-box {
+                width: rem(40);
+                .fa-heart {
+                    font-size: 1.8rem;
+                }
             }
         }
     }
-    //background-color: rgb(246, 246, 246);
     .section-menu {
         background-color: rgb(246, 246, 246);
         .menu-title {
@@ -257,18 +270,6 @@
             margin-top: rem(30);
             margin-left: rem(15);
         } 
-        .test {
-            position: relative;
-        }
-        .z-index-1 {
-        }
-        .test2 {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgb(246, 246, 246);
-        }
     }
     .border {
         width: 3.5rem;
@@ -276,22 +277,42 @@
         border-bottom: 1mm solid map-get($base-color, $TERTIARY);            
         margin-bottom: 0.5rem;
     }
-    .main-list {  
+    .main-list {
         @include simple-flex(column, nowrap); 
         @include space-($between);
-        //@include align-(center);
-        .thumbnail-box { 
+        .thumbnail-box { //background-color: #39a98d;
             @include text-(start);
             background-color: rgb(255, 255, 255);
             border-radius: 15px;
             box-shadow: 0px 3px 8px rgb(207 207 207);
+            width: 95%;
             margin: rem(8);
             padding: rem(12);
-            .thumbnail {
+            .thumbnail { // background-color: red;
+                width: content;
                 @include simple-flex(row, nowrap); 
                 @include space-($between);
             }
+            .circle-box { display: none;
+                .check-circle {
+                    font-size: convert(20, pt, rem);
+                    background-color: $EXTRA;
+                    color: white;
+                    border-radius: 0px 15px 15px 0;
+
+                    padding: rem(15)
+                }
+    
+            }
         }    
+    }
+    .btn-box {
+        .btn-action {
+            @extend .btn-explore;
+            margin: rem(60) rem(30) rem(30) rem(30);
+            //padding: rem(25) rem(80) rem(25) rem(80);
+        }
+    
     }
 
 }

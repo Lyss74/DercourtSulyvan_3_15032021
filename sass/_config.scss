@@ -4,7 +4,7 @@
 .PROD {background-color: yellow;} 
 .DISPLAY {display: none;}
 /*
-./dart-sass/sass sass/style.scss style.css --watch
+./dart-sass/sass sass/style.scss style.css --watch 
 */
 
 /////////////////////* CONSTANT *////////////////////////
@@ -55,7 +55,7 @@ $EXTRA-2: rgb(246, 246, 246);
 
 /////////////////////* DYNAMIC CONFIG *//////////////////// 
 /* generic-text */
-html, body {@include text-();  font-size: $BASE-FONT-SIZE; //height: auto;
+html, body { @include text-();  font-size: $BASE-FONT-SIZE; 
 }
 
 h1, h2, h3, h4, h5, h6 {font-family: $FONT-TITLE, Arial, sans-serif;  }
@@ -66,7 +66,7 @@ a {text-decoration: none; color: black; }
 ul {list-style: none; }		
 
 /*  generic-resp-size   */
-ul, section {width: $FULL; }
+//ul, section {width: fit-content; }
 
 /*  generic-picture   */
 img {max-height: $FULL; max-width: $FULL; width: $FULL; object-fit: cover; }
