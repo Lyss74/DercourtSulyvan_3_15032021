@@ -87,12 +87,10 @@ $evenly: space-evenly;
 @mixin flex-auto($direction-1, $direction-2, $wrap, $between) { 
     @include display; 
     @include flex-($direction-1);
-    @include respond(mobile-p); 
-    @include respond(tablet-p);
-    @include respond(desktop)
-    { 
-        @include flex-($direction-2);
-    };
+    @include respond(mobile-p) {@include flex-($direction-1);};  
+    @include respond(tablet-p) {@include flex-($direction-1);}; 
+    @include respond(mobile) {@include flex-($direction-2);};
+    @include respond(tablet) {@include flex-($direction-2);};
     @include wrap($wrap);
     @include space-($between);
 }

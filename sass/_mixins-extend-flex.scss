@@ -119,15 +119,13 @@
 //        @include flex-auto(column, row, wrap-reverse, $around);
 //        .child-box {
 //            flex: 1 1 auto; }
-@mixin flex-auto-desktop($direction-1, $direction-2, $wrap, $between) { 
-    @extend %flex;
+@mixin ex-flex-auto-dir($direction-1, $direction-2, $wrap, $between) { 
+    @include display; 
     @extend %#{$direction-1};
-    @include respond(mobile-p); 
-    @include respond(tablet-p);
-    @include respond(desktop)
-    { 
-        @extend %#{$direction-2};
-    };
+    @include respond(mobile-p) {@extend %#{$direction-1};}; 
+    @include respond(tablet-p) {@extend %#{$direction-1};};
+    @include respond(mobile) {@extend %#{$direction-2};};
+    @include respond(tablet) {@extend %#{$direction-2};};
     @extend %#{$between};
     @extend %#{$wrap};
 }

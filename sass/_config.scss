@@ -1,8 +1,10 @@
 /////////////////// ** IMPORT ** ////////////////
-@import 'mixins.scss';
+@import 'mixins';
+@import 'function';
+
 
 .PROD {background-color: yellow;} 
-.DISPLAY {display: none;}
+.NONE {display: none;}
 /*
 ./dart-sass/sass sass/style.scss style.css --watch 
 */
@@ -31,9 +33,14 @@
     font-weight: normal;
     font-style: normal;
     } 
- 
-/* !DEFAULT */
-$BASE-FONT-SIZE: 15px;
+
+//$unit-px : strip-unit(1500px) / strip-unit($BASE-FONT-SIZE); 0.95
+$BASE-FONT-SIZE: 16px;
+$baseval: strip-unit($BASE-FONT-SIZE);
+$current-f-s: convert($baseval, px, rem); //-> rem value
+$vw-size: vw(16);
+
+/* !DEFAULT */ 
 $FULL: 100%;
 $default-size: $BASE-FONT-SIZE!default;
 $default-widht: $FULL!default;
@@ -48,7 +55,7 @@ $SECONDARY: #FF79DA;
 $TERTIARY: #99E2D0; 
 $QUATERNARY:  #353535;
 $EXTRA: lightgreen;
-$EXTRA-2: rgb(246, 246, 246);
+$EXTRA-2: rgb(234, 234, 234);
 
 
 /////////////////////* CONSTANT -END- *////////////////////
@@ -69,9 +76,12 @@ ul {list-style: none; }
 //ul, section {width: fit-content; }
 
 /*  generic-picture   */
-img {max-height: $FULL; max-width: $FULL; width: $FULL; object-fit: cover; }
+img {display: block; margin: 0%; padding: 0%; max-height: $FULL; max-width: $FULL; width: $FULL; object-fit: cover; }
 
 /* generic border-box */
+html, body {
+    max-width: $FULL; min-width: $FULL;
+}
 div {box-sizing: border-box; height: $FULL; width: $FULL;}
 
 /*  generic-margin-base   */

@@ -1,114 +1,135 @@
-/////////////////// ** IMPORT ** ////////////////
-@import 'import.scss';
+/////////////////// ** IMPORT ** ///////////////// lighten($colour, 10%); darken($colour, 10%);
 
+@import 'import';
+
+.test {    font-size: calc(vw(20) + 5rem);
+}
 /////////////////// ** START ** /////////////////
-@media only screen and (max-width: 455px) { 
 
     //////// ** HEADER ** //////// 
-    .header-logo-box { 
-        padding: rem(15); 
-        .header-logo {
-            max-height: 50%; 
-            max-width: 50%
-        }    
+    //.header-box { 
+    //    padding: rem(15); 
+    //    &--logo {
+    //        max-height: 50%; 
+    //        max-width: 50%
+    //    }    
+    //}
+.header { 
+    @include simple-flex(row, nowrap); @include space-($evenly);
+    &--arrow { 
+        @include display(none);
+        background-color: grey; 
+        width: fit-content;
     }
+    &--logo { 
+        padding: rem(15);
+        height: 25%; 
+         width: 35%;
+        &:hover {
+        }
+    }
+}
+
+
 
     //////// ** SECTION home-box ** //////// 
-    .section-home {   
-        background-color: rgb(234, 234, 234);
-        .home-list { 
+    .section-home {   @include center-block();
+        width: 95%;
+        background-color: $EXTRA-2;
+        &--list { 
             @include simple-flex(column, nowrap);
-            .background {
+            .section-home--bcnd {
                 border-top: 2px solid rgb(207, 207, 207);
                 box-shadow: inset 0px 0px 4px rgb(207 207 207);
-                padding: rem(25);
+                padding: rem(5);
             }
-            .home-location { 
-                background-color: rgb(234, 234, 234);
-                font-size: convert(14, pt, rem);
+            .section-home--box-icon {
+                background-color: $EXTRA-2;
+                font-size: convert(15, pt, rem);
                 width: auto;
-                margin: auto;
+                margin: rem(10);
                 .fa-map-marker-alt {
                     margin-right: rem(15);
                 }
             }
-            .home-title-1 {            
-                padding-top: rem(45) ;
+            .section-home--title {  
+                font-size: convert(12, pt, rem);
+                padding-top: rem(45);
             }
-            .home-title-1, .discover, .btn-box {
-                background-color: map-get($base-color, $EXTRA-2);
+            .section-home--discover {
+                font-size: convert(12, pt, rem);
+                margin-bottom: rem(5);
+
             }
-            .reserve-title {
+            .section-home--title, .section-home--discover, .btn-box {
+                background-color: $EXTRA-2;
+            }
+            .title--reserve {
                 font-size: convert(20, pt, rem); 
             }
-            .discover{
+            &--discover {
                 font-size: convert(14, pt, rem);
             } 
+            .jump-line {display: none;}
         }
     }
-
     .btn-box{
         padding-bottom: rem(45);
-        .btn-explore  { 
-            background: linear-gradient( #FF79DA, #9356DC);
-            font-size: convert(12, pt, rem);
-            color: #fff;
-            border-radius: 50px;
-            box-shadow: 0px 8px 4px rgb(207 207 207);
-            margin: rem(5) rem(0) rem(10) rem(0); 
-            padding: rem(20) rem(35);
-            border: none;
+        .btn--explore  { 
+            @include btn
         } 
     }
 
     //////// ** SECTION running-box ** //////// 
-    .section-runnig {                 
-        @include simple-flex(column, nowrap);
-        @include space-($evenly);
-        .runnig-list { 
-            @include simple-flex(column, nowrap); 
+    .section-runnig {   
+        @include center-block();
+        width: 95%;
+        &--list { 
+            @include flex-auto(row, column, nowrap, $between); 
             @include space-($around);
             @include align-();
-            height: rem(280);
             .runnig-card {  
                 @include simple-flex(row, nowrap);
                 @include align-();
-                background-color: map-get($base-color, $EXTRA-2); 
-                margin: auto;
+                background-color: $EXTRA-2; 
+                margin:  rem(15);
                 height: rem(75);
-                width: 85%;
+                width: 80%;
                 border-radius: 30px;
-                box-shadow: 0px 3px 8px rgb(207 207 207);
+                box-shadow: 0px 3px 8px $EXTRA-2;
             }
-            .runnig-card-ennum {
+            .runnig-card--ennum {
                 @include display;
                 background-color: $PRIMARY;
                 border-radius: 20px;
                 color: white;
-                padding: 5px 10px;
+                font-size: convert(15, pt, rem);
+                padding: 5px 15px 5px 15px;
                 margin-left: -10px;
                 margin-right: 5%;
             }
-            .runnig-card-icon { 
+            .runnig-card--icon { 
                 @include simple-flex(row, nowrap);
-                margin-right: rem(20);
-                font-size: convert(20, px, rem);
-                .fa-store,
-                .fa-list,
+                margin-left: rem(30);
+                margin-right: rem(30);
+                font-size: convert(25, px, rem);
+                .fa-store,.fa-list,
                 .fa-mobile-alt {
-                    color: map-get($base-color, $QUATERNARY );
+                    color: $QUATERNARY;
                     &:hover {
-                        color: map-get($base-color, $PRIMARY );
+                        color: $PRIMARY;
                     }
                 }
             }
-            .running-card-text {
-                font-size: convert(14, pt, rem);
-                padding: rem(5)
+            .running-card--text {
+                font-size: convert(15, pt, rem);
+                padding: rem(5);
+                margin-left: rem(25);
             }
         }
     }
-    .part-title {
+    .section--title { 
+        display:block;
         font-size: convert(25, px, rem);
         font-family: $FONT-TEXT;
         margin-left: rem(20);
@@ -117,202 +138,207 @@
 
 
     //////// ** SECTION restaurant-list-box ** //////// 
-    .section-restaurant-display {
-        @include simple-flex(column, nowrap);
-        @include align-(start);
-        @include space-($around);
-        background-color: map-get($base-color, $EXTRA-2); 
-        margin-top: rem(50);
-        .restaurant-list {
-            @include simple-flex(column, nowrap);
+    .section-restaurant {
+        @include center-block();
+        background-color: $EXTRA-2; 
+        width: 95%;
+        padding-bottom: rem(70);
+        margin-bottom: rem(50);
+        .section-restaurant--list {               
+            @include simple-flex(row, wrap);
             @include space-($between);
             @include align-();
-            .restaurant-pos {
-                margin: rem(10) 0 rem(10);
+            .section-restaurant--pos {
+                @include center-block();
+                position: relative;
                 background-color: white;
                 border: 3px solid white;
-                border-radius: 0 0 20px 20px;
-                width: 90%;
-                .restaurant-new { 
-                    position: absolute;
-                    top:0; right: 0; left: 0; 
-
+                border-radius: 20px;
+                width: 45%;
+                margin-top: rem(20);
+                .fig-size {
+                    border-radius: 20px;
+                .section-restaurant--new { 
+                    z-index: 1;
+                    display: block;
                     text-align: center;
                     color: #39a98d;
                     background-color: #99e2d0;
-                    margin-top: rem(20);
-                    margin-left: rem(170);
-                    padding: rem(7);
+                    padding: rem(15);
+                    position: absolute;
+                    left: 80%;
+                    top: 20px;
                 }
-                .restaurant-img {
+                .section-restaurant--img {
                     position: relative;
                     border: 3px solid white;
                     border-radius: 20px 20px 0 0;
                     height: 200px;
                     width: 100%;
                 }
-                .insert {
+                .section-restaurant--insert {
+                    @include simple-flex(row, nowrap);
                     @include text-(start);
                     font-size: convert(20, px, rem);
                     background-color: white;
-                    margin: rem(10) 0 rem(40) 0;
-                    padding-left: rem(25);
-                    .restaurant-location { 
+                    padding-left: rem(20);
+                    .section-restaurant--text {  
+                        @include simple-flex(column, nowrap);
+                        font-size: convert(15, px, rem);
+                        width: 85%
+                    }
+                    .section-restaurant--loc { 
                         @include simple-flex(row, nowrap);
                         @include space-($between);
                         margin-top: rem(5);
-
-                        .heart {
-                            color: linear-gradient( $PRIMARY, $SECONDARY);
-                        }
-
-                        .heart-after { color: rebeccapurple; 
-                            font-size: convert(23, px, rem);
-                            margin-right: rem(20); 
-                        }
-
                     }
-                }    
+                }
+                    .section-restaurant--icon {
+                        width: 10%;
+                        .section-restaurant-heart--active {  
+                            width: fit-content;
+                            .heart--active {
+                                color: $PRIMARY;
+                            }
+                        }
+                        .section-restaurant-heart--active {  
+                            display: none;
+                        }
+                        &:hover {
+                            .section-restaurant-heart {
+                                display: none;
+                            }
+                            .section-restaurant-heart--active {  
+                                display: inherit;
+                            }
+                        } 
+                        .section-restaurant-heart {  
+                            .heart {
+                            }
+                        }    
+                    }
+                }
             }
         }
     }
 
-    
-
-
-    /*                         .heart {
-                                font-size: convert(23, px, rem);
-                                margin-right: rem(20);   
-                                &:hover {
-                                    color: transparent;
-                                    background-color: $PRIMARY;
-                                }
-                            }
-
-                                .far:hover {
-            background-color: rebeccapurple;
-        }
-                            */
-
-
     //////// ** SECTION footer ** //////// 
     .section-footer {  
-        background-color: map-get($base-color, $QUATERNARY);
+        background-color: $QUATERNARY;
         padding-top: rem(30);
         padding-bottom: rem(20);
-        .footer-title { 
+        &--title { 
             font-size: convert(30, px, rem);
             @include text-(start);
             color: white;
             margin-left: rem(20);
         }
-        .footer-list {
+        &--list {
             @include simple-flex(column, nowrap);
             font-size: convert(14, pt, rem);
             width: fit-content;
             margin: rem(20);
-            .footer-incon {
+            .section-footer--icon {
                 margin-right: rem(8);
                 width: rem(20)
-                
             }
-            .footer-add,.footer-partner, 
-            .footer-cgv, .footer-contact { 
+            .section-footer--add,.section-footer--partner, 
+            .section-footer--cgv, .section-footer--contact { 
                 @include simple-flex(row, nowrap); 
                 @include align-(start); 
                 @include text-(start);
                 color: white;
-
             }
         }
     }
-
 
     //////// ** RESTAURANT pages ** //////// 
     .header-arrow {
-        position: absolute; 
-        left: 3rem; 
-        top: 1.5rem;        
-        .fa-arrow-left {
-            font-size: 1.5rem;
-        }
-    }
-    .fig-menu {
-        position: relative;
-        .cap-menu { 
-            @include simple-flex(row, nowrap); 
-            @include space-($between);
-            @include align-(center);
-            background-color: rgb(246, 246, 246);
-            border-radius: 40px 40px 0 0; 
-            position: absolute;
-            left: 0; right: 0;
-            padding: 30px;
-            margin-top: -40px;   
-            .restaurant-name {
-                @include text-(left);
-                width: 100%;
-                margin-left: rem(-15);
-            }
-            .fa-heart-box {
-                width: rem(40);
-                .fa-heart {
-                    font-size: 1.8rem;
+                        position: absolute; 
+                        left: 3rem; 
+                        top: rem(17);        
+                        .fa-arrow-left {
+                            font-size: 1.5rem;
+                        }
+                    }
+    .section-menu {
+        background-color: $EXTRA-2;
+        &--fig {
+            position: relative;
+            margin-bottom: 50px;
+            .section-menu--cap { 
+                @include simple-flex(row, nowrap); 
+                @include space-($between);
+                @include align-(center);
+                background-color: $EXTRA-2;
+                border-radius: 40px 40px 0 0; 
+                position: absolute;
+                left: 0; right: 0;
+                padding: 30px;
+                margin-top: -40px;   
+                &--name {
+                    @include text-(left);
+                    width: 100%;
+                    margin-left: rem(-15);
+                }
+                .menu-restaurant--icon {
+                    width: rem(40);
+                    .fa-heart {
+                        font-size: 1.8rem;
+                    }
                 }
             }
         }
     }
-    .section-menu {
-        background-color: rgb(246, 246, 246);
-        .menu-title {
-            @include text-(start);
-            color: map-get($base-color, $QUATERNARY);
-            margin-top: rem(30);
-            margin-left: rem(15);
-        } 
-    }
-    .border {
-        width: 3.5rem;
-        height: 0.5rem;
-        border-bottom: 1mm solid map-get($base-color, $TERTIARY);            
-        margin-bottom: 0.5rem;
-    }
-    .main-list {
+
+    .section-main--list { 
         @include simple-flex(column, nowrap); 
         @include space-($between);
-        .thumbnail-box { //background-color: #39a98d;
+        .section-menu--title { 
+            @include text-(start);
+            color: $QUATERNARY;
+            margin-top: rem(30);
+            margin-left: rem(15);    
+        } 
+        .border {
+            width: 3.5rem;
+            border-bottom: 1mm solid $TERTIARY;    
+            margin-top: rem(-12);        
+            margin-bottom: rem(20);
+            margin-left: rem(15);    
+
+        }
+        .thumbnail--box { 
             @include text-(start);
             background-color: rgb(255, 255, 255);
             border-radius: 15px;
             box-shadow: 0px 3px 8px rgb(207 207 207);
-            width: 95%;
             margin: rem(8);
             padding: rem(12);
-            .thumbnail { // background-color: red;
+            .thumbnail--text {
                 width: content;
                 @include simple-flex(row, nowrap); 
                 @include space-($between);
             }
-            .circle-box { display: none;
+            .check-box { 
                 .check-circle {
                     font-size: convert(20, pt, rem);
                     background-color: $EXTRA;
                     color: white;
                     border-radius: 0px 15px 15px 0;
-
                     padding: rem(15)
                 }
-    
             }
         }    
-    }
-    .btn-box {
-        .btn-action {
-            @extend .btn-explore;
-            margin: rem(60) rem(30) rem(30) rem(30);
-            //padding: rem(25) rem(80) rem(25) rem(80);
+        .btn-box{
+            padding-bottom: rem(45);
+            .btn--explore  { 
+                @include btn;
+                background-color: #39a98d;
+                width: rem(220);
+            } 
         }
-    
     }
 
-}
+
+

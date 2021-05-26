@@ -28,6 +28,21 @@
     text-shadow: $size $size $colour;
         }
 
+//
+// 
+//
+// 
+@mixin btn {
+    background: linear-gradient( #FF79DA, #9356DC);
+    font-size: convert(12, pt, rem);
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0px 8px 4px rgb(207 207 207);
+    margin: rem(5) rem(0) rem(10) rem(0); 
+    padding: rem(20) rem(35);
+    border: none;
+} 
+
 // Keep images from scaling beyond the width of their parents
 // > img, a > img {
 //  @include img-responsive;
@@ -72,31 +87,31 @@
 //       @include flex-(row);
 //    }; -> change the flex-direction
 @mixin respond($breakpoint) {
-    @if $breakpoint==desktop {
-        @media only screen and (min-width: 1200px) and (max-width: 1400px) {  
-            @content;
-            }
-    }
+    //@if $breakpoint==desktop {
+    //    @media only screen and (min-width: 1200px) and (max-width: 1400px) {  
+    //        @content;
+    //        }
+    //}
     @if $breakpoint==mobile {
         // here `laptop` is the value of $breakpoint
         // when call laptop, we mean the following piece of code        
-        @media only screen and (max-width: 425px) {
+        @media only screen and (max-width: 625px) {
             @content;
             }
     }
     @if $breakpoint==mobile-p {
-        @media only screen and (min-width: 525px) and (max-width: 815px) {
+        @media only screen and (min-width: 625px) and (max-width: 812px) {
             @content;
             }
     }
 
     @if $breakpoint==tablet {
-        @media only screen and (min-width: 815px) and (max-width: 1030px) {   
+        @media only screen and (min-width: 812px) and (max-width: 1025px) {   
             @content;
             }
     }
     @if $breakpoint==tablet-p {  
-        @media only screen and (min-width: 1030px) and (max-width: 1200px) {  
+        @media only screen and (min-width: 1025px) and (max-width: 1150px) {  
             @content;
             }
     }

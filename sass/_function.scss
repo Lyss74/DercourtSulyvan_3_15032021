@@ -10,6 +10,16 @@
 
 // 1rem = 12pt = 16px = 100%
 
+//
+//
+//
+//
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
 
 /* REM-COVERTER */  
 // url|-> 'https://outils-css.aliasdmc.fr'
@@ -21,27 +31,26 @@
     @return 1rem * $size / strip-unit($base);
 }
 
-//
-//
-//
-//
-@function lightness-shift($colour) {
-    @if (lightness($colour) < 25% ) {
-        @return lighten($colour, 10%);
-    } @else {
-        @return darken($colour, 10%);
-        }
+/* VW-COVERTER */  
+// url|-> 'https://outils-css.aliasdmc.fr'
+// values : 
+// numeric $size, $base use default size
+// call : {
+//    rem(75, 100)
+@function vw($base: $BASE-FONT-SIZE) {
+  @return strip-unit($base) * 0.06510416666666667vw;
 }
 
 //
 //
 //
 //
-@function strip-unit($number) {
-    @if type-of($number) == 'number' and not unitless($number) {
-        @return $number / ($number * 0 + 1);
-    }
-    @return $number;
+@function lightness-shift($colour) {
+  @if (lightness($colour) < 25% ) {
+      @return lighten($colour, 10%);
+  } @else {
+      @return darken($colour, 10%);
+      }
 }
 
 /* 
