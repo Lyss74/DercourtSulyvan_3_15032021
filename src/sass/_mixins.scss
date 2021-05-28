@@ -1,0 +1,128 @@
+/////////////////////* DYNAMIC CONFIG *////////////////////// 
+/* TEXT-ALIGN */
+// values :
+// left ,right, center, start, end *...
+// call : 
+//    @include text-()
+//    @include text-(left)
+@mixin text-($align: center) {
+    text-align: $align;
+}
+
+/* DISPLAY */
+// values : 
+// flex, block, *...,
+// call : 
+//    @include display()
+//    @include display(block)
+@mixin display($type: flex) {
+    display: $type;
+}
+
+//
+//
+//
+//
+@mixin heading-shadow($colour: lightness-shift($PRIMARY), $size: $heading-shadow-size){
+    color: $colour;
+    text-shadow: $size $size $colour;
+        }
+
+//
+// 
+//
+// 
+@mixin btn {
+    background: linear-gradient($SECONDARY, $PRIMARY);
+    font-size: convert(12, pt, rem);
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0px 8px 4px rgb(207 207 207);
+    margin: rem(5) rem(0) rem(10) rem(0); 
+    padding: rem(20) rem(35);
+    border: none;
+    &:hover {
+        background: linear-gradient($PRIMARY, $SECONDARY);
+    }
+} 
+
+@mixin img {
+    border-radius: 50px;
+    box-shadow: 0px 8px 4px rgb(207 207 207);
+    border: none;
+    margin: auto;
+
+} 
+// Keep images from scaling beyond the width of their parents
+// > img, a > img {
+//  @include img-responsive;
+//  margin-right: auto;
+//  margin-left: auto;
+@mixin img-responsive($display: block) {
+    @include display($display: block);
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+// [converter] $parent hack
+//
+//
+//
+@mixin bg-variant($parent, $color) {
+    #{$parent} {
+      background-color: $color;
+    }
+    a#{$parent}:hover,
+    a#{$parent}:focus {
+      background-color: darken($color, 10%);
+    }
+}
+
+//
+//
+//
+//
+@mixin center-block() {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* RESPONSE LAYOUT */
+// values : 
+// desktop, mobile, mobile-p, tablet, tablet-p
+// call :
+//    @include respond(desktop)
+//    { 
+//       @include flex-(row);
+//    }; -> change the flex-direction
+@mixin respond($breakpoint) {
+    //@if $breakpoint==desktop {
+    //    @media only screen and (min-width: 1200px) and (max-width: 1400px) {  
+    //        @content;
+    //        }
+    //}
+    @if $breakpoint==mobile {
+        // here `laptop` is the value of $breakpoint
+        // when call laptop, we mean the following piece of code        
+        @media only screen and (max-width: 900px) {
+            @content;
+            }
+    }
+    @if $breakpoint==mobile-p {
+        @media only screen and (min-width: 900px) and (max-width: 1000px) {
+            @content;
+            }
+    }
+
+    @if $breakpoint==tablet {
+        @media only screen and (min-width: 1000px) and (max-width: 1100px) {   
+            @content;
+            }
+    }
+    @if $breakpoint==tablet-p {  
+        @media only screen and (min-width: 1100px) and (max-width: 1200px) {  
+            @content;
+            }
+    }
+}

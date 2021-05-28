@@ -1,0 +1,413 @@
+/////////////////// ** IMPORT ** ///////////////// lighten($colour, 10%); darken($colour, 10%);
+
+@import "import";
+
+/////////////////// ** START ** /////////////////
+.header {
+	background-color: #fff;
+	margin-bottom: rem(2);
+	&--arrow {
+		@include display(none);
+	}
+	&--logo {
+		width: fit-content;
+		margin: auto;
+		padding: rem(20);
+		&:hover {
+		}
+	}
+}
+
+//////// ** SECTION home-box ** ////////
+.section-home,
+header {
+	@include center-block();
+	width: 95%;
+	background-color: $EXTRA-2;
+	margin-bottom: rem(25);
+	filter: drop-shadow(15px 15px 15px lighten($TERTIARY, 1%));
+	&--list {
+		@include simple-flex(column, nowrap);
+		.section-home--bcnd {
+			border-top: 2px solid rgb(207, 207, 207);
+			box-shadow: inset 0px 0px 4px rgb(207 207 207);
+			padding: rem(5);
+		}
+		.section-home--box-icon {
+			background-color: $EXTRA-2;
+			font-size: convert(15, pt, rem);
+			width: auto;
+			margin: rem(10);
+			.fa-map-marker-alt {
+				margin-right: rem(15);
+			}
+		}
+		.section-home--title {
+			font-size: convert(12, pt, rem);
+			padding-top: rem(45);
+		}
+		.section-home--discover {
+			font-size: convert(12, pt, rem);
+			margin-bottom: rem(5);
+		}
+		.section-home--title,
+		.section-home--discover,
+		.btn-box {
+			background-color: $EXTRA-2;
+		}
+		.title--reserve {
+			font-size: convert(20, pt, rem);
+		}
+		&--discover {
+			font-size: convert(14, pt, rem);
+		}
+		.jump-line {
+			@include display(none);
+		}
+	}
+}
+.btn-box {
+	padding-bottom: rem(45);
+	.btn--explore {
+		@include btn;
+	}
+}
+
+//////// ** SECTION running-box ** ////////
+.section-runnig {
+	@include center-block();
+	width: 95%;
+	margin-top: rem(70);
+	margin-bottom: rem(70);
+	&--list {
+		@include flex-auto(row, column, nowrap, $between);
+		@include space-($around);
+		@include align-();
+		.runnig-card {
+			@include simple-flex(row, nowrap);
+			@include align-();
+			background-color: $EXTRA-2;
+			margin: rem(15);
+			height: rem(75);
+			width: 45%;
+			border-radius: 30px;
+			box-shadow: 0px 3px 8px $EXTRA-2;
+			&:hover {
+				background-color: lighten($TERTIARY, 20%);
+			}
+		}
+		.runnig-card--ennum {
+			@include display();
+			background-color: $PRIMARY;
+			border-radius: 20px;
+			color: white;
+			padding: 5px 15px 5px 15px;
+			margin-left: -10px;
+			margin-right: 5%;
+		}
+		.runnig-card--icon {
+			@include simple-flex(row, nowrap);
+			.fa-store,
+			.fa-list,
+			.fa-mobile-alt {
+				color: $QUATERNARY;
+				&:hover {
+					color: $PRIMARY;
+				}
+			}
+		}
+		.running-card--text {
+            font-size: convert(15, pt, rem);
+			padding: rem(5);
+            margin-left: rem(40);
+			margin-right: rem(30);
+		}
+        .runnig-card--ennum,
+        .runnig-card--icon {
+            font-size: convert(16, pt, rem);
+        }
+	}
+}
+.section--title {
+	@include display(block);
+	font-size: convert(25, px, rem);
+	font-family: $FONT-TEXT;
+	width: fit-content;
+	padding: rem(25);
+	margin: rem(10);
+}
+
+//////// ** SECTION restaurant-list-box ** ////////
+.section-restaurant {
+	@include center-block();
+	background-color: $EXTRA-2;
+	width: 95%;
+	padding-bottom: rem(70);
+	margin-bottom: rem(50);
+	.section-restaurant--list {
+		@include flex-auto(row, column, wrap, $between);
+		//@include space-($between);
+		//@include align-();
+        margin: auto;
+
+		.section-restaurant--pos {
+			@include center-block();
+			position: relative;
+			background-color: white;
+			border: 3px solid white;
+			border-radius: 20px;
+			width: 42%;
+			margin-top: rem(20);
+			&:hover {
+				filter: drop-shadow(15px 15px 15px lighten($TERTIARY, 15%));
+			}
+			.fig-size {
+				border-radius: 20px;
+				.section-restaurant--new {
+					z-index: 1;
+					@include display(block);
+					text-align: center;
+					color: #39a98d;
+					background-color: #99e2d0;
+					padding: rem(15);
+					position: absolute;
+					//left: 78%;
+					//top: 30px;
+                    margin-top: 5%;
+                    margin-left: 75%
+				}
+				.section-restaurant--img {
+					position: relative;
+					border: 3px solid white;
+					border-radius: 20px 20px 0 0;
+					height: 200px;
+					width: 100%;
+				}
+				.section-restaurant--insert {
+					@include simple-flex(row, nowrap);
+					@include text-(start);
+					font-size: convert(20, px, rem);
+					background-color: white;
+					padding-left: rem(20);
+					.section-restaurant--text {
+						@include simple-flex(column, nowrap);
+						font-size: convert(15, px, rem);
+						width: rem(450);
+						margin: rem(15);
+					}
+					.section-restaurant--loc {
+						@include simple-flex(row, nowrap);
+						@include space-($between);
+						margin-top: rem(5);
+					}
+					.section-restaurant--icon {
+						@include display(block);
+						width: 10%;
+						font-size: convert(25, px, rem);
+						margin-top: rem(15);
+						padding: rem(5);
+						.section-restaurant-heart--active {
+							width: fit-content;
+							.heart--active {
+								color: $PRIMARY;
+							}
+						}
+						.section-restaurant-heart--active {
+							@include display(none);
+						}
+						&:active {
+							.section-restaurant-heart {
+								@include display(none);
+							}
+							.section-restaurant-heart--active {
+								@include display(inherit);
+							}
+						}
+						.section-restaurant-heart {
+							.heart {
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.section-restaurant--icon {
+    @include display(block);
+    width: 10%;
+    font-size: convert(25, px, rem);
+    margin-top: rem(15);
+    padding: rem(5);
+    .section-restaurant-heart--active {
+        width: fit-content;
+        .heart--active {
+            color: $PRIMARY;
+        }
+    }
+    .section-restaurant-heart--active {
+        @include display(none);
+    }
+    &:active {
+        .section-restaurant-heart {
+            @include display(none);
+        }
+        .section-restaurant-heart--active {
+            @include display(inherit);
+        }
+    }
+    .section-restaurant-heart {
+        .heart {
+        }
+    }
+}
+//////// ** RESTAURANT pages ** ////////
+.header--active {
+	@include display(inherit);
+	display: block;
+	margin: auto;
+	font-size: convert(20, px, rem);
+	width: fit-content;
+	position: absolute;
+	left: rem(120);
+	top: rem(25);
+}
+
+.section-menu {
+	margin-bottom: rem(70);
+	background-color: $EXTRA-2;
+	width: 95%;
+	margin: auto;
+	margin-top: rem(70);
+
+	&--fig {
+		background: linear-gradient(
+			lighten($SECONDARY, 25%),
+			lighten($PRIMARY, 25%)
+		);
+		position: relative;
+		margin-bottom: 50px;
+		width: 100%;
+		margin: auto;
+		.section-menu--img {
+			@include img;
+			width: 50%;
+			height: 80%;
+		}
+		.section-menu--cap {
+			@include simple-flex(row, nowrap);
+			@include space-($between);
+			@include align-(center);
+			background-color: $EXTRA-2;
+			border-radius: 40px 40px 0 0;
+			position: absolute;
+			left: 0;
+			right: 0;
+			padding: 30px;
+			margin-top: -40px;
+			.menu-restaurant--name {
+				font-size: convert(25, px, rem);
+				@include simple-flex(row, nowrap);
+				@include space-($around);
+				//@include text-(left);;
+				width: 100%;
+				margin-left: rem(-15);
+			}
+		}
+	}
+}
+
+.section-main--list {
+	@include simple-flex(column, nowrap);
+	@include space-($between);
+	width: 95%;
+	margin: auto;
+	padding: rem(75);
+	.section-menu--title {
+		@include text-(start);
+		font-size: convert(35, px, rem);
+		color: $QUATERNARY;
+		margin-top: rem(30);
+		margin-left: rem(15);
+	}
+	.border {
+		width: 20rem;
+		border-bottom: 1mm solid $TERTIARY;
+		margin-top: rem(-12);
+		margin-bottom: rem(20);
+		margin-left: rem(15);
+	}
+	.thumbnail--box {
+		@include text-();
+		background-color: rgb(255, 255, 255);
+		border-radius: 15px;
+		box-shadow: 0px 3px 8px rgb(207 207 207);
+		font-size: convert(20, px, rem);
+		width: 70%;
+		margin: auto;
+		padding: rem(5);
+		margin-top: 5%;
+		margin-bottom: 5%;
+		&:hover {
+			filter: drop-shadow(15px 15px 15px lighten($TERTIARY, 5%));
+		}
+		.thumbnail--text {
+			@include center-block();
+			width: rem(755);
+		}
+		.check-box {
+			.check-circle {
+				display: none;
+				font-size: convert(20, pt, rem);
+				background-color: $EXTRA;
+				color: white;
+				border-radius: 0px 15px 15px 0;
+				padding: rem(15);
+			}
+		}
+	}
+	.btn-box {
+		padding-bottom: rem(45);
+		.btn--explore {
+			@include btn;
+			background-color: #39a98d;
+			width: rem(220);
+		}
+	}
+}
+
+//////// ** SECTION footer ** ////////
+//footer { display: none;background-color: red;}
+
+.section-footer {
+	background-color: $QUATERNARY;
+	padding: rem(5) rem(0);
+	&--title {
+		font-size: convert(50, px, rem);
+		@include text-(center);
+		color: white;
+		margin-left: rem(20);
+	}
+	&--list {
+		@include simple-flex(row, nowrap);
+		font-size: convert(20, pt, rem);
+		width: fit-content;
+		margin: auto;
+		margin-bottom: rem(25);
+		.section-footer--text {
+			margin: rem(20);
+		}
+		.section-footer--icon {
+			width: rem(40);
+		}
+		.section-footer--add,
+		.section-footer--partner,
+		.section-footer--cgv,
+		.section-footer--contact {
+			@include simple-flex(row, nowrap);
+			@include align-(center);
+			@include text-(center);
+			color: white;
+		}
+	}
+}

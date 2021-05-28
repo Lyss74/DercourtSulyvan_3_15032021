@@ -1,0 +1,658 @@
+@charset "UTF-8";
+/* TEXT-ALIGN */
+/* DISPLAY */
+/* RESPONSE LAYOUT */
+/* function */
+/* REM-COVERTER */
+/* VW-COVERTER */
+/* 
+https://www.sitepoint.com/converting-typographic-units-sass/ 
+  font-size: convert(16, px, percent);
+*/
+.PROD {
+  background-color: yellow;
+}
+
+.NONE {
+  display: none;
+}
+
+/* 
+./dart-sass/sass src/sass/style.scss assets/css/style.css --watch 
+*/
+/* FONT-FACE */
+@font-face {
+  font-family: "robotoregular";
+  src: url("./assets/font/roboto/Roboto-Regular-webfont.eot");
+  src: url("./assets/font/roboto/Roboto-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("./assets/font/roboto/Roboto-Regular-webfont.woff") format("woff"), url("./assets/font/roboto/Roboto-Regular-webfont.ttf") format("truetype"), url("./assets/font/roboto/Roboto-Regular-webfont.svg#robotoregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "shrikhandregular";
+  src: url("./assets/font/shrikhand/shrikhand-regular-webfont.eot");
+  src: url("./assets/font/shrikhand/shrikhand-regular-webfont.eot?#iefix") format("embedded-opentype"), url("./assets/font/shrikhand/shrikhand-regular-webfont.woff2") format("woff2"), url("./assets/font/shrikhand/shrikhand-regular-webfont.woff") format("woff"), url("./assets/font/shrikhand/shrikhand-regular-webfont.ttf") format("truetype"), url("./assets/font/shrikhand/shrikhand-regular-webfont.svg#shrikhandregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* !DEFAULT */
+/* FONT */
+/* COLOR */
+/* generic-text */
+html, body {
+  text-align: center;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "shrikhandregular", Arial, sans-serif;
+}
+
+p, b, a, li, span, button {
+  font-family: "robotoregular", Helvetica, sans-serif;
+}
+
+/*  generic-style   */
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.384);
+}
+a:hover {
+  color: rgba(255, 255, 255, 0.384) !important;
+}
+
+ul {
+  list-style: none;
+}
+
+/*  generic-resp-size   */
+/*  generic-picture   */
+img {
+  display: block;
+  margin: 0%;
+  padding: 0%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+/* generic border-box */
+html, body {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+div {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+/*  generic-margin-base   */
+html, body,
+ul, figure {
+  margin: 0%;
+  padding: 0%;
+}
+
+/* MAP */
+/*
+$map: (
+   key-01: value-01,
+   key-02: value-02,
+   key-03: value-03
+	 );
+	$colour-primary: #15DEA5; 
+	$colour-secondary: #001534;
+	$colour-accent: #D6FFF5;
+	$colour-white: #fff;
+	$colour-invalid: #DB464B;
+	$txt-input-palette: (
+   active: (
+       bg: $colour-primary,
+       border: $colour-primary,
+       txt: $colour-white,
+   ),
+   focus: (
+       bg: $colour-primary,
+       border: $colour-primary,
+       txt: $colour-white,
+   ),
+   invalid: (
+       bg: $colour-invalid,
+       border: $colour-white,
+       txt: $colour-white,
+   )
+)
+*/
+/* TEXT-ALIGN */
+/* DISPLAY */
+/* RESPONSE LAYOUT */
+/* function */
+/* REM-COVERTER */
+/* VW-COVERTER */
+/* 
+https://www.sitepoint.com/converting-typographic-units-sass/ 
+  font-size: convert(16, px, percent);
+*/
+/* BASIS VALUE */
+/* FLEXBOX ASSIGN-ROLE */
+/* USING: DECLARE YOUR FLEX CONFIGURATION FOR AUTO-DIRECTION FLEXBOX */
+/* FLEXBOX EXTENSION */
+/* direction */
+/* space */
+/* wrap */
+/* flex-flow */
+/* align object */
+/* call : 
+    @extend %align-{config}
+*/
+/* SIMPLE-FLEX */
+/*  FLEX-AUTO */
+/*  generic-flex   */
+/* FLEX-DIRECTION */
+/* FLEX-WRAP */
+/* FLEX-SPACE */
+/* ALIGN-ITEMS */
+/* FLEX-FLOW */
+/* SIMPLE-FLEX */
+/*  FLEX-AUTO */
+.header {
+  background-color: #fff;
+  margin-bottom: 0.125rem;
+}
+.header--arrow {
+  display: none;
+}
+.header--logo {
+  width: fit-content;
+  margin: auto;
+  padding: 1.25rem;
+}
+.section-home,
+header {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  background-color: #eaeaea;
+  margin-bottom: 1.5625rem;
+  filter: drop-shadow(15px 15px 15px #9de3d2);
+}
+.section-home--list,
+header--list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+.section-home--list .section-home--bcnd,
+header--list .section-home--bcnd {
+  border-top: 2px solid #cfcfcf;
+  box-shadow: inset 0px 0px 4px #cfcfcf;
+  padding: 0.3125rem;
+}
+.section-home--list .section-home--box-icon,
+header--list .section-home--box-icon {
+  background-color: #eaeaea;
+  font-size: 1.25em;
+  width: auto;
+  margin: 0.625rem;
+}
+.section-home--list .section-home--box-icon .fa-map-marker-alt,
+header--list .section-home--box-icon .fa-map-marker-alt {
+  margin-right: 0.9375rem;
+}
+.section-home--list .section-home--title,
+header--list .section-home--title {
+  font-size: 1em;
+  padding-top: 2.8125rem;
+}
+.section-home--list .section-home--discover,
+header--list .section-home--discover {
+  font-size: 1em;
+  margin-bottom: 0.3125rem;
+}
+.section-home--list .section-home--title,
+.section-home--list .section-home--discover,
+.section-home--list .btn-box,
+header--list .section-home--title,
+header--list .section-home--discover,
+header--list .btn-box {
+  background-color: #eaeaea;
+}
+.section-home--list .title--reserve,
+header--list .title--reserve {
+  font-size: 1.6666666667em;
+}
+.section-home--list--discover,
+header--list--discover {
+  font-size: 1.1666666667em;
+}
+.section-home--list .jump-line,
+header--list .jump-line {
+  display: none;
+}
+
+.btn-box {
+  padding-bottom: 2.8125rem;
+}
+.btn-box .btn--explore {
+  background: linear-gradient(#FF79DA, #9356DC);
+  font-size: 1em;
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 0px 8px 4px #cfcfcf;
+  margin: 0.3125rem 0rem 0.625rem 0rem;
+  padding: 1.25rem 2.1875rem;
+  border: none;
+}
+.btn-box .btn--explore:hover {
+  background: linear-gradient(#9356DC, #FF79DA);
+}
+
+.section-runnig {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  margin-top: 4.375rem;
+  margin-bottom: 4.375rem;
+}
+.section-runnig--list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: auto;
+  align-content: space-around;
+  justify-content: space-around;
+  align-items: center;
+}
+@media only screen and (min-width: 900px) and (max-width: 1000px) {
+  .section-runnig--list {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .section-runnig--list {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1100px) {
+  .section-runnig--list {
+    flex-direction: row;
+  }
+}
+.section-runnig--list .runnig-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: #eaeaea;
+  margin: 0.9375rem;
+  height: 4.6875rem;
+  width: 45%;
+  border-radius: 30px;
+  box-shadow: 0px 3px 8px #eaeaea;
+}
+.section-runnig--list .runnig-card:hover {
+  background-color: #e8f9f5;
+}
+.section-runnig--list .runnig-card--ennum {
+  display: flex;
+  background-color: #9356DC;
+  border-radius: 20px;
+  color: white;
+  padding: 5px 15px 5px 15px;
+  margin-left: -10px;
+  margin-right: 5%;
+}
+.section-runnig--list .runnig-card--icon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+}
+.section-runnig--list .runnig-card--icon .fa-store,
+.section-runnig--list .runnig-card--icon .fa-list,
+.section-runnig--list .runnig-card--icon .fa-mobile-alt {
+  color: #353535;
+}
+.section-runnig--list .runnig-card--icon .fa-store:hover,
+.section-runnig--list .runnig-card--icon .fa-list:hover,
+.section-runnig--list .runnig-card--icon .fa-mobile-alt:hover {
+  color: #9356DC;
+}
+.section-runnig--list .running-card--text {
+  font-size: 1.25em;
+  padding: 0.3125rem;
+  margin-left: 2.5rem;
+  margin-right: 1.875rem;
+}
+.section-runnig--list .runnig-card--ennum,
+.section-runnig--list .runnig-card--icon {
+  font-size: 1.3333333333em;
+}
+
+.section--title {
+  display: block;
+  font-size: 1.5625em;
+  font-family: "robotoregular";
+  width: fit-content;
+  padding: 1.5625rem;
+  margin: 0.625rem;
+}
+
+.section-restaurant {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #eaeaea;
+  width: 95%;
+  padding-bottom: 4.375rem;
+  margin-bottom: 3.125rem;
+}
+.section-restaurant .section-restaurant--list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  margin: auto;
+}
+@media only screen and (min-width: 900px) and (max-width: 1000px) {
+  .section-restaurant .section-restaurant--list {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .section-restaurant .section-restaurant--list {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1100px) {
+  .section-restaurant .section-restaurant--list {
+    flex-direction: row;
+  }
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 20px;
+  width: 42%;
+  margin-top: 1.25rem;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos:hover {
+  filter: drop-shadow(15px 15px 15px #d5f3eb);
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size {
+  border-radius: 20px;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--new {
+  z-index: 1;
+  display: block;
+  text-align: center;
+  color: #39a98d;
+  background-color: #99e2d0;
+  padding: 0.9375rem;
+  position: absolute;
+  margin-top: 5%;
+  margin-left: 75%;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--img {
+  position: relative;
+  border: 3px solid white;
+  border-radius: 20px 20px 0 0;
+  height: 200px;
+  width: 100%;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  text-align: start;
+  font-size: 1.25em;
+  background-color: white;
+  padding-left: 1.25rem;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  font-size: 0.9375em;
+  width: 28.125rem;
+  margin: 0.9375rem;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--loc {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  align-content: space-between;
+  justify-content: space-between;
+  margin-top: 0.3125rem;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--icon {
+  display: block;
+  width: 10%;
+  font-size: 1.5625em;
+  margin-top: 0.9375rem;
+  padding: 0.3125rem;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--icon .section-restaurant-heart--active {
+  width: fit-content;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--icon .section-restaurant-heart--active .heart--active {
+  color: #9356DC;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--icon .section-restaurant-heart--active {
+  display: none;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--icon:active .section-restaurant-heart {
+  display: none;
+}
+.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--icon:active .section-restaurant-heart--active {
+  display: inherit;
+}
+.section-restaurant--icon {
+  display: block;
+  width: 10%;
+  font-size: 1.5625em;
+  margin-top: 0.9375rem;
+  padding: 0.3125rem;
+}
+.section-restaurant--icon .section-restaurant-heart--active {
+  width: fit-content;
+}
+.section-restaurant--icon .section-restaurant-heart--active .heart--active {
+  color: #9356DC;
+}
+.section-restaurant--icon .section-restaurant-heart--active {
+  display: none;
+}
+.section-restaurant--icon:active .section-restaurant-heart {
+  display: none;
+}
+.section-restaurant--icon:active .section-restaurant-heart--active {
+  display: inherit;
+}
+.header--active {
+  display: inherit;
+  display: block;
+  margin: auto;
+  font-size: 1.25em;
+  width: fit-content;
+  position: absolute;
+  left: 7.5rem;
+  top: 1.5625rem;
+}
+
+.section-menu {
+  margin-bottom: 4.375rem;
+  background-color: #eaeaea;
+  width: 95%;
+  margin: auto;
+  margin-top: 4.375rem;
+}
+.section-menu--fig {
+  background: linear-gradient(#fff9fd, #d7c0f2);
+  position: relative;
+  margin-bottom: 50px;
+  width: 100%;
+  margin: auto;
+}
+.section-menu--fig .section-menu--img {
+  border-radius: 50px;
+  box-shadow: 0px 8px 4px #cfcfcf;
+  border: none;
+  margin: auto;
+  width: 50%;
+  height: 80%;
+}
+.section-menu--fig .section-menu--cap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+  border-radius: 40px 40px 0 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  margin-top: -40px;
+}
+.section-menu--fig .section-menu--cap .menu-restaurant--name {
+  font-size: 1.5625em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  align-content: space-around;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: -0.9375rem;
+}
+
+.section-main--list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  padding: 4.6875rem;
+}
+.section-main--list .section-menu--title {
+  text-align: start;
+  font-size: 2.1875em;
+  color: #353535;
+  margin-top: 1.875rem;
+  margin-left: 0.9375rem;
+}
+.section-main--list .border {
+  width: 20rem;
+  border-bottom: 1mm solid #99E2D0;
+  margin-top: -0.75rem;
+  margin-bottom: 1.25rem;
+  margin-left: 0.9375rem;
+}
+.section-main--list .thumbnail--box {
+  text-align: center;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 3px 8px #cfcfcf;
+  font-size: 1.25em;
+  width: 70%;
+  margin: auto;
+  padding: 0.3125rem;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.section-main--list .thumbnail--box:hover {
+  filter: drop-shadow(15px 15px 15px #ade8d9);
+}
+.section-main--list .thumbnail--box .thumbnail--text {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 47.1875rem;
+}
+.section-main--list .thumbnail--box .check-box .check-circle {
+  display: none;
+  font-size: 1.6666666667em;
+  background-color: lightgreen;
+  color: white;
+  border-radius: 0px 15px 15px 0;
+  padding: 0.9375rem;
+}
+.section-main--list .btn-box {
+  padding-bottom: 2.8125rem;
+}
+.section-main--list .btn-box .btn--explore {
+  background: linear-gradient(#FF79DA, #9356DC);
+  font-size: 1em;
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 0px 8px 4px #cfcfcf;
+  margin: 0.3125rem 0rem 0.625rem 0rem;
+  padding: 1.25rem 2.1875rem;
+  border: none;
+  background-color: #39a98d;
+  width: 13.75rem;
+}
+.section-main--list .btn-box .btn--explore:hover {
+  background: linear-gradient(#9356DC, #FF79DA);
+}
+
+.section-footer {
+  background-color: #353535;
+  padding: 0.3125rem 0rem;
+}
+.section-footer--title {
+  font-size: 3.125em;
+  text-align: center;
+  color: white;
+  margin-left: 1.25rem;
+}
+.section-footer--list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  font-size: 1.6666666667em;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 1.5625rem;
+}
+.section-footer--list .section-footer--text {
+  margin: 1.25rem;
+}
+.section-footer--list .section-footer--icon {
+  width: 2.5rem;
+}
+.section-footer--list .section-footer--add,
+.section-footer--list .section-footer--partner,
+.section-footer--list .section-footer--cgv,
+.section-footer--list .section-footer--contact {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+/*# sourceMappingURL=style.css.map */
