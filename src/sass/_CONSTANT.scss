@@ -1,0 +1,35 @@
+/////////////////////* CONSTANT *////////////////////////
+/* FONT */
+$FONT-TITLE: 'shrikhand';     
+$FONT-TEXT: 'roboto';     
+
+/* FONT-FACE */
+@font-face {
+    font-family: $FONT-TEXT;
+    src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap") format("truetype");
+}
+
+@font-face {
+    font-family: $FONT-TITLE;
+    src: url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap") format("truetype");
+}
+
+/* BASE-FONT-SIZE */ 
+$BASE-FONT-SIZE: 15.5px!default;
+
+/* !DEFAULT */ 
+$FULL: 100%;
+$default-size: $BASE-FONT-SIZE!default;
+$default-widht: $FULL!default;
+
+/* COLOR */
+$PRIMARY: #9356DC;
+$SECONDARY: #FF79DA;  
+$TERTIARY: #99E2D0; 
+$QUATERNARY:  #353535;
+$EXTRA: lightgreen;
+$EXTRA-2: #eaeaea;
+$EXTRA-3: #f6f6f6;
+$TEXT-COLOR: rgba(0, 0, 0, 0.384);
+
+/////////////////////* CONSTANT -END- *////////////////////
