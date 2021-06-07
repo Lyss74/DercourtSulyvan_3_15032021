@@ -1,14 +1,6 @@
 @charset "UTF-8";
 /* FONT */
-/* FONT-FACE */
-@font-face {
-  font-family: "roboto";
-  src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap") format("truetype");
-}
-@font-face {
-  font-family: "shrikhand";
-  src: url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap") format("truetype");
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 /* BASE-FONT-SIZE */
 /* !DEFAULT */
 /* COLOR */
@@ -36,7 +28,7 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 /* html & body fix configuration */
 html, body {
   text-align: center;
-  font-size: 15.5px;
+  font-size: 16px;
   max-width: 100%;
   min-width: 100%;
   margin: 0%;
@@ -46,21 +38,20 @@ html, body {
 
 /* generic-text */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "shrikhand", Helvetica, sans-serif;
-  width: 100%;
+  font-family: "Shrikhand", cursive, Helvetica, sans-serif;
 }
 
 p, b, a, li, span, button {
-  font-family: "roboto", Helvetica, sans-serif;
+  font-family: "Roboto", Helvetica sans-serif;
 }
 
 /* generic-style */
 a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.384);
+  color: rgba(0, 0, 0, 0.575);
 }
 a:hover {
-  color: rgba(255, 255, 255, 0.384) !important;
+  color: rgba(255, 255, 255, 0.575) !important;
 }
 
 ul {
@@ -91,7 +82,7 @@ ul, figure {
 
 /* icon size and color */
 i {
-  font-size: 156.25%;
+  font-size: 125%;
   color: #353535;
 }
 
@@ -161,8 +152,8 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   background-color: #fff;
   display: block;
   margin: auto;
-  filter: drop-shadow(15px 15px 15px #828282);
-  margin-bottom: 1.6129032258rem;
+  filter: drop-shadow(15px 15px 15px #cecece);
+  margin-bottom: 1.5625rem;
 }
 .header--arrow {
   display: none;
@@ -170,14 +161,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 .header--logo {
   width: fit-content;
   margin: auto;
-  padding: 1.2903225806rem;
+  padding: 1.25rem;
 }
 
 .section-home {
   background-color: #f6f6f6;
   display: block;
   margin: auto;
-  margin-bottom: 1.6129032258rem;
+  margin-bottom: 1.5625rem;
   filter: drop-shadow(15px 15px 15px #383838);
 }
 .section-home--list {
@@ -191,22 +182,23 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   background-color: #eaeaea;
   box-shadow: inset 0px 0px 4px #cfcfcf;
   filter: drop-shadow(15px 15px 15px #9b9b9b);
-  padding: 0.6451612903rem;
-  margin-bottom: 1.6129032258rem;
+  padding: 0.625rem;
+  margin-bottom: 1.5625rem;
+}
+.section-home--list .section-home--bcnd .fa-map-marker-alt {
+  font-size: 19px;
 }
 .section-home--list .section-home--box-icon {
-  font-size: 106.25%;
   font-weight: 600;
 }
 .section-home--list .section-home--box-icon .fa-map-marker-alt {
-  padding-right: 0.9677419355rem;
+  padding-right: 0.9375rem;
 }
 .section-home--list .section-home--title {
-  padding-top: 0.6451612903rem;
+  padding-top: 0.625rem;
 }
 .section-home--list .section-home--discover {
-  font-size: 1.25em;
-  color: rgba(1, 1, 1, 0.384);
+  color: rgba(0, 0, 0, 0.575);
 }
 .section-home--list .jump-line {
   display: none;
@@ -215,8 +207,8 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   display: block;
   margin: auto;
   width: fit-content;
-  padding-top: 1.935483871rem;
-  padding-bottom: 2.9032258065rem;
+  padding-top: 1.875rem;
+  padding-bottom: 2.8125rem;
 }
 .section-home .btn-box .btn--explore {
   background: linear-gradient(#FF79DA, #9356DC);
@@ -224,8 +216,8 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   color: #fff;
   border-radius: 50px;
   box-shadow: 0px 8px 4px #cfcfcf;
-  margin: 0.3225806452rem 0rem 0.6451612903rem 0rem;
-  padding: 1.2903225806rem 2.2580645161rem;
+  margin: 0.625rem 0rem 3.125rem 0rem;
+  padding: 1.25rem 2.1875rem;
   border: none;
 }
 .section-home .btn-box .btn--explore:hover {
@@ -235,10 +227,12 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 .section-runnig {
   display: block;
   margin: auto;
-  margin-top: 4.5161290323rem;
-  margin-bottom: 4.5161290323rem;
+  margin-top: 4.375rem;
+  margin-bottom: 4.375rem;
 }
 .section-runnig--list {
+  display: flex;
+  flex-direction: row;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -246,40 +240,24 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   justify-content: space-around;
   align-items: center;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 800px) {
   .section-runnig--list {
     flex-direction: column;
-    font-size: 70%;
-  }
-  .section-runnig--list .runnig-card {
-    margin: -8%;
   }
 }
-@media only screen and (min-width: 450px) and (max-width: 700px) {
-  .section-runnig--list {
-    flex-direction: column;
-    font-size: 80%;
-  }
-  .section-runnig--list .runnig-card {
-    margin: -2%;
-  }
-}
-@media only screen and (min-width: 700px) and (max-width: 900px) {
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
   .section-runnig--list {
     flex-direction: row;
-    font-size: 83%;
-  }
-  .section-runnig--list .runnig-card {
-    margin: -6%;
   }
 }
-@media only screen and (min-width: 900px) and (max-width: 1200px) {
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
   .section-runnig--list {
-    flex-direction: column;
-    font-size: 90%;
+    flex-direction: row;
   }
-  .section-runnig--list .runnig-card {
-    margin: -3%;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .section-runnig--list {
+    flex-direction: row;
   }
 }
 .section-runnig--list .runnig-card {
@@ -292,22 +270,21 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   background-color: #eaeaea;
   border-radius: 15px;
   box-shadow: 0px 3px 8px #eaeaea;
-  margin: 0.9677419355rem;
-  height: 4.8387096774rem;
+  margin: 0.9375rem;
+  height: 4.6875rem;
   width: 25%;
 }
 .section-runnig--list .runnig-card:hover {
   background-color: #e8f9f5;
 }
 .section-runnig--list .runnig-card--ennum {
-  font-size: 1em;
   background-color: #9356DC;
   border-radius: 20px;
   color: white;
   height: 30px;
   width: 30px;
-  padding-top: 0.3225806452rem;
-  margin-left: -1.935483871rem;
+  padding-top: 0.3125rem;
+  margin-left: -1.875rem;
 }
 .section-runnig--list .runnig-card--icon {
   display: flex;
@@ -328,25 +305,23 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   color: #9356DC;
 }
 .section-runnig--list .running-card--text {
-  font-size: 1.25em;
   width: 70%;
-  margin: -0.1935483871rem;
+  margin: -0.1875rem;
   margin-left: -10%;
 }
 
-.section--title {
+.section--title, .section-menu--fig .section-menu--cap .menu-restaurant--box .menu-restaurant--name {
   display: block;
-  font-family: "roboto";
+  font-family: "Roboto";
   width: fit-content;
-  padding: 1.6129032258rem;
+  padding: 1.5625rem;
 }
 
 .section-restaurant {
   display: block;
   margin: auto;
   background-color: #eaeaea;
-  padding-bottom: 4.5161290323rem;
-  margin-bottom: 3.2258064516rem;
+  padding-bottom: 2.1875rem;
 }
 .section-restaurant .section-restaurant--list {
   display: flex;
@@ -355,40 +330,24 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   align-content: space-around;
   justify-content: space-around;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 800px) {
   .section-restaurant .section-restaurant--list {
     flex-direction: column;
-    font-size: 70%;
-  }
-  .section-restaurant .section-restaurant--list .section-restaurant--pos {
-    margin: -8%;
   }
 }
-@media only screen and (min-width: 450px) and (max-width: 700px) {
-  .section-restaurant .section-restaurant--list {
-    flex-direction: column;
-    font-size: 80%;
-  }
-  .section-restaurant .section-restaurant--list .section-restaurant--pos {
-    margin: -2%;
-  }
-}
-@media only screen and (min-width: 700px) and (max-width: 900px) {
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
   .section-restaurant .section-restaurant--list {
     flex-direction: row;
-    font-size: 83%;
-  }
-  .section-restaurant .section-restaurant--list .section-restaurant--pos {
-    margin: -6%;
   }
 }
-@media only screen and (min-width: 900px) and (max-width: 1200px) {
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
   .section-restaurant .section-restaurant--list {
-    flex-direction: column;
-    font-size: 90%;
+    flex-direction: row;
   }
-  .section-restaurant .section-restaurant--list .section-restaurant--pos {
-    margin: -3%;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .section-restaurant .section-restaurant--list {
+    flex-direction: row;
   }
 }
 .section-restaurant .section-restaurant--list .section-restaurant--pos {
@@ -398,7 +357,7 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   background-color: white;
   border-radius: 20px;
   width: 45%;
-  margin-top: 1.2903225806rem;
+  margin-top: 0.625rem;
 }
 .section-restaurant .section-restaurant--list .section-restaurant--pos:hover {
   filter: drop-shadow(15px 15px 15px #d5f3eb);
@@ -412,7 +371,7 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   text-align: center;
   color: #008766;
   background-color: #99E2D0;
-  padding: 0.6451612903rem 1.935483871rem;
+  padding: 0.625rem 1.875rem;
   position: absolute;
   width: fit-content;
   margin-top: 5%;
@@ -433,7 +392,7 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   justify-content: space-around;
   text-align: start;
   background-color: white;
-  padding-left: 1.2903225806rem;
+  padding-left: 1.25rem;
 }
 .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--text {
   display: flex;
@@ -441,8 +400,8 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   flex-wrap: nowrap;
   align-content: space-between;
   justify-content: space-between;
-  width: 29.0322580645rem;
-  margin: 0.9677419355rem;
+  width: 28.125rem;
+  margin: 0.9375rem;
 }
 .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--loc {
   display: flex;
@@ -452,21 +411,15 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   justify-content: space-between;
   align-content: space-between;
   justify-content: space-between;
-  margin-top: 0.3225806452rem;
+  margin-top: 0.3125rem;
 }
 .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--loc,
 .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--name {
-  font-size: 1.4375em;
+  font-size: 1.25em;
 }
 
 .section-restaurant--icon {
   display: block;
-  padding: 1.935483871rem;
-  height: fit-content;
-  width: fit-content;
-}
-.section-restaurant--icon .section-restaurant-heart--active {
-  width: fit-content;
 }
 .section-restaurant--icon .section-restaurant-heart--active .heart--active {
   color: #9356DC;
@@ -483,8 +436,9 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 .section-restaurant--icon:active .section-restaurant-heart--active .heart--active {
   font-size: 1.5625em;
 }
-.section-restaurant--icon .section-restaurant-heart .heart {
+.section-restaurant--icon .section-restaurant-heart .heart, .section-restaurant--icon .section-restaurant-heart .section-restaurant-heart--active .heart--active, .section-restaurant--icon .section-restaurant-heart--active .section-restaurant-heart .heart--active {
   font-size: 1.5625em;
+  margin-top: 100%;
 }
 
 .header--active {
@@ -493,15 +447,15 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   margin: auto;
   width: fit-content;
   position: absolute;
-  left: 7.7419354839rem;
-  top: 1.6129032258rem;
+  left: 7.5rem;
+  top: 1.5625rem;
 }
 
 .section-menu {
-  margin-bottom: 4.5161290323rem;
+  margin-bottom: 4.375rem;
   background-color: #eaeaea;
   margin: auto;
-  margin-top: 4.5161290323rem;
+  margin-top: 4.375rem;
 }
 .section-menu--fig {
   background: linear-gradient(#fff9fd, #d7c0f2);
@@ -523,8 +477,8 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   position: absolute;
   left: 0;
   right: 0;
-  padding: 30px;
-  margin-top: -3.2258064516rem;
+  padding: 20px;
+  margin-top: -3.125rem;
 }
 .section-menu--fig .section-menu--cap .menu-restaurant--box {
   display: flex;
@@ -532,11 +486,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   flex-wrap: nowrap;
   align-content: space-between;
   justify-content: space-between;
+  align-items: center;
+  margin: 0%;
+  padding: 0%;
 }
 .section-menu--fig .section-menu--cap .menu-restaurant--box .menu-restaurant--name {
-  font-size: 1.875em;
-  font-weight: bolder;
-  font-style: oblique 80deg;
+  margin: 0%;
+  padding: 0%;
+  font-weight: 800;
 }
 
 .section-main--list {
@@ -545,7 +502,26 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   flex-wrap: nowrap;
   align-content: space-evenly;
   justify-content: space-evenly;
-  margin-top: 6.4516129032rem;
+}
+@media only screen and (max-width: 800px) {
+  .section-main--list {
+    flex-direction: column;
+  }
+}
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  .section-main--list {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+  .section-main--list {
+    flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .section-main--list {
+    flex-direction: row;
+  }
 }
 .section-main--list .section-main--part-menu {
   display: flex;
@@ -557,12 +533,16 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 }
 .section-main--list .section-main--part-menu .section-menu--title {
   text-align: start;
+  font-family: "roboto";
+  font-weight: 500;
+  text-transform: uppercase;
   color: #353535;
+  height: 0.625rem;
 }
 .section-main--list .section-main--part-menu .border {
-  width: 9.6774193548rem;
+  width: 9.375rem;
   border-bottom: 1mm solid #99E2D0;
-  margin-bottom: 0.6451612903rem;
+  margin: -55 0 0.625rem 0;
 }
 .section-main--list .section-main--part-menu .thumbnail--box {
   text-align: start;
@@ -570,7 +550,7 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   border-radius: 15px;
   box-shadow: 0px 3px 8px #cfcfcf;
   margin: auto;
-  padding: 0.7741935484rem;
+  padding: 1.5625rem;
   margin: 5% 0;
 }
 .section-main--list .section-main--part-menu .thumbnail--box:hover {
@@ -582,13 +562,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   flex-wrap: nowrap;
   align-content: space-between;
   justify-content: space-between;
+  height: 35px;
 }
 .section-main--list .section-main--part-menu .thumbnail--box .check-box .check-circle {
   display: none;
   background-color: lightgreen;
   color: white;
   border-radius: 0px 15px 15px 0;
-  padding: 0.9677419355rem;
+  padding: 0.9375rem;
 }
 
 .btn-box .btn--explore {
@@ -597,11 +578,11 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   color: #fff;
   border-radius: 50px;
   box-shadow: 0px 8px 4px #cfcfcf;
-  margin: 0.3225806452rem 0rem 0.6451612903rem 0rem;
-  padding: 1.2903225806rem 2.2580645161rem;
+  margin: 0.625rem 0rem 3.125rem 0rem;
+  padding: 1.25rem 2.1875rem;
   border: none;
   background-color: #39a98d;
-  width: 14.1935483871rem;
+  width: 13.75rem;
 }
 .btn-box .btn--explore:hover {
   background: linear-gradient(#9356DC, #FF79DA);
@@ -609,11 +590,10 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 
 .section-footer {
   background-color: #353535;
-  padding: 0.3225806452rem 0rem;
+  padding: 0.3125rem 0rem;
 }
 .section-footer--title {
   text-align: center;
-  font-size: 2.25em;
   font-weight: 950;
   font-style: oblique 70deg;
   color: white;
@@ -625,47 +605,31 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   align-content: center;
   justify-content: center;
   margin: auto;
-  margin-bottom: 1.6129032258rem;
+  margin-bottom: 1.5625rem;
   width: fit-content;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 800px) {
   .section-footer--list {
     flex-direction: column;
-    font-size: 70%;
-  }
-  .section-footer--list .section-footer--text {
-    margin: -8%;
   }
 }
-@media only screen and (min-width: 450px) and (max-width: 700px) {
-  .section-footer--list {
-    flex-direction: column;
-    font-size: 80%;
-  }
-  .section-footer--list .section-footer--text {
-    margin: -2%;
-  }
-}
-@media only screen and (min-width: 700px) and (max-width: 900px) {
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
   .section-footer--list {
     flex-direction: row;
-    font-size: 83%;
-  }
-  .section-footer--list .section-footer--text {
-    margin: -6%;
   }
 }
-@media only screen and (min-width: 900px) and (max-width: 1200px) {
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
   .section-footer--list {
-    flex-direction: column;
-    font-size: 90%;
+    flex-direction: row;
   }
-  .section-footer--list .section-footer--text {
-    margin: -3%;
+}
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .section-footer--list {
+    flex-direction: row;
   }
 }
 .section-footer--list .section-footer--text {
-  margin: 1.2903225806rem;
+  margin: 1.25rem;
 }
 .section-footer--list .section-footer--icon {
   width: 35px;
@@ -681,15 +645,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   justify-content: space-around;
   align-items: center;
   text-align: center;
-  font-size: 1.25em;
   color: white !important;
 }
 
 main {
-  padding: 1.6129032258rem;
+  padding: 1.5625rem;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 780px) {
   .header {
     filter: none;
     background-color: #fff;
@@ -710,10 +673,10 @@ main {
   }
   .section-home--list .section-home--bcnd {
     filter: none;
-    padding: 0.4516129032rem;
+    padding: 0.4375rem;
   }
   .section-home--list .section-home--title {
-    padding-top: 0.6451612903rem;
+    padding-top: 0.625rem;
   }
   .section-home--list .jump-line {
     display: inherit;
@@ -722,8 +685,8 @@ main {
     display: block;
     margin: auto;
     width: fit-content;
-    padding-top: 1.935483871rem;
-    padding-bottom: 2.9032258065rem;
+    padding-top: 1.875rem;
+    padding-bottom: 2.8125rem;
   }
   .section-home .btn-box .btn--explore {
     background: linear-gradient(#FF79DA, #9356DC);
@@ -731,8 +694,8 @@ main {
     color: #fff;
     border-radius: 50px;
     box-shadow: 0px 8px 4px #cfcfcf;
-    margin: 0.3225806452rem 0rem 0.6451612903rem 0rem;
-    padding: 1.2903225806rem 2.2580645161rem;
+    margin: 0.625rem 0rem 3.125rem 0rem;
+    padding: 1.25rem 2.1875rem;
     border: none;
   }
   .section-home .btn-box .btn--explore:hover {
@@ -740,35 +703,31 @@ main {
   }
 
   .section-runnig {
-    padding: 1.2903225806rem;
+    padding: 1.25rem;
   }
-  .section-runnig .section--title {
+  .section-runnig .section--title, .section-runnig .section-menu--fig .section-menu--cap .menu-restaurant--box .menu-restaurant--name, .section-menu--fig .section-menu--cap .menu-restaurant--box .section-runnig .menu-restaurant--name {
     margin: 0%;
     padding: 0%;
   }
-  .section-runnig--list {
-    flex-direction: column;
-  }
   .section-runnig--list .runnig-card {
-    margin: 0.9677419355rem;
-    height: 4.8387096774rem;
+    margin: 0.9375rem;
+    height: 4.6875rem;
     width: 100%;
   }
   .section-runnig--list .runnig-card--ennum {
-    padding-top: 0.5161290323rem;
-    margin-left: -1.935483871rem;
+    padding-top: 0.375rem;
+    margin-left: -1.875rem;
   }
   .section-runnig--list .runnig-card--icon {
     width: 8%;
-    margin-left: -1.2903225806rem;
+    margin-left: -1.25rem;
   }
   .section-runnig--list .running-card--text {
     margin-left: -15%;
   }
 
   .section-restaurant .section-restaurant--list {
-    margin-top: -10%;
-    padding: 1.2903225806rem;
+    padding: 0rem 1.25rem;
   }
   .section-restaurant .section-restaurant--list .section-restaurant--pos {
     width: 100%;
@@ -777,14 +736,57 @@ main {
     filter: none;
   }
   .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--new {
-    top: 0.3225806452rem;
-    right: 0.9677419355rem;
+    top: 0.3125rem;
+    right: 0.9375rem;
   }
 
+  .header--active {
+    display: block;
+    margin-left: -6.25rem;
+    margin-top: 0.125rem;
+  }
+
+  .section-menu {
+    margin-bottom: 0rem;
+    margin-top: 0rem;
+  }
+  .section-menu--fig .section-menu--img {
+    width: 100%;
+    border-radius: 0%;
+  }
+  .section-main--list {
+    margin-top: 3.125rem;
+    padding: 1.25rem;
+  }
+  .section-main--list .section-main--part-menu {
+    width: 100%;
+  }
+  .section-main--list .section-main--part-menu .border {
+    width: 3.125rem;
+  }
+  .section-main--list .section-main--part-menu .thumbnail--box {
+    padding: 0.625rem;
+  }
+  .section-main--list .section-main--part-menu .thumbnail--box:hover {
+    filter: none;
+  }
+  .section-main--list .section-main--part-menu .thumbnail--box .check-box .check-circle {
+    display: none;
+    padding: 0.9375rem;
+  }
+
+  .section-footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
   .section-footer--title {
     text-align: start;
     width: fit-content;
-    margin-bottom: 1.2903225806rem;
+    margin-bottom: 1.25rem;
     margin-left: 25%;
   }
   .section-footer--list {
@@ -792,7 +794,7 @@ main {
     margin: 0;
   }
   .section-footer--list .section-footer--text {
-    margin: 0.3870967742rem;
+    margin: 0.375rem;
   }
   .section-footer--list .section-footer--add,
 .section-footer--list .section-footer--partner,
@@ -801,14 +803,14 @@ main {
     text-align: start;
   }
   .section-footer--title, .section-footer--list {
-    margin-left: 0.9677419355rem;
+    margin-left: 0.9375rem;
   }
 
   main {
     padding: 0;
   }
 }
-@media only screen and (min-width: 800px) and (max-width: 1200px) {
+@media only screen and (min-width: 780px) and (max-width: 1200px) {
   .header {
     filter: none;
     background-color: #fff;
@@ -829,20 +831,20 @@ main {
   }
   .section-home--list .section-home--bcnd {
     filter: none;
-    padding: 0.4516129032rem;
+    padding: 0.4375rem;
   }
   .section-home--list .section-home--title {
-    padding-top: 0.6451612903rem;
+    padding-top: 0.625rem;
   }
   .section-home--list .jump-line {
-    display: inherit;
+    display: none;
   }
   .section-home .btn-box {
     display: block;
     margin: auto;
     width: fit-content;
-    padding-top: 1.935483871rem;
-    padding-bottom: 2.9032258065rem;
+    padding-top: 1.875rem;
+    padding-bottom: 2.8125rem;
   }
   .section-home .btn-box .btn--explore {
     background: linear-gradient(#FF79DA, #9356DC);
@@ -850,8 +852,8 @@ main {
     color: #fff;
     border-radius: 50px;
     box-shadow: 0px 8px 4px #cfcfcf;
-    margin: 0.3225806452rem 0rem 0.6451612903rem 0rem;
-    padding: 1.2903225806rem 2.2580645161rem;
+    margin: 0.625rem 0rem 3.125rem 0rem;
+    padding: 1.25rem 2.1875rem;
     border: none;
   }
   .section-home .btn-box .btn--explore:hover {
@@ -859,35 +861,35 @@ main {
   }
 
   .section-runnig {
-    padding: 1.2903225806rem;
+    padding: 1.25rem;
   }
-  .section-runnig .section--title {
+  .section-runnig .section--title, .section-runnig .section-menu--fig .section-menu--cap .menu-restaurant--box .menu-restaurant--name, .section-menu--fig .section-menu--cap .menu-restaurant--box .section-runnig .menu-restaurant--name {
     margin: 0%;
     padding: 0%;
   }
-  .section-runnig--list {
-    flex-direction: column;
-  }
   .section-runnig--list .runnig-card {
-    margin: 0.9677419355rem;
-    height: 4.8387096774rem;
+    margin: 0.9375rem;
+    height: 4.6875rem;
     width: 100%;
   }
   .section-runnig--list .runnig-card--ennum {
-    padding-top: 0.5161290323rem;
-    margin-left: -1.935483871rem;
+    padding-top: 0.5rem;
+    margin-left: -1.875rem;
   }
   .section-runnig--list .runnig-card--icon {
     width: 8%;
-    margin-left: -1.2903225806rem;
+    margin-left: -1.25rem;
   }
   .section-runnig--list .running-card--text {
     margin-left: -15%;
   }
 
   .section-restaurant .section-restaurant--list {
-    margin-top: -10%;
-    padding: 1.2903225806rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
   }
   .section-restaurant .section-restaurant--list .section-restaurant--pos {
     width: 100%;
@@ -896,31 +898,40 @@ main {
     filter: none;
   }
   .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--new {
-    top: 0.3225806452rem;
-    right: 0.9677419355rem;
+    top: 0.3125rem;
+    right: 0.9375rem;
   }
 
+  .section-footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
   .section-footer--title {
     text-align: start;
     width: fit-content;
-    margin-bottom: 1.2903225806rem;
+    margin-bottom: 1.25rem;
     margin-left: 25%;
   }
   .section-footer--list {
     align-items: start;
+    width: 90%;
     margin: 0;
   }
   .section-footer--list .section-footer--text {
-    margin: 0.3870967742rem;
+    margin: 0.375rem;
   }
   .section-footer--list .section-footer--add,
 .section-footer--list .section-footer--partner,
 .section-footer--list .section-footer--cgv,
 .section-footer--list .section-footer--contact {
-    text-align: start;
+    text-align: center;
   }
   .section-footer--title, .section-footer--list {
-    margin-left: 0.9677419355rem;
+    margin-left: 0.9375rem;
   }
 }
 /*

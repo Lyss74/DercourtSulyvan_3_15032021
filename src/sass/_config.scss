@@ -18,8 +18,8 @@
 html, body { @include text-(); font-size: $BASE-FONT-SIZE; max-width: $FULL; min-width: $FULL; margin: 0%; padding: 0%; height: 100%;}
 
 /* generic-text */
-h1, h2, h3, h4, h5, h6 {font-family: $FONT-TITLE, Helvetica, sans-serif;  width: $FULL}
-p, b , a, li, span, button {font-family: $FONT-TEXT, Helvetica, sans-serif; }
+h1, h2, h3, h4, h5, h6 {font-family: $FONT-TITLE, Helvetica, sans-serif; }
+p, b , a, li, span, button {font-family: $FONT-TEXT, Helvetica sans-serif; }
 
 /* generic-style */
 a { text-decoration: none;  color: $TEXT-COLOR;  &:hover { color: lighten($TEXT-COLOR, 100%)!important; } }
@@ -35,7 +35,7 @@ img {display: block; margin: 0%; padding: 0%; max-height: $FULL; max-width: $FUL
 ul, figure {margin: 0%; padding: 0%; height: 100%;}
 
 /* icon size and color */
-i {font-size: convert(25, px, percent); color: $QUATERNARY}
+i {font-size: convert(20, px, percent); color: $QUATERNARY}
 /* MAP */
 $dynamic-flex: (fixed-auto:  0 0 auto, resize-auto: 1 1 auto, fixed-no-auto: 0 0, resize-no-auto:1 1);
 

@@ -1,4 +1,33 @@
 /////////////////////* DYNAMIC CONFIG *////////////////////// 
+//
+//
+//
+@mixin resize-font($screen) {
+    @if $screen==mobile {
+        @include respond(mobile) {
+            $font-size-mob: 12px;
+            font-size: floor((100% * $font-size-mob / $BASE-FONT-SIZE));    
+        };
+    }
+    @if $screen==mobile-p {
+        @include respond(mobile-p) {
+            $font-size-mob: 14px;
+            font-size: floor((100% * $font-size-mob / $BASE-FONT-SIZE));    
+        };
+    }
+    @if $screen==tablet {
+        @include respond(tablet) {
+            $font-size-mob: 15px;
+            font-size: floor((100% * $font-size-mob / $BASE-FONT-SIZE));    
+        };
+    }
+    @if $screen==tablet-p {
+        @include respond(tablet-p) {
+            $font-size-mob: 16px;
+            font-size: floor((100% * $font-size-mob / $BASE-FONT-SIZE));    
+        };
+    }
+}
 /* TEXT-ALIGN */
 // values :
 // left ,right, center, start, end *...
@@ -38,7 +67,7 @@
     color: #fff;
     border-radius: 50px;
     box-shadow: 0px 8px 4px rgb(207 207 207);
-    margin: rem(5) rem(0) rem(10) rem(0); 
+    margin: rem(10) rem(0) rem(50) rem(0); 
     padding: rem(20) rem(35);
     border: none;
     &:hover {
@@ -87,7 +116,15 @@
     margin: auto;
 }
 
-
+//
+//
+//
+//
+@mixin min-w-size($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
 /* RESPONSE LAYOUT */
 // values : 
 // desktop, mobile, mobile-p, tablet, tablet-p
@@ -97,30 +134,25 @@
 //       @include flex-(row);
 //    }; -> change the flex-direction
 @mixin respond($breakpoint) {
-    //@if $breakpoint==desktop {
-    //    @media only screen and (min-width: 1200px) and (max-width: 1400px) {  
-    //        @content;
-    //        }
-    //}
     @if $breakpoint==mobile {
         // here `laptop` is the value of $breakpoint
         // when call laptop, we mean the following piece of code        
-        @media only screen and (max-width: 450px) {
+        @media only screen and (max-width: 800px) {
             @content;
             }
     }
     @if $breakpoint==mobile-p {
-        @media only screen and (min-width: 450px) and (max-width: 700px) {
+        @media only screen and (min-width: 800px) and (max-width: 1000px) {
             @content;
             }
     }
     @if $breakpoint==tablet {
-        @media only screen and (min-width: 700px) and (max-width: 900px) {   
+        @media only screen and (min-width: 1000px) and (max-width: 1200px) {   
             @content;
             }
     }
     @if $breakpoint==tablet-p {  
-        @media only screen and (min-width: 900px) and (max-width: 1200px) {  
+        @media only screen and (min-width: 1200px) and (max-width: 1400px) {  
             @content;
             }
     }
