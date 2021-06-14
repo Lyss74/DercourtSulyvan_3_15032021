@@ -12,7 +12,7 @@
 /* VW-COVERTER */
 /* 
 https://www.sitepoint.com/converting-typographic-units-sass/ 
-  font-size: convert(16, px, percent);
+	font-size: convert(16, px, percent);
 */
 .PROD {
   background-color: yellow;
@@ -22,13 +22,11 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   display: none;
 }
 
-/* 
-./dart-sass/sass src/sass/style.scss assets/css/style.css --watch 
-*/
 /* html & body fix configuration */
-html, body {
+html,
+body {
   text-align: center;
-  font-size: 16px;
+  text-rendering: geometricPrecision;
   max-width: 100%;
   min-width: 100%;
   margin: 0%;
@@ -37,12 +35,24 @@ html, body {
 }
 
 /* generic-text */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Shrikhand", cursive, Helvetica, sans-serif;
+  margin: 0%;
 }
 
-p, b, a, li, span, button {
+p,
+b,
+a,
+li,
+span,
+button {
   font-family: "Roboto", Helvetica sans-serif;
+  margin: 1%;
 }
 
 /* generic-style */
@@ -74,7 +84,8 @@ img {
 }
 
 /* generic-margin-base */
-ul, figure {
+ul,
+figure {
   margin: 0%;
   padding: 0%;
   height: 100%;
@@ -82,40 +93,11 @@ ul, figure {
 
 /* icon size and color */
 i {
-  font-size: 125%;
+  font-size: 131.25%;
   color: #353535;
 }
 
 /* MAP */
-/*
-$map: (
-   key-01: value-01,
-   key-02: value-02,
-   key-03: value-03
-	 );
-	$colour-primary: #15DEA5; 
-	$colour-secondary: #001534;
-	$colour-accent: #D6FFF5;
-	$colour-white: #fff;
-	$colour-invalid: #DB464B;
-	$txt-input-palette: (
-   active: (
-       bg: $colour-primary,
-       border: $colour-primary,
-       txt: $colour-white,
-   ),
-   focus: (
-       bg: $colour-primary,
-       border: $colour-primary,
-       txt: $colour-white,
-   ),
-   invalid: (
-       bg: $colour-invalid,
-       border: $colour-white,
-       txt: $colour-white,
-   )
-)
-*/
 /* TEXT-ALIGN */
 /* DISPLAY */
 /* RESPONSE LAYOUT */
@@ -124,7 +106,7 @@ $map: (
 /* VW-COVERTER */
 /* 
 https://www.sitepoint.com/converting-typographic-units-sass/ 
-  font-size: convert(16, px, percent);
+	font-size: convert(16, px, percent);
 */
 /* BASIS VALUE */
 /* FLEXBOX ASSIGN-ROLE */
@@ -147,13 +129,55 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 /* ALIGN-ITEMS */
 /* FLEX-FLOW */
 /* SIMPLE-FLEX */
-/*  FLEX-AUTO */
+/*  DYNAMIC-RESIZE */
+/*-----------------------------*\
+            · loader ·
+\*-----------------------------*/
+body {
+  z-index: 10;
+}
+
+.loader {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #f6f6f6;
+  font-size: 3.125em;
+  background: linear-gradient(217deg, #9356DC, #22dd22 70.71%), linear-gradient(127deg, #99E2D0, white 70.71%);
+  height: 100%;
+  line-height: 500px;
+  z-index: 1;
+}
+.loader .--form {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 75px;
+  height: 75px;
+}
+.loader .loader--page {
+  border-radius: 50px;
+  border: 6px solid #38e038;
+}
+.loader .loader--page:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  bottom: -6px;
+  right: -6px;
+  border-radius: 50px;
+  border: 4px solid transparent;
+  border-top-color: #e8fce8;
+  animation: loader-spin 2s linear infinite;
+}
+
 .header {
   background-color: #fff;
   display: block;
   margin: auto;
-  filter: drop-shadow(15px 15px 15px #cecece);
-  margin-bottom: 1.5625rem;
+  filter: drop-shadow(15px 15px 15px #e8e8e8);
+  margin-bottom: 1.25rem;
 }
 .header--arrow {
   display: none;
@@ -168,7 +192,7 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   background-color: #f6f6f6;
   display: block;
   margin: auto;
-  margin-bottom: 1.5625rem;
+  margin-bottom: 1.25rem;
   filter: drop-shadow(15px 15px 15px #383838);
 }
 .section-home--list {
@@ -182,8 +206,8 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   background-color: #eaeaea;
   box-shadow: inset 0px 0px 4px #cfcfcf;
   filter: drop-shadow(15px 15px 15px #9b9b9b);
-  padding: 0.625rem;
-  margin-bottom: 1.5625rem;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 .section-home--list .section-home--bcnd .fa-map-marker-alt {
   font-size: 19px;
@@ -195,7 +219,7 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   padding-right: 0.9375rem;
 }
 .section-home--list .section-home--title {
-  padding-top: 0.625rem;
+  padding: 1.25rem;
 }
 .section-home--list .section-home--discover {
   color: rgba(0, 0, 0, 0.575);
@@ -207,16 +231,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   display: block;
   margin: auto;
   width: fit-content;
-  padding-top: 1.875rem;
-  padding-bottom: 2.8125rem;
 }
 .section-home .btn-box .btn--explore {
   background: linear-gradient(#FF79DA, #9356DC);
-  font-size: 1em;
+  font-size: 0.8333333333em;
   color: #fff;
   border-radius: 50px;
   box-shadow: 0px 8px 4px #cfcfcf;
-  margin: 0.625rem 0rem 3.125rem 0rem;
+  margin: 2.1875rem 0rem 3.125rem 0rem;
   padding: 1.25rem 2.1875rem;
   border: none;
 }
@@ -227,12 +249,10 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 .section-runnig {
   display: block;
   margin: auto;
-  margin-top: 4.375rem;
-  margin-bottom: 4.375rem;
+  margin-top: 3.4375rem;
+  margin-bottom: 3.4375rem;
 }
 .section-runnig--list {
-  display: flex;
-  flex-direction: row;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -240,14 +260,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   justify-content: space-around;
   align-items: center;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 620px) {
   .section-runnig--list {
     flex-direction: column;
   }
 }
-@media only screen and (min-width: 800px) and (max-width: 1000px) {
+@media only screen and (min-width: 620px) and (max-width: 1000px) {
   .section-runnig--list {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
@@ -279,11 +299,11 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 }
 .section-runnig--list .runnig-card--ennum {
   background-color: #9356DC;
-  border-radius: 20px;
+  border-radius: 50%;
   color: white;
-  height: 30px;
-  width: 30px;
-  padding-top: 0.3125rem;
+  height: 27px;
+  width: 27px;
+  padding-top: 0.1875rem;
   margin-left: -1.875rem;
 }
 .section-runnig--list .runnig-card--icon {
@@ -310,18 +330,19 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   margin-left: -10%;
 }
 
-.section--title, .section-menu--fig .section-menu--cap .menu-restaurant--box .menu-restaurant--name {
+.section--title {
   display: block;
   font-family: "Roboto";
   width: fit-content;
-  padding: 1.5625rem;
+  padding: 0.9375rem;
 }
 
 .section-restaurant {
   display: block;
   margin: auto;
   background-color: #eaeaea;
-  padding-bottom: 2.1875rem;
+  padding-top: 2.1875rem;
+  padding-bottom: 2.8125rem;
 }
 .section-restaurant .section-restaurant--list {
   display: flex;
@@ -330,14 +351,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   align-content: space-around;
   justify-content: space-around;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 620px) {
   .section-restaurant .section-restaurant--list {
     flex-direction: column;
   }
 }
-@media only screen and (min-width: 800px) and (max-width: 1000px) {
+@media only screen and (min-width: 620px) and (max-width: 1000px) {
   .section-restaurant .section-restaurant--list {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
@@ -357,7 +378,7 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   background-color: white;
   border-radius: 20px;
   width: 45%;
-  margin-top: 0.625rem;
+  margin: 0.9375rem;
 }
 .section-restaurant .section-restaurant--list .section-restaurant--pos:hover {
   filter: drop-shadow(15px 15px 15px #d5f3eb);
@@ -374,8 +395,8 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   padding: 0.625rem 1.875rem;
   position: absolute;
   width: fit-content;
-  margin-top: 5%;
-  margin-left: 78%;
+  margin-top: 4%;
+  margin-left: 78.5%;
 }
 .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--img {
   position: relative;
@@ -388,11 +409,11 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-content: space-around;
-  justify-content: space-around;
+  align-content: space-between;
+  justify-content: space-between;
   text-align: start;
+  align-items: baseline;
   background-color: white;
-  padding-left: 1.25rem;
 }
 .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--text {
   display: flex;
@@ -411,21 +432,21 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   justify-content: space-between;
   align-content: space-between;
   justify-content: space-between;
-  margin-top: 0.3125rem;
-}
-.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--loc,
-.section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--insert .section-restaurant--name {
-  font-size: 1.25em;
 }
 
 .section-restaurant--icon {
-  display: block;
+  display: flex;
+  height: fit-content;
 }
 .section-restaurant--icon .section-restaurant-heart--active .heart--active {
-  color: #9356DC;
+  font-size: 1.4375em;
+  margin-right: 1.875rem;
+  margin-top: 1.875rem;
 }
 .section-restaurant--icon .section-restaurant-heart--active {
   display: none;
+  background: -webkit-linear-gradient(#FF79DA, #9356DC);
+  -webkit-text-fill-color: transparent;
 }
 .section-restaurant--icon:active .section-restaurant-heart {
   display: none;
@@ -433,12 +454,10 @@ https://www.sitepoint.com/converting-typographic-units-sass/
 .section-restaurant--icon:active .section-restaurant-heart--active {
   display: inherit;
 }
-.section-restaurant--icon:active .section-restaurant-heart--active .heart--active {
-  font-size: 1.5625em;
-}
-.section-restaurant--icon .section-restaurant-heart .heart, .section-restaurant--icon .section-restaurant-heart .section-restaurant-heart--active .heart--active, .section-restaurant--icon .section-restaurant-heart--active .section-restaurant-heart .heart--active {
-  font-size: 1.5625em;
-  margin-top: 100%;
+.section-restaurant--icon .section-restaurant-heart .heart {
+  font-size: 1.4375em;
+  margin-right: 1.875rem;
+  margin-top: 1.875rem;
 }
 
 .header--active {
@@ -455,12 +474,10 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   margin-bottom: 4.375rem;
   background-color: #eaeaea;
   margin: auto;
-  margin-top: 4.375rem;
 }
 .section-menu--fig {
-  background: linear-gradient(#fff9fd, #d7c0f2);
+  background: linear-gradient(white, #e4d5f6);
   position: relative;
-  margin-bottom: 50px;
   margin: auto;
 }
 .section-menu--fig .section-menu--img {
@@ -491,9 +508,9 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   padding: 0%;
 }
 .section-menu--fig .section-menu--cap .menu-restaurant--box .menu-restaurant--name {
-  margin: 0%;
-  padding: 0%;
-  font-weight: 800;
+  font-size: 1.75rem;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 400;
 }
 
 .section-main--list {
@@ -503,14 +520,14 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   align-content: space-evenly;
   justify-content: space-evenly;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 620px) {
   .section-main--list {
     flex-direction: column;
   }
 }
-@media only screen and (min-width: 800px) and (max-width: 1000px) {
+@media only screen and (min-width: 620px) and (max-width: 1000px) {
   .section-main--list {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
@@ -531,7 +548,16 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   justify-content: space-evenly;
   width: 28%;
 }
-.section-main--list .section-main--part-menu .section-menu--title {
+.section-main--list .section-main--part-menu .title-border-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-around;
+  margin: 55px 0 5px 0;
+  width: 100%;
+}
+.section-main--list .section-main--part-menu .title-border-box .section-menu--title {
   text-align: start;
   font-family: "roboto";
   font-weight: 500;
@@ -539,49 +565,93 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   color: #353535;
   height: 0.625rem;
 }
-.section-main--list .section-main--part-menu .border {
-  width: 9.375rem;
+.section-main--list .section-main--part-menu .title-border-box .border {
+  width: 6.875rem;
   border-bottom: 1mm solid #99E2D0;
-  margin: -55 0 0.625rem 0;
+  margin: 0.9375rem 0;
 }
-.section-main--list .section-main--part-menu .thumbnail--box {
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-around;
   text-align: start;
   background-color: white;
   border-radius: 15px;
   box-shadow: 0px 3px 8px #cfcfcf;
-  margin: auto;
-  padding: 1.5625rem;
   margin: 5% 0;
+  height: auto;
+  animation: moveToUp 1500ms ease-out;
 }
-.section-main--list .section-main--part-menu .thumbnail--box:hover {
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box:hover {
   filter: drop-shadow(15px 15px 15px #a8a8a8);
 }
-.section-main--list .section-main--part-menu .thumbnail--box .thumbnail--text {
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box .--text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-around;
+  justify-content: space-around;
+  width: 100%;
+  padding: 4%;
+}
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box .--text .--content {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: space-between;
   justify-content: space-between;
-  height: 35px;
+  height: auto;
 }
-.section-main--list .section-main--part-menu .thumbnail--box .check-box .check-circle {
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box .--text .--content .--name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+}
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box .check-box {
   display: none;
   background-color: lightgreen;
-  color: white;
   border-radius: 0px 15px 15px 0;
-  padding: 0.9375rem;
+  width: 5.625rem;
+  margin: 0;
+}
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box .check-box .check-circle {
+  display: block;
+  margin: auto;
+  color: white;
+  padding: 1.5625rem;
+}
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box:hover .--anim {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 65%;
+}
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box:hover .--price {
+  animation: moveToRight 300ms ease-out forwards;
+}
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box:hover .check-box {
+  display: inherit;
+  animation: moveToRight 300ms ease-out forwards;
+}
+.section-main--list .section-main--part-menu .thumbnail-container .thumbnail--box:hover .check-circle {
+  animation: rotate-icon 300ms ease-in;
 }
 
 .btn-box .btn--explore {
   background: linear-gradient(#FF79DA, #9356DC);
-  font-size: 1em;
+  font-size: 0.8333333333em;
   color: #fff;
   border-radius: 50px;
   box-shadow: 0px 8px 4px #cfcfcf;
-  margin: 0.625rem 0rem 3.125rem 0rem;
+  margin: 2.1875rem 0rem 3.125rem 0rem;
   padding: 1.25rem 2.1875rem;
   border: none;
-  background-color: #39a98d;
+  padding: 1.0625rem 0.9375rem;
   width: 13.75rem;
 }
 .btn-box .btn--explore:hover {
@@ -605,17 +675,16 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   align-content: center;
   justify-content: center;
   margin: auto;
-  margin-bottom: 1.5625rem;
   width: fit-content;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 620px) {
   .section-footer--list {
     flex-direction: column;
   }
 }
-@media only screen and (min-width: 800px) and (max-width: 1000px) {
+@media only screen and (min-width: 620px) and (max-width: 1000px) {
   .section-footer--list {
-    flex-direction: row;
+    flex-direction: column;
   }
 }
 @media only screen and (min-width: 1000px) and (max-width: 1200px) {
@@ -648,35 +717,33 @@ https://www.sitepoint.com/converting-typographic-units-sass/
   color: white !important;
 }
 
-main {
-  padding: 1.5625rem;
-}
-
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 680px) {
   .header {
     filter: none;
-    background-color: #fff;
-    display: block;
-    margin: auto;
+    padding: 0.21875rem;
   }
-  .header--arrow {
-    display: none;
+  .header--active {
+    font-size: 85%;
+    top: 1.25rem;
   }
   .header--logo {
     width: fit-content;
     margin: auto;
+    padding: 0.625rem;
   }
 
   .section-home {
     filter: none;
-    margin-bottom: -10%;
+    margin-bottom: -15%;
   }
   .section-home--list .section-home--bcnd {
     filter: none;
-    padding: 0.4375rem;
+    padding: 0.9375rem;
+    margin-bottom: 0.9375rem;
   }
   .section-home--list .section-home--title {
     padding-top: 0.625rem;
+    margin-bottom: 0.625rem;
   }
   .section-home--list .jump-line {
     display: inherit;
@@ -685,16 +752,14 @@ main {
     display: block;
     margin: auto;
     width: fit-content;
-    padding-top: 1.875rem;
-    padding-bottom: 2.8125rem;
   }
   .section-home .btn-box .btn--explore {
     background: linear-gradient(#FF79DA, #9356DC);
-    font-size: 1em;
+    font-size: 0.8333333333em;
     color: #fff;
     border-radius: 50px;
     box-shadow: 0px 8px 4px #cfcfcf;
-    margin: 0.625rem 0rem 3.125rem 0rem;
+    margin: 2.1875rem 0rem 3.125rem 0rem;
     padding: 1.25rem 2.1875rem;
     border: none;
   }
@@ -705,7 +770,7 @@ main {
   .section-runnig {
     padding: 1.25rem;
   }
-  .section-runnig .section--title, .section-runnig .section-menu--fig .section-menu--cap .menu-restaurant--box .menu-restaurant--name, .section-menu--fig .section-menu--cap .menu-restaurant--box .section-runnig .menu-restaurant--name {
+  .section-runnig .section--title {
     margin: 0%;
     padding: 0%;
   }
@@ -715,8 +780,8 @@ main {
     width: 100%;
   }
   .section-runnig--list .runnig-card--ennum {
-    padding-top: 0.375rem;
-    margin-left: -1.875rem;
+    padding-top: 0.25rem;
+    margin-left: -10%;
   }
   .section-runnig--list .runnig-card--icon {
     width: 8%;
@@ -727,7 +792,7 @@ main {
   }
 
   .section-restaurant .section-restaurant--list {
-    padding: 0rem 1.25rem;
+    padding: 0rem 0.625rem;
   }
   .section-restaurant .section-restaurant--list .section-restaurant--pos {
     width: 100%;
@@ -737,7 +802,8 @@ main {
   }
   .section-restaurant .section-restaurant--list .section-restaurant--pos .fig-size .section-restaurant--new {
     top: 0.3125rem;
-    right: 0.9375rem;
+    right: 1.25rem;
+    padding: 0.3125rem 0.9375rem;
   }
 
   .header--active {
@@ -754,40 +820,42 @@ main {
     width: 100%;
     border-radius: 0%;
   }
+
+  .section-restaurant--icon {
+    margin-right: 1.5625rem;
+  }
+  .section-restaurant--icon .section-restaurant-heart--active .heart--active {
+    margin: 0;
+  }
+  .section-restaurant--icon .section-restaurant-heart .heart {
+    margin: 0;
+  }
+
   .section-main--list {
-    margin-top: 3.125rem;
-    padding: 1.25rem;
+    padding: 0.625rem;
   }
   .section-main--list .section-main--part-menu {
     width: 100%;
   }
-  .section-main--list .section-main--part-menu .border {
-    width: 3.125rem;
+  .section-main--list .section-main--part-menu .title-border-box {
+    margin: 45px 0 0px 0;
   }
-  .section-main--list .section-main--part-menu .thumbnail--box {
-    padding: 0.625rem;
+  .section-main--list .section-main--part-menu .title-border-box .section-menu--title {
+    margin-bottom: 25px;
   }
-  .section-main--list .section-main--part-menu .thumbnail--box:hover {
-    filter: none;
-  }
-  .section-main--list .section-main--part-menu .thumbnail--box .check-box .check-circle {
-    display: none;
-    padding: 0.9375rem;
+  .section-main--list .section-main--part-menu .title-border-box .border {
+    margin: -1% 0 0.625rem 0;
+    width: 3.75rem;
   }
 
   .section-footer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    padding: 1.5625rem;
+    align-items: start;
   }
   .section-footer--title {
     text-align: start;
     width: fit-content;
     margin-bottom: 1.25rem;
-    margin-left: 25%;
   }
   .section-footer--list {
     align-items: start;
@@ -802,27 +870,13 @@ main {
 .section-footer--list .section-footer--contact {
     text-align: start;
   }
-  .section-footer--title, .section-footer--list {
-    margin-left: 0.9375rem;
-  }
-
-  main {
-    padding: 0;
-  }
 }
-@media only screen and (min-width: 780px) and (max-width: 1200px) {
+@media only screen and (min-width: 680px) and (max-width: 1200px) {
   .header {
     filter: none;
-    background-color: #fff;
-    display: block;
-    margin: auto;
   }
-  .header--arrow {
-    display: none;
-  }
-  .header--logo {
-    width: fit-content;
-    margin: auto;
+  .header--active {
+    font-size: 80%;
   }
 
   .section-home {
@@ -848,11 +902,11 @@ main {
   }
   .section-home .btn-box .btn--explore {
     background: linear-gradient(#FF79DA, #9356DC);
-    font-size: 1em;
+    font-size: 0.8333333333em;
     color: #fff;
     border-radius: 50px;
     box-shadow: 0px 8px 4px #cfcfcf;
-    margin: 0.625rem 0rem 3.125rem 0rem;
+    margin: 2.1875rem 0rem 3.125rem 0rem;
     padding: 1.25rem 2.1875rem;
     border: none;
   }
@@ -860,10 +914,20 @@ main {
     background: linear-gradient(#9356DC, #FF79DA);
   }
 
+  .section-restaurant--icon {
+    margin-right: 1.5625rem;
+  }
+  .section-restaurant--icon .section-restaurant-heart--active .heart--active {
+    margin: 0;
+  }
+  .section-restaurant--icon .section-restaurant-heart .heart {
+    margin: 0;
+  }
+
   .section-runnig {
     padding: 1.25rem;
   }
-  .section-runnig .section--title, .section-runnig .section-menu--fig .section-menu--cap .menu-restaurant--box .menu-restaurant--name, .section-menu--fig .section-menu--cap .menu-restaurant--box .section-runnig .menu-restaurant--name {
+  .section-runnig .section--title {
     margin: 0%;
     padding: 0%;
   }
@@ -873,7 +937,6 @@ main {
     width: 100%;
   }
   .section-runnig--list .runnig-card--ennum {
-    padding-top: 0.5rem;
     margin-left: -1.875rem;
   }
   .section-runnig--list .runnig-card--icon {
@@ -892,7 +955,7 @@ main {
     justify-content: space-between;
   }
   .section-restaurant .section-restaurant--list .section-restaurant--pos {
-    width: 100%;
+    width: 45%;
   }
   .section-restaurant .section-restaurant--list .section-restaurant--pos:hover {
     filter: none;
@@ -934,213 +997,39 @@ main {
     margin-left: 0.9375rem;
   }
 }
-/*
-// Some vars
-$animation-duration: 4s;
-
-$background-color:  #d55084;
-$window-top:        #3c3e99;
-$window-bar:        #4c54a4;
-$window-content:    #fff;
-$window-background: #efeff3;
-$button-color:      #e20269;
-
-$window-width:   140px, 400px, 560px;
-$window-height:  250px, 300px, 370px;
-$content-width:  140px, 270px, 290px;
-$content-height: 220px, 220px, 225px;
-$header-height:  30px, 90px, 105px;
-$header-border:  7px, 12px, 14px;
-$button-size:    20px, 26px, 26px;
-
-// Card
-section {
-  position: relative;
-  width: nth($window-width, 1);
-  height: nth($window-height, 1);
-  background-color: $window-background;
-  animation: window forwards $animation-duration infinite;
-  overflow: hidden;
-
-  > * {
-    position: absolute;
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
-
-header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: nth($header-height, 1);
-  border-top: nth($header-border, 1) solid $window-top;
-  background-color: $window-bar;
-  animation: header forwards $animation-duration infinite;
-}
-
-article {
-  top: 30px;
-  left: 50%;
-  width: nth($content-width, 1);
-  height: nth($content-height, 1);
-  box-shadow: 0 2px 4px rgba(100,100,100,.1);
-  background-color: $window-content;
-  transform: translateX(-50%);
-  animation: article forwards $animation-duration infinite;
-
-  // medium
-  &::after {
-    position: absolute;
-    top: 100%;
-    margin-top: 15px;
-    width: 100%;
-    height: 100px; // 30px on small, 95px on large
-    background-color: $window-content;
-    box-shadow: 0 2px 4px rgba(100,100,100,.1);
-    content: '';
+@keyframes moveToUp {
+  0% {
+    transform: translateY(2em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
-
-button {
-  position: absolute;
-  right: 10px;
-  top: (nth($window-height, 1) - 20px * 1.5);
-  margin: 0;
-  padding: 0;
-  width: 20px;
-  height: 20px;
-  border: 0;
-  border-radius: 100%;
-  box-shadow: inset 0 0 1px rgba(0,0,0,.4), 0 2px 3px rgba(0,0,0,.2);
-  -webkit-appearance: none;
-  background-color: $button-color;
-  animation: button forwards $animation-duration infinite;
-}
-
-// Animations
-@keyframes window {
-  0%, 15%, 90% {
-    width: nth($window-width, 1);
-    height: nth($window-height, 1);
+@keyframes moveToRight {
+  0% {
+    transform: translatex(1rem);
   }
-
-  30%, 45% {
-    width: nth($window-width, 2);
-    height: nth($window-height, 2);
-  }
-
-  60%, 75% {
-    width: nth($window-width, 3);
-    height: nth($window-height, 3);
+  100% {
+    transform: translatex(0);
   }
 }
-
-@keyframes header {
-  0%, 15%, 90% {
-    width: 100%;
-    height: nth($header-height, 1);
-    border-top-width: nth($header-border, 1);
+@keyframes rotate-icon {
+  0% {
+    transform: rotate(90deg);
   }
-
-  30%, 45% {
-    height: nth($header-height, 2);
-    border-top-width: nth($header-border, 2);
-  }
-
-  60%, 75% {
-    height: nth($header-height, 3);
-    border-top-width: nth($header-border, 3);
+  100% {
+    transform: rotate(360deg);
   }
 }
-
-@keyframes article {
-  0%, 15%, 90% {
-    top: $window-bar;
-    width: nth($content-width, 1);
-    height: nth($content-height, 1);
-  }
-
-  30%, 45% {
-    top: 35px;
-    width: nth($content-width, 2);
-    height: nth($content-height, 2);
-  }
-
-  60%, 75% {
-    top: 35px;
-    width: nth($content-width, 3);
-    height: nth($content-height, 3);
-  }
-}
-
-@keyframes button {
-  0%, 15%, 90% {
-    right: 10px;
-    top: (nth($window-height, 1) - 20px * 1.5);
-    width: nth($button-size, 1);
-    height: nth($button-size, 1);
-  }
-
-  30%, 45% {
-    right: 20px;
-    top: (nth($header-height, 2) - 26px * .5);
-    width: nth($button-size, 2);
-    height: nth($button-size, 2);
-  }
-
-  60%, 75% {
-    right: 25px;
-    top: (nth($header-height, 3) - 26px * .5);
-    width: nth($button-size, 3);
-    height: nth($button-size, 3);
-  }
-}
-
-// Unimportant bits
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $background-color;
-}
-
-.credit {
-  display: none;
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  margin: 0;
-  color: #fff;
-  font-size: 14px;
-  font-family: Avenir Next, Helvetica Neue, sans-serif;
-
-  // The CodePen preview/thumbnail window is about 300px-500px in height
-  @media (min-height: 500px) {
-    display: block;
-  }
-
-  a {
-    display: inline-block;
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 1px dashed rgba(255,255,255,.3);
-    transition: border-color ease-out .15s;
-
-    &:focus,
-    &:hover {
-      border-bottom-color: #fff;
-    }
-  }
-}*/
 
 /*# sourceMappingURL=style.css.map */
