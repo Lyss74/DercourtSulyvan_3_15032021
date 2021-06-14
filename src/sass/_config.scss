@@ -1,71 +1,96 @@
 /////////////////// ** IMPORT ** ////////////////
 @import 'mixins';
 @import 'function';
+.PROD {
+    background-color: yellow;
+}
 
-
-.PROD {background-color: yellow;} 
-.NONE {display: none;}
-/* 
-./dart-sass/sass src/sass/style.scss assets/css/style.css --watch 
-*/ 
+.NONE {
+    display: none;
+}
 
 /////////////////////* DYNAMIC CONFIG *//////////////////// 
+
 /* html & body fix configuration */
+
 // text position
 // font-size,
 // margin - padding,
 // max and min size
-html, body { @include text-(); font-size: $BASE-FONT-SIZE; max-width: $FULL; min-width: $FULL; margin: 0%; padding: 0%; height: 100%;}
+html,
+body {
+    @include text-();
+    text-rendering: geometricPrecision;
+    max-width: $FULL;
+    min-width: $FULL;
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+}
+
 
 /* generic-text */
-h1, h2, h3, h4, h5, h6 {font-family: $FONT-TITLE, Helvetica, sans-serif; }
-p, b , a, li, span, button {font-family: $FONT-TEXT, Helvetica sans-serif; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $FONT-TITLE, Helvetica, sans-serif; margin: 0%;
+}
+
+p,
+b,
+a,
+li,
+span,
+button {
+    font-family: $FONT-TEXT, Helvetica sans-serif; margin: 1%;
+}
+
 
 /* generic-style */
-a { text-decoration: none;  color: $TEXT-COLOR;  &:hover { color: lighten($TEXT-COLOR, 100%)!important; } }
-ul {list-style: none; }		
+a {
+    text-decoration: none;
+    color: $TEXT-COLOR;
+    &:hover {
+        color: lighten($TEXT-COLOR, 100%)!important;
+    }
+}
+
+ul {
+    list-style: none;
+}
 
 /* generic-picture */
-img {display: block; margin: 0%; padding: 0%; max-height: $FULL; max-width: $FULL; object-fit: cover; }
+img {
+    display: block;
+    margin: 0%;
+    padding: 0%;
+    max-height: $FULL;
+    max-width: $FULL;
+    object-fit: cover;
+}
 
 /* generic border-box */
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 /* generic-margin-base */
-ul, figure {margin: 0%; padding: 0%; height: 100%;}
+ul,
+figure {
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+}
 
 /* icon size and color */
-i {font-size: convert(20, px, percent); color: $QUATERNARY}
-/* MAP */
-$dynamic-flex: (fixed-auto:  0 0 auto, resize-auto: 1 1 auto, fixed-no-auto: 0 0, resize-no-auto:1 1);
+i {
+    font-size: convert(21, px, percent);
+    color: $QUATERNARY
+}
 
+/* MAP */
+$dynamic-flex: (fixed-auto : 0 0 auto, resize-auto: 1 1 auto, fixed-no-auto: 0 0, resize-no-auto:1 1);
 /////////////////////* DYNAMIC CONFIG -END- */////////////////// 
-/*
-$map: (
-   key-01: value-01,
-   key-02: value-02,
-   key-03: value-03
-	 );
-	$colour-primary: #15DEA5; 
-	$colour-secondary: #001534;
-	$colour-accent: #D6FFF5;
-	$colour-white: #fff;
-	$colour-invalid: #DB464B;
-	$txt-input-palette: (
-   active: (
-       bg: $colour-primary,
-       border: $colour-primary,
-       txt: $colour-white,
-   ),
-   focus: (
-       bg: $colour-primary,
-       border: $colour-primary,
-       txt: $colour-white,
-   ),
-   invalid: (
-       bg: $colour-invalid,
-       border: $colour-white,
-       txt: $colour-white,
-   )
-)
-*/

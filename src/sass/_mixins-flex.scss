@@ -1,11 +1,14 @@
 /////////////////////* DYNAMIC CONFIG *////////////////////// 
+
 /*  generic-flex   */
-$around: space-around; 
-$between: space-between;   
+
+$around: space-around;
+$between: space-between;
 $evenly: space-evenly;
 $center: center;
 
 /* FLEX-DIRECTION */
+
 // values :
 // row, row-reverse, column, column-reverse
 // call : 
@@ -16,6 +19,7 @@ $center: center;
 }
 
 /* FLEX-WRAP */
+
 // values :
 // wrap, nowrap, wrap-reverse
 // call : 
@@ -26,6 +30,7 @@ $center: center;
 }
 
 /* FLEX-SPACE */
+
 // values : 
 //    $between,
 //    $around,
@@ -35,21 +40,23 @@ $center: center;
 //    @include space-($around)
 //
 @mixin space-($value: $between) {
-    align-content: $value; 
-    justify-content: $value;   
+    align-content: $value;
+    justify-content: $value;
 }
 
 /* ALIGN-ITEMS */
+
 // values :
 // flex-start, flex-end, center, baseline, stretch
 // call : 
 //    @include flex-align()
 //    @include flex-align(flex-end)
 @mixin align-($items: center) {
-    align-items: $items;   
+    align-items: $items;
 }
 
 /* FLEX-FLOW */
+
 // values :
 // row wrap;
 // row-reverse wrap;
@@ -62,38 +69,33 @@ $center: center;
 //    @include flex-flow()
 //    @include flex-flow(column-reverse wrap-reverse)
 @mixin flex-flow($values: row wrap) {
-    flex-flow: $values;   
+    flex-flow: $values;
 }
 
 /* SIMPLE-FLEX */
+
 // values : 
 //call :
 //       @include simple-flex(column, wrap-reverse, around, start, flex);
-@mixin simple-flex($direction, $wrap, $between) { 
-    @include display; 
+@mixin simple-flex($direction, $wrap, $between) {
+    @include display;
     @include flex-($direction);
     @include wrap($wrap);
     @include space-($between)
 }
 
-/*  FLEX-AUTO */
-// comment : just add this values in child-box -> "flex: 1 1 auto;"
-// values : 
-//    wrap, nowrap,
-//    $between, $around
+/*  DYNAMIC-RESIZE */
+
 // call :
 //        @include flex-auto(column, row, wrap-reverse, $around);
-//        .child-box {
-//            flex: 1 1 auto; }
-@mixin dynamic-resize($direction-1, $direction-2, $wrap, $between) { 
-    @include display; 
+@mixin dynamic-flex($direction-1, $direction-2, $wrap, $between) {
+    @include display;
     @include flex-($direction-1);
     @include respond(mobile) {
         @include flex-($direction-2);
     };
     @include respond(mobile-p) {
-        @include flex-($direction-1);
-
+        @include flex-($direction-2);
     };
     @include respond(tablet) {
         @include flex-($direction-1);
