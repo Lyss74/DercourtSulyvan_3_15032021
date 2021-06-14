@@ -6,24 +6,30 @@
 		<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">		
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		<link href="./assets/images/logo/omf.png"  rel="shortcut icon"/>
+		<link href="./assets/images/logo/omf.png" rel="shortcut icon"/>
+		<meta name="description" content="Une nouvelle façon de profiter de ses restaurant favoris chez soi">
 		<title>				
 			ohmyfood : omf 
 		</title>
 	</head>
 
 	<body>
+		<div class="loader">
+			<span class="loader--page --form"></span>
+			Chargement . . . 
+		</div>
+
 		<header>
 			<ul class="header">	 
 				<li class="header--arrow">
-					<a href="../index.html">
+					<a href="./index.html">
 						<i class="fas fa-arrow-left"></i>
 					</a>
 				</li>
 				<li class="header--logo">
-					<a href="">
-						<img class="" src="./assets/images/icon/ohmyfood@2x.svg" alt=" "/> 			  
-					</a>			
+					<p>
+						<img src="./assets/images/icon/ohmyfood@2x.svg" alt="Oh My Food: l'alternative réservation"/> 			  
+					</p>			
 				</li>
 			</ul> 
 		</header> 
@@ -54,7 +60,7 @@
 
 			<div class="btn-box">		 
 				<button class="btn--explore">  
-					<b>Commandez</b>
+					<b>Explorez nos restaurant</b>
 				</button>		
 			</div>
 		</section>
@@ -110,12 +116,10 @@
 					<li class="section-restaurant--pos"> 
 						<figure class="fig-size">
 							<b class="section-restaurant--new">Nouveau</b>
-							<img class="section-restaurant--img" src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt=""> 
+							<img class="section-restaurant--img" src="./assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="OMF : NOUVEAU : La palette du goût à Ménilmontant"> 
 							<figcaption class="section-restaurant--insert"> 
 								<div class="section-restaurant--text">
-									<b class="section-restaurant--name">
-										La palette du goût
-									</b>
+									<h3><b class="section-restaurant--name">La palette du goût</b></h3>
 									<p class="section-restaurant--loc"> 						
 										Ménilmontant
 									</p>
@@ -132,20 +136,15 @@
 						</figure>		
 					</li>
 
-
 					<li class="section-restaurant--pos">				 
 						<figure class="fig-size">
 							<b class="section-restaurant--new">Nouveau</b>
-							<img class="section-restaurant--img" src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" 
-								alt="">			 
+							<img class="section-restaurant--img" src="./assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="OMF : NOUVEAU La note enchantée à Charonne">			 
 							<figcaption class="section-restaurant--insert"> 
 								<div class="section-restaurant--text">
-									<b class="section-restaurant--name">
-										La note enchantée
-									</b>
+									<h3><b class="section-restaurant--name">La note enchantée</b></h3>
 									<p class="section-restaurant--loc">	 							
 										Charonne
-										
 									</p>
 								</div>
 								<div class="section-restaurant--icon">
@@ -160,27 +159,23 @@
 						</figure>		
 					</li>
 
-
 					<li class="section-restaurant--pos">	 
-						<a href="./html/a-la-francaise.html">
 						<figure class="fig-size">
-							<img class="section-restaurant--img" src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
-						</a> 
+							<a href="./html/a-la-francaise.html">
+							<img class="section-restaurant--img" src="./assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="OMF : À la française à la Cité Rouge"></a>
 							<figcaption class="section-restaurant--insert"> 								
 								<div class="section-restaurant--text">
-									<b class="section-restaurant--name">
-										À la française
-									</b>
+									<h3><b class="section-restaurant--name">À la française</b></h3>
 									<p class="section-restaurant--loc">	 							
 										Cité Rouge
 									</p>
 								</div>
 								<div class="section-restaurant--icon">
 									<div class="section-restaurant-heart">
-											<i class='far fa-heart heart'></i>
+										<i class='far fa-heart heart'></i>
 									</div>
 									<div class="section-restaurant-heart--active">
-											<i class='fas fa-heart heart--active'></i>
+										<i class='fas fa-heart heart--active'></i>
 									</div>
 								</div>
 							</figcaption>
@@ -189,13 +184,10 @@
 
 					<li class="section-restaurant--pos">	 
 						<figure class="fig-size">
-								<img class="section-restaurant--img" src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" 
-									alt=""> 
+								<img class="section-restaurant--img" src="./assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="OMF : Le délice des sens à Folie-Méricourt"> 
 							<figcaption class="section-restaurant--insert"> 
 								<div class="section-restaurant--text">
-									<b class="section-restaurant--name">
-										Le délice des sens
-									</b>
+									<h3><b class="section-restaurant--name">Le délice des sens</b></h3>
 									<p class="section-restaurant--loc">	 								
 										Folie-Méricourt
 									</p>	
@@ -215,7 +207,6 @@
 			</section>		
 		</main>
 
-
 		<footer>
 			<section class="section-footer">  
 				<h2 class="section-footer--title">	 
@@ -223,30 +214,26 @@
 				</h2>		
 				<ul class="section-footer--list"> 
 					<li class="section-footer--text">
-						<a class="section-footer--add">	 
-							<b class="section-footer--icon">
-								<div class="fas fa-utensils"></div>
-							</b> 
-								Proposer un restaurant
+						<a class="section-footer--add">
+							<i class="fas fa-utensils"></i>
+							<b class="section-footer--icon">Proposer un restaurant</b>
 						</a>
 					</li>
 
 					<li class="section-footer--text">
-						<a class="section-footer--partner">		 
-							<b class="section-footer--icon">
-								<div class="fas fa-hands-helping"></div>
-							</b> 
-								Devenir partenaire
+						<a class="section-footer--partner" href="#">
+							<i class="fas fa-hands-helping"></i>
+							<b class="section-footer--icon">Devenir partenaire</b>
 						</a>
 					</li>
 
 					<li class="section-footer--text">
-						<a class="section-footer--cgv">		 
+						<a class="section-footer--cgv" href="#">		 
 							Mention légales
 						</a>		
 					</li>
 					<li class="section-footer--text">
-						<a class="section-footer--contact">		 
+						<a class="section-footer--contact" href="#">	 
 							Contact
 						</a>		
 					</li>
