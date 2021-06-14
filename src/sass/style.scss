@@ -1,23 +1,36 @@
-/////////////////// ** IMPORT ** /////////////////
+/*-----------------------------*\
+            · IMPORT ·
+\*-----------------------------*/
 @import "import";
 
 /*-----------------------------*\
-            · loader ·
+            · LOADER ·
 \*-----------------------------*/
 body {
-    z-index: 10;
+    z-index: 0;
+}
+.text-loader { background-color: transparent; @include center-block;
+    text-align: center;
+    color: $EXTRA-3;
+    font-size: convert(50, px, rem);
+    width: fit-content;
+    position: absolute;
+    top: 40%;
+    left: 38%
+}
+.container {
+    @extend .text-loader;
+    font-size: convert(30, px, rem);
+    top: 3%;
+    left: 41%;
 }
     .loader {
         margin: 0;
         padding: 0;
-        text-align: center;
-        color: $EXTRA-3;
-        font-size: convert(50, px, rem);
-        background: linear-gradient(217deg, $PRIMARY, darken($EXTRA, 25%) 70.71%),
-                    linear-gradient(127deg, $TERTIARY, lighten($SECONDARY, 50%) 70.71%);
+        background: linear-gradient(217deg, lighten($PRIMARY, 15%), lighten($EXTRA, 15%) 70.71%);
         height: 100%;
         line-height: 500px;
-        z-index: 1;
+        z-index: 500;
         .--form { 
             position: relative;
             display: inline-block;
