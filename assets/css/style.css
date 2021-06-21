@@ -144,6 +144,85 @@ i {
 /*---------------------------------*\
         · DYNAMIC CONFIG END ·
 \*---------------------------------*/
+/*------------------------------------*\
+            · ANNIMATIONS ·
+\*------------------------------------*/
+/*------------------*\
+    · LOADER ·
+\*------------------*/
+body {
+  z-index: 0;
+}
+
+.loader {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(217deg, #e4d5f6, white 70.71%);
+  height: 100%;
+  line-height: 500px;
+  z-index: 500;
+}
+.loader .--form {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 75px;
+  height: 75px;
+}
+.loader .loader--page {
+  border-radius: 50px;
+  border: 6px solid #38e038;
+}
+.loader .loader--page:after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  bottom: -6px;
+  right: -6px;
+  border-radius: 50px;
+  border: 4px solid transparent;
+  border-top-color: #e8fce8;
+  animation: loader-spin 2s linear infinite;
+}
+
+/*-----------------*\
+    · KeyFrame ·
+\*-----------------*/
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes moveToUp {
+  0% {
+    transform: translateY(2em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes moveToRight {
+  0% {
+    transform: translatex(1rem);
+  }
+  100% {
+    transform: translatex(0);
+  }
+}
+@keyframes rotate-icon {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*-----------------------------------*\
         · DYNAMIC CONFIG ·
 \*-----------------------------------*/
@@ -205,45 +284,6 @@ i {
 /*----------------------*\
     · DYNAMIC-RESIZE ·
 \*----------------------*/
-/*-----------------------------*\
-            · LOADER ·
-\*-----------------------------*/
-body {
-  z-index: 0;
-}
-
-.loader {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(217deg, #bc95e9, #d2f8d2 70.71%);
-  height: 100%;
-  line-height: 500px;
-  z-index: 500;
-}
-.loader .--form {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  width: 75px;
-  height: 75px;
-}
-.loader .loader--page {
-  border-radius: 50px;
-  border: 6px solid #38e038;
-}
-.loader .loader--page:after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: -6px;
-  bottom: -6px;
-  right: -6px;
-  border-radius: 50px;
-  border: 4px solid transparent;
-  border-top-color: #e8fce8;
-  animation: loader-spin 2s linear infinite;
-}
-
 /*-----------------------------*\
             · HEADER ·
 \*-----------------------------*/
