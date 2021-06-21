@@ -1,10 +1,10 @@
-/////////////////////* START *////////////////////////
+/*----------------------*\
+        · START ·
+\*----------------------*/
+/*-----------------*\
+    · function ·
+\*-----------------*/
 
-/* function */
-
-//
-//
-//
 //
 @function strip-unit($number) {
     @if type-of($number)=='number' and not unitless($number) {
@@ -36,25 +36,6 @@
 @function vw($base: $BASE-FONT-SIZE) {
     @return strip-unit($base) * 0.06510416667vw;
 }
-
-//
-//
-//
-//
-@function lightness-shift($colour) {
-    @if (lightness($colour) < 25%) {
-        @return lighten($colour, 10%);
-    }
-    @else {
-        @return darken($colour, 10%);
-    }
-}
-
-
-/* 
-https://www.sitepoint.com/converting-typographic-units-sass/ 
-	font-size: convert(16, px, percent);
-*/
 
 @function convert($value, $currentUnit, $convertUnit) {
     @if $currentUnit==px {

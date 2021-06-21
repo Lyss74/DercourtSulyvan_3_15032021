@@ -95,7 +95,7 @@ $center: center;
         @include flex-($direction-2);
     };
     @include respond(mobile-p) {
-        @include flex-($direction-2);
+        @include flex-($direction-1);
     };
     @include respond(tablet) {
         @include flex-($direction-1);

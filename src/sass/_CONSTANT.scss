@@ -1,19 +1,29 @@
-/////////////////////* CONSTANT *////////////////////////
-/* FONT */
+/*-----------------------------------*\
+            · CONSTANT ·
+\*-----------------------------------*/
+
+/*------------*\
+    · FONT ·
+\*------------*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
 $FONT-TITLE: 'Shrikhand', cursive;     
 $FONT-TEXT: 'Roboto';    
 
 
-/* BASE-FONT-SIZE */ 
+/*----------------------*\
+    · BASE-FONT-SIZE ·
+\*----------------------*/
 $BASE-FONT-SIZE: 16px!default;
 
-
-/* !DEFAULT */ 
+/*------------------*\
+    · !DEFAULT ·
+\*------------------*/
 $FULL: 100%;
 $default-widht: $FULL!default;
 
-/* COLOR */
+/*------------------*\
+    · COLOR ·
+\*------------------*/
 $PRIMARY: #9356DC;
 $SECONDARY: #FF79DA;  
 $TERTIARY: #99E2D0; 
@@ -23,4 +33,6 @@ $EXTRA-2: #eaeaea;
 $EXTRA-3: #f6f6f6;
 $TEXT-COLOR: rgba(0, 0, 0, 0.575);
 
-/////////////////////* CONSTANT -END- *////////////////////
+/*-----------------------------------*\
+            · CONSTANT END ·
+\*-----------------------------------*/

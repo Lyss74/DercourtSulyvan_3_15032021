@@ -24,15 +24,11 @@
 }
 
 //
-//
-//
 @mixin heading-shadow($colour: lightness-shift($PRIMARY), $size: $heading-shadow-size) {
     color: $colour;
     text-shadow: $size $size $colour;
 }
 
-//
-//
 // 
 @mixin btn {
     background: linear-gradient($SECONDARY, $PRIMARY);
@@ -48,6 +44,7 @@
     }
 }
 
+//
 @mixin img {
     border-radius: 50px;
     box-shadow: 0px 8px 4px rgb(207 207 207);
@@ -66,21 +63,6 @@
     height: auto;
 }
 
-// [converter] $parent hack
-//
-//
-@mixin bg-variant($parent, $color) {
-    #{$parent} {
-        background-color: $color;
-    }
-    a#{$parent}:hover,
-    a#{$parent}:focus {
-        background-color: darken($color, 10%);
-    }
-}
-
-//
-//
 //
 @mixin center-block() {
     display: block;
@@ -100,12 +82,12 @@
     @if $breakpoint==mobile {
         // here `laptop` is the value of $breakpoint
         // when call laptop, we mean the following piece of code        
-        @media only screen and (max-width: 620px) {
+        @media only screen and (max-width: 800px) {
             @content;
         }
     }
     @if $breakpoint==mobile-p {
-        @media only screen and (min-width: 620px) and (max-width: 1000px) {
+        @media only screen and (min-width: 800px) and (max-width: 1000px) {
             @content;
         }
     }
@@ -121,8 +103,6 @@
     }
 }
 
-//
-//
 //
 @mixin min-w-size($size) {
     @media (min-width: $size) {
