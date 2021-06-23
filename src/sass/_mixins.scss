@@ -1,7 +1,10 @@
-/////////////////////* DYNAMIC CONFIG *////////////////////// 
+/*-----------------------------------*\
+        · DYNAMIC CONFIG ·
+\*-----------------------------------*/
 
-/* TEXT-ALIGN */
-
+/*----------------------*\
+    · TEXT-ALIGN ·
+\*----------------------*/
 // values :
 // left ,right, center, start, end *...
 // call : 
@@ -11,9 +14,9 @@
     text-align: $align;
 }
 
-
-/* DISPLAY */
-
+/*----------------------*\
+    · DISPLAY ·
+\*----------------------*/
 // values : 
 // flex, block, *...,
 // call : 
@@ -69,8 +72,9 @@
     margin: auto;
 }
 
-/* RESPONSE LAYOUT */
-
+/*----------------------*\
+    · RESPONSE LAYOUT ·
+\*----------------------*/
 // values : 
 // desktop, mobile, mobile-p, tablet, tablet-p
 // call :
@@ -100,12 +104,5 @@
         @media only screen and (min-width: 1200px) and (max-width: 1400px) {
             @content;
         }
-    }
-}
-
-//
-@mixin min-w-size($size) {
-    @media (min-width: $size) {
-        @content;
     }
 }

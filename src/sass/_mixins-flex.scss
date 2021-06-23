@@ -1,14 +1,18 @@
-/////////////////////* DYNAMIC CONFIG *////////////////////// 
+/*-----------------------------------*\
+        · DYNAMIC CONFIG ·
+\*-----------------------------------*/
 
-/*  generic-flex   */
-
+/*----------------------*\
+    · generic-flex ·
+\*----------------------*/
 $around: space-around;
 $between: space-between;
 $evenly: space-evenly;
 $center: center;
 
-/* FLEX-DIRECTION */
-
+/*----------------------*\
+    · FLEX-DIRECTION ·
+\*----------------------*/
 // values :
 // row, row-reverse, column, column-reverse
 // call : 
@@ -18,8 +22,9 @@ $center: center;
     flex-direction: $direction;
 }
 
-/* FLEX-WRAP */
-
+/*----------------------*\
+    · FLEX-WRAP ·
+\*----------------------*/
 // values :
 // wrap, nowrap, wrap-reverse
 // call : 
@@ -29,8 +34,9 @@ $center: center;
     flex-wrap: $values;
 }
 
-/* FLEX-SPACE */
-
+/*----------------------*\
+    · FLEX-SPACE ·
+\*----------------------*/
 // values : 
 //    $between,
 //    $around,
@@ -44,8 +50,9 @@ $center: center;
     justify-content: $value;
 }
 
-/* ALIGN-ITEMS */
-
+/*----------------------*\
+    · ALIGN-ITEMS ·
+\*----------------------*/
 // values :
 // flex-start, flex-end, center, baseline, stretch
 // call : 
@@ -55,8 +62,9 @@ $center: center;
     align-items: $items;
 }
 
-/* FLEX-FLOW */
-
+/*----------------------*\
+    · FLEX-FLOW ·
+\*----------------------*/
 // values :
 // row wrap;
 // row-reverse wrap;
@@ -72,8 +80,9 @@ $center: center;
     flex-flow: $values;
 }
 
-/* SIMPLE-FLEX */
-
+/*----------------------*\
+    · SIMPLE-FLEX ·
+\*----------------------*/
 // values : 
 //call :
 //       @include simple-flex(column, wrap-reverse, around, start, flex);
@@ -84,8 +93,9 @@ $center: center;
     @include space-($between)
 }
 
-/*  DYNAMIC-RESIZE */
-
+/*----------------------*\
+    · DYNAMIC-RESIZE ·
+\*----------------------*/
 // call :
 //        @include flex-auto(column, row, wrap-reverse, $around);
 @mixin dynamic-flex($direction-1, $direction-2, $wrap, $between) {
