@@ -1,6 +1,6 @@
 ![Logo of the project](https://zupimages.net/up/21/25/pzlj.png)
 
-# · Oh My Food : Votre restaurant préféré sur le bout des doigts ·
+## · Oh My Food : Votre restaurant préféré sur le bout des doigts ·
 
 
 

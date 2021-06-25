@@ -10,13 +10,16 @@
     background-color: #fff;
     @include center-block();
     filter: drop-shadow(15px 15px 15px lighten($QUATERNARY, 70%));
-    &--arrow {
-        @include display(none);
-    }
     &--logo {
         width: fit-content;
         margin: auto;
-        padding: rem(40);
+        padding: rem(20);
+    }
+    &--arrow {
+        width: fit-content;
+        position: absolute;
+        top: 15%; left: 15%;
+        @include display(none); 
     }
 }
 
@@ -220,10 +223,8 @@
         · RESTAURANT pages ·
 \*----------------------------------*/
 .header { 
-    &--active {
+    &--arrow {
         display: inherit;
-        width: fit-content;
-        position: absolute;
     }
 }
 .section-menu {
@@ -239,6 +240,10 @@
             width: 50%;
             height: 80%;
         }
+        .section-menu--resize {
+            @extend .section-menu--img;
+            height: 32rem;
+        }
         .section-menu--cap {
             background-color: $EXTRA-2;
             border-radius: 40px 40px 0 0;
@@ -252,9 +257,7 @@
                 @include align-(center);
                 margin: 0%;
                 padding: 0%;
-                .menu-restaurant--name {
-                    font-size: 1.75rem;
-                    font-family: "Shrikhand", sans-serif;
+                .menu-restaurant--name {                   
                     font-weight: 400;
                     margin-left: 1%;
                 }
@@ -279,7 +282,6 @@
                 text-transform: uppercase;
                 color: $QUATERNARY;
                 height: rem(10);
-                
             }
             .border {
                 width: rem(110);
@@ -303,7 +305,7 @@
 				box-shadow: 0px 3px 8px rgb(207 207 207);
 				margin: 5% 0;
 				height: auto;  
-                animation: 755.361ms ease-out 501.293ms 1 normal none running moveToUp;                
+                animation: 755.361ms ease-in-out 500ms 1 normal none running moveToUp;                
                 animation-duration: 1500ms;
 				&:hover {
 					filter: drop-shadow(15px 15px 15px lighten($QUATERNARY, 45%));
@@ -406,27 +408,22 @@
 }
 @media only screen and (max-width: 680px) {
 
-/*------------------------------*\
-            · HEADER ·
-\*------------------------------*/
+    /*------------------------------*\
+                · HEADER ·
+    \*------------------------------*/
     .header {
         filter: none;
 		padding: rem(3.5);
-        &--active {
+        &--arrow {
             font-size: 85%;
-            top: rem(20);
+            //top: 5%;
             left: 10%;
-        }
-        &--logo {  
-            width: fit-content;
-            margin: auto;
-            padding: rem(15);
         }
     }
 
-/*-------------------------------------*\
-            · SECTION home-box ·
-\*-------------------------------------*/
+    /*-------------------------------------*\
+                · SECTION home-box ·
+    \*-------------------------------------*/
     .section-home {
         filter: none;
         margin-bottom: -15%;
@@ -504,17 +501,12 @@
     /*-----------------------------------------*\
                 · RESTAURANT pages ·
     \*-----------------------------------------*/
-    /*.arrow--active { 
-        @include display(block);
-        //margin-left: rem(-100);
-        margin-top: rem(2);
-    }*/
     .header {  
-        &--active {
+        &--arrow {
             @include center-block();
             width: fit-content;
             position: absolute;
-            top: 43%;
+            top: 5%;
             left: 5%;
         }
     }
@@ -522,9 +514,12 @@
         margin-bottom: rem(0);
         margin-top: rem(0);
         &--fig {
-            .section-menu--img {
+            .section-menu--img, .section-menu--resize {
                 width: 100%;
                 border-radius: 0%;
+            }
+            .section-menu--resize {
+                height: 14rem;
             }
         }
     }
@@ -553,7 +548,6 @@
                     width: rem(60);
 				}
 			}
-
         }
     }
 
@@ -581,18 +575,6 @@
 }
 
 @media only screen and (min-width: 680px) and (max-width: 1200px) {
-
-    /*-------------------------------*\
-                · HEADER ·
-    \*-------------------------------*/
-
-   /* .header {
-        filter: none;
-        &--active {
-            font-size: 80%;
-        }
-    }*/
-
     /*--------------------------------------*\
                 · SECTION home-box ·
     \*--------------------------------------*/
@@ -639,8 +621,6 @@
                 · SECTION running-box ·
     \*---------------------------------------------*/
     .section-runnig {
-        .section--title {
-        }
         &--list {
             .runnig-card {
                 margin: rem(15);
