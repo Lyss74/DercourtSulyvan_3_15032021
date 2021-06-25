@@ -3,13 +3,6 @@
 \*-----------------------------*/
 @import 'mixins';
 @import 'function';
-.PROD {
-    background-color: yellow;
-}
-
-.NONE {
-    display: none;
-}
 
 /*-----------------------------*\
         · DYNAMIC CONFIG ·
@@ -69,14 +62,16 @@ img {
     padding: 0%;
     max-height: $FULL;
     max-width: $FULL;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 /*-----------------------------------*\
         · generic border-box ·
 \*-----------------------------------*/
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /*-----------------------------------*\

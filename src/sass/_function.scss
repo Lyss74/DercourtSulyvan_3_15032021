@@ -14,10 +14,10 @@
 }
 
 
-/* REM-COVERTER */
-
+/*---------------------*\
+    · rem converter ·
+\*---------------------*/
 // url|-> 'https://outils-css.aliasdmc.fr'
-// values : 
 // numeric $size, $base use default size
 // call : {
 //    rem(75, 100)
@@ -26,17 +26,9 @@
 }
 
 
-/* VW-COVERTER */
-
-// url|-> 'https://outils-css.aliasdmc.fr'
-// values : 
-// numeric $size, $base use default size
-// call : {
-//    rem(75, 100)
-@function vw($base: $BASE-FONT-SIZE) {
-    @return strip-unit($base) * 0.06510416667vw;
-}
-
+/*-------------------------*\
+    · convert font-size ·
+\*-------------------------*/
 @function convert($value, $currentUnit, $convertUnit) {
     @if $currentUnit==px {
         @if $convertUnit==rem {
