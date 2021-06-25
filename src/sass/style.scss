@@ -16,19 +16,18 @@
         line-height: 500px;
         z-index: 100;
         animation: 0.1s linear 2.5s forwards hideLoader ;
-        .--form { 
+        &--form { 
             position: relative;
             display: inline-block;
             vertical-align: middle;
             width: 75px; 
             height: 75px;
         }
-        .loader--page { 
+        &--page { 
             border-radius: 50px;
             border: 6px solid darken($SECONDARY, 30%);
-            //border: 6px solid transparent;
         }        
-        .loader--page:after { 
+        &--page:after { 
             content: '';
             position: absolute;
             top: -6.2px; 
@@ -359,20 +358,10 @@
                     @include simple-flex(column, nowrap, $around);
                     width: 100%;
                     padding: 10px;
-                    ._anim {                             
-
-                    }	
 					._content {
-
 						._name {
 							@include simple-flex(row, nowrap, $between);
                             width: 100%;
-                            ._annim {                             
-
-                            }
-                            ._price {
-
-                            }
 						}
 					}
 				}
@@ -407,13 +396,9 @@
                                     overflow: hidden;
                                     text-overflow: ellipsis;
                                 }
-                                ._price {
-    
-                                }
                             }
                         }
                     }
-
                     .check-box {                        
                         width: 75px;
                     }
@@ -443,7 +428,7 @@
     padding: rem(30) 0 rem(5) 0;
     &--title {
         @include text-(center);
-        font-weight: 950;
+        font-weight: 700;
         font-style: oblique 70deg;
         color: white;
         margin-bottom: rem(15);
