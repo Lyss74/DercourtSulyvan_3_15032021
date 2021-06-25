@@ -1,161 +1,59 @@
-/*------------------------------------*\
-            · ANNIMATIONS ·
-\*------------------------------------*/
-
-/*------------------*\
-    · LOADER ·
-\*------------------*/
-body {
-    z-index: 0;
-}
-    .loader {
-        margin: 0;
-        padding: 0;
-        background: -o-linear-gradient(233deg, lighten($PRIMARY, 30%), lighten($EXTRA, 30%) 70.71%);
-        background: linear-gradient(217deg, lighten($PRIMARY, 30%), lighten($EXTRA, 30%) 70.71%);
-        height: 100%;
-        line-height: 500px;
-        z-index: 500;
-        -webkit-animation: all loaderDuration ;
-                animation: all loaderDuration ;
-        .--form { 
-            position: relative;
-            display: inline-block;
-            vertical-align: middle;
-            width: 75px;
-            height: 75px;
-        }
-        .loader--page { 
-            border-radius: 50px;
-            border: 6px solid darken($EXTRA, 20%);
-        }        
-        .loader--page:after { 
-            content: '';
-            position: absolute;
-            top: -6px; left: -6px; bottom: -6px; right: -6px;
-            border-radius: 50px;
-            border: 4px solid transparent;
-            border-top-color: lighten($EXTRA, 20%);
-            -webkit-animation: loaderSpin 2s linear infinite;
-                    animation: loaderSpin 2s linear infinite;
-        }    
-    }
-    header, 
-    main, 
-    footer {
-        -webkit-animation: all loaderDuration ;
-                animation: all loaderDuration ;
-    }
 
 /*-----------------*\
     · KeyFrame ·
 \*-----------------*/
-@-webkit-keyframes loaderDuration {
-    0% {
-        display: none;
-    }
-    100% {
-        display: inherit;
-    }
-}
 
-@keyframes loaderDuration {
+@keyframes hideLoader {
     0% {
-        display: none;
+        display: block;
+        opacity: 1;
     }
-    100% {
-        display: inherit;
-    }
-}
+    99% {
+        display: block;
+        opacity: 0;
 
-@-webkit-keyframes loaderSpin {
-    0% {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
     }
     100% {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        display: none;
+        opacity: 0;
+
     }
 }
 
 @keyframes loaderSpin {
     0% {
-        -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     100% {
-        -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
-    }
-}
-
-@-webkit-keyframes moveToUp {
-    0% {
-        -webkit-transform: translateY(2em);
-                transform: translateY(2em);
-        opacity: 0;    
-    }
-    100% {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
-        opacity: 1;    
+        transform: rotate(360deg);
     }
 }
 
 @keyframes moveToUp {
     0% {
-        -webkit-transform: translateY(2em);
-                transform: translateY(2em);
+        transform: translateY(2rem);
         opacity: 0;    
     }
     100% {
-        -webkit-transform: translateY(0);
-                transform: translateY(0);
+        transform: translateY(0);
         opacity: 1;    
-    }
-}
-
-@-webkit-keyframes moveToRight {
-    0% {
-        -webkit-transform: translatex(1rem);
-                transform: translatex(1rem);
-    }
-    100% {
-        -webkit-transform: translatex(0);
-                transform: translatex(0);
     }
 }
 
 @keyframes moveToRight {
     0% {
-        -webkit-transform: translatex(1rem);
-                transform: translatex(1rem);
+        transform: translatex(1rem);
     }
     100% {
-        -webkit-transform: translatex(0);
-                transform: translatex(0);
-    }
-} 
-
-@-webkit-keyframes rotate-icon {
-    0% {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
-    }
-    100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+        transform: translatex(0);
     }
 } 
 
 @keyframes rotate-icon {
     0% {
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+        transform: rotate(90deg);
     }
     100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }

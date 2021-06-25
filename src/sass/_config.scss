@@ -44,7 +44,7 @@ button {
 a {
     text-decoration: none;
     color: $TEXT-COLOR;
-    ; margin: 0%;
+    margin: 0%;
     &:hover {
         color: lighten($TEXT-COLOR, 100%)!important;
     }
@@ -58,19 +58,17 @@ ul {
 \*-----------------------------*/
 img {
     display: block;
+    object-fit: cover;
     margin: 0%;
     padding: 0%;
     max-height: $FULL;
     max-width: $FULL;
-    -o-object-fit: cover;
-       object-fit: cover;
 }
 
 /*-----------------------------------*\
         · generic border-box ·
 \*-----------------------------------*/
 * {
-    -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
 

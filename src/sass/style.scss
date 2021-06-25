@@ -3,6 +3,48 @@
 \*-----------------------------*/
 @import "import";
 
+/*----------------*\
+    · LOADER ·
+\*----------------*/
+body {
+    z-index: 0;
+}
+    .loader {
+        position: fixed;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(217deg, lighten($PRIMARY, 30%), lighten($EXTRA, 30%) 70.71%);
+        height: 100vh;
+        width: 100vw;
+        line-height: 500px;
+        z-index: 500;
+        animation: 0.1s linear 2.5s forwards hideLoader ;
+        .--form { 
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            width: 75px; 
+            height: 75px;
+        }
+        .loader--page { 
+            border-radius: 50px;
+            border: 6px solid darken($SECONDARY, 30%);
+            //border: 6px solid transparent;
+        }        
+        .loader--page:after { 
+            content: '';
+            position: absolute;
+            top: -6.2px; 
+            left: -6px; 
+            bottom: -6px; 
+            right: -6px;
+            border-radius: 50px;
+            border: 6.5px solid transparent;
+            border-top-color: $EXTRA;
+            animation: loaderSpin 2s linear infinite;
+        }    
+    }
+
 /*-----------------------------*\
             · HEADER ·
 \*-----------------------------*/
@@ -18,7 +60,7 @@
     &--arrow {
         width: fit-content;
         position: absolute;
-        top: 15%; left: 15%;
+        top: 15%; left: 5%;
         @include display(none); 
     }
 }
@@ -295,64 +337,77 @@
 		.thumbnail-container {  
             @include simple-flex(column, nowrap, $around);
             @include center-block();
-            width: 95%;
             overflow: hidden; 
+            width: 95%;
 			.thumbnail--box {
                 @include simple-flex(row, nowrap, $around);
-				@include text-(start);
+				@include text-(start);   
+                transform: translateY(2rem);
+                opacity: 0;
 				background-color: rgb(255, 255, 255);
 				border-radius: 15px;
 				box-shadow: 0px 3px 8px rgb(207 207 207);
 				margin: 5% 0;
-				height: auto;  
-                animation: 755.361ms ease-in-out 500ms 1 normal none running moveToUp;                
-                animation-duration: 1500ms;
+				height: 75px;  
+                animation: 1000ms ease-in-out 0s forwards moveToUp;    
+                @for $increment from 1 through 20 {
+                    &:nth-of-type(#{$increment}) {
+                        animation-delay: 0.2s*$increment;
+                    }
+                }
 				&:hover {
 					filter: drop-shadow(15px 15px 15px lighten($QUATERNARY, 45%));
 				}
-				.--text {      							  overflow: hidden;
+				._text {      						  
                     @include simple-flex(column, nowrap, $around);
                     width: 100%;
-                    padding: 4%;
-					.--content {
+                    padding: 10px;
+                    ._anim {                             
+                            /*white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;    */  
+                    }	
+					._content {
 							@include simple-flex(row, nowrap, $between);
+                            /*white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;    */
                             height: auto;
-						.--name { 
+						._name { 
 							@include simple-flex(row, nowrap, $between);
                             width: 100%;
+                            /*white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;    */   
 						}
 					}
 				}
                 .check-box { 
-                    display: none;
+                    @include text-(center);
+                    flex-shrink: 0;
+                    overflow: hidden;
                     background-color: $EXTRA;
                     border-radius: 0px 15px 15px 0;
+                    transition: width 0.3s ease-in-out;
                     width: 0;
                     margin: 0;
                     .check-circle { 
-                        display: block; 
-                        margin: auto;
+
                         color: white;
                         padding: rem(25);
                     }
                 }
                 &:hover {   
-                    .--text {
-                        width: 80%;
+                    ._text {
+
+                       width: 100%;
                     }
-                    .--anim {                             
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        width: 65%;
-                    }
-                    .--price {
-                        animation: moveToRight 300ms ease-out forwards;
+
+                    ._price {
+                        //animation: moveToRight 300ms ease-out forwards;
                     }
                     .check-box {                        
-                        width: 20%;
-                        display: inherit;
-                        animation: moveToRight 300ms ease-out forwards;
+                        width: 75px;
                     }
                     .check-circle {
                         animation: rotate-icon 300ms ease-in;
@@ -414,11 +469,6 @@
     .header {
         filter: none;
 		padding: rem(3.5);
-        &--arrow {
-            font-size: 85%;
-            //top: 5%;
-            left: 10%;
-        }
     }
 
     /*-------------------------------------*\
@@ -503,11 +553,9 @@
     \*-----------------------------------------*/
     .header {  
         &--arrow {
-            @include center-block();
-            width: fit-content;
-            position: absolute;
-            top: 5%;
-            left: 5%;
+            //@include center-block();
+            top: 4%; left: 5%;
+
         }
     }
     .section-menu {

@@ -2,18 +2,12 @@
 /* BASIS VALUE */
 %flex-auto {
     flex: auto;
-    -webkit-box-flex: 1;    
-    -ms-flex: auto;    
 }
 %flex-auto {
     flex: initial;
-    -webkit-box-flex: initial;    
-    -ms-flex: initial;   
-    }
+}
 %flex-auto {
     flex: none;
-    -webkit-box-flex: 0;    
-    -ms-flex: none;    
 }
 /* FLEXBOX ASSIGN-ROLE */
 /* USING: DECLARE YOUR FLEX CONFIGURATION FOR AUTO-DIRECTION FLEXBOX */
