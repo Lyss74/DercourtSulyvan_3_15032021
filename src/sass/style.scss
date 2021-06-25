@@ -6,9 +6,6 @@
 /*----------------*\
     · LOADER ·
 \*----------------*/
-body {
-    z-index: 0;
-}
     .loader {
         position: fixed;
         margin: 0;
@@ -17,7 +14,7 @@ body {
         height: 100vh;
         width: 100vw;
         line-height: 500px;
-        z-index: 500;
+        z-index: 100;
         animation: 0.1s linear 2.5s forwards hideLoader ;
         .--form { 
             position: relative;
@@ -337,11 +334,11 @@ body {
 		.thumbnail-container {  
             @include simple-flex(column, nowrap, $around);
             @include center-block();
-            overflow: hidden; 
             width: 95%;
 			.thumbnail--box {
                 @include simple-flex(row, nowrap, $around);
 				@include text-(start);   
+                overflow: hidden; 
                 transform: translateY(2rem);
                 opacity: 0;
 				background-color: rgb(255, 255, 255);
@@ -363,22 +360,19 @@ body {
                     width: 100%;
                     padding: 10px;
                     ._anim {                             
-                            /*white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;    */  
+
                     }	
 					._content {
-							@include simple-flex(row, nowrap, $between);
-                            /*white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;    */
-                            height: auto;
-						._name { 
+
+						._name {
 							@include simple-flex(row, nowrap, $between);
                             width: 100%;
-                            /*white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;    */   
+                            ._annim {                             
+
+                            }
+                            ._price {
+
+                            }
 						}
 					}
 				}
@@ -387,25 +381,39 @@ body {
                     flex-shrink: 0;
                     overflow: hidden;
                     background-color: $EXTRA;
-                    border-radius: 0px 15px 15px 0;
-                    transition: width 0.3s ease-in-out;
+                    border-radius: 0px 15px 15px 0; 
+                    transition: margin 300ms, width 300ms;;
                     width: 0;
                     margin: 0;
                     .check-circle { 
-
                         color: white;
                         padding: rem(25);
                     }
                 }
                 &:hover {   
-                    ._text {
 
-                       width: 100%;
+                    ._text {      		
+		  
+                        ._anim {                             
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }	
+                        ._content {
+
+                            ._name { 
+                                ._annim {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                                ._price {
+    
+                                }
+                            }
+                        }
                     }
 
-                    ._price {
-                        //animation: moveToRight 300ms ease-out forwards;
-                    }
                     .check-box {                        
                         width: 75px;
                     }
@@ -553,7 +561,6 @@ body {
     \*-----------------------------------------*/
     .header {  
         &--arrow {
-            //@include center-block();
             top: 4%; left: 5%;
 
         }
