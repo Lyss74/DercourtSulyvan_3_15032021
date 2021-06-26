@@ -331,7 +331,8 @@
             }
         }
 		.thumbnail-container {  
-            @include simple-flex(column, nowrap, $around);
+            //@include simple-flex(column, nowrap, $around); 
+            @include display(flex);
             @include center-block();
             width: 95%;
 			.thumbnail--box {
@@ -354,14 +355,29 @@
 				&:hover {
 					filter: drop-shadow(15px 15px 15px lighten($QUATERNARY, 45%));
 				}
-				._text {      						  
+				._text {	  
                     @include simple-flex(column, nowrap, $around);
+                    flex-shrink: 3;
                     width: 100%;
-                    padding: 10px;
-					._content {
+                    ._anim {            
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        padding: 15px;
+                    }					
+                    ._content {
 						._name {
 							@include simple-flex(row, nowrap, $between);
-                            width: 100%;
+                            @include align-(center);
+                            ._anim {               
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                padding: 15px;
+                            }
+                            ._price {
+                                margin-right: 15px;
+                            }
 						}
 					}
 				}
@@ -371,30 +387,28 @@
                     overflow: hidden;
                     background-color: $EXTRA;
                     border-radius: 0px 15px 15px 0; 
-                    transition: margin 300ms, width 300ms;;
+                    transition: width 250ms, margin 250ms;
                     width: 0;
                     margin: 0;
                     .check-circle { 
                         color: white;
                         padding: rem(25);
+                        margin-top: 3px;
                     }
                 }
                 &:hover {   
 
-                    ._text {      		
-		  
-                        ._anim {                             
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
+                    ._text {       
+
+                        ._anim {                          
+                           
+
                         }	
                         ._content {
 
-                            ._name { 
-                                ._annim {
-                                    white-space: nowrap;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
+                            ._name {
+                               ._annim {
+
                                 }
                             }
                         }
