@@ -25,7 +25,7 @@
         }
         &--page { 
             border-radius: 50px;
-            border: 6px solid darken($SECONDARY, 30%);
+            border: 6px solid lighten($SECONDARY, 5%);
         }        
         &--page:after { 
             content: '';
@@ -37,6 +37,7 @@
             border-radius: 50px;
             border: 6.5px solid transparent;
             border-top-color: $EXTRA;
+            border-bottom-color: $PRIMARY;
             animation: loaderSpin 2s linear infinite;
         }    
     }
@@ -116,7 +117,8 @@
         @include dynamic-flex(row, column, nowrap, $around);
         @include align-();
         padding: rem(25);
-        .runnig-card {
+        .runnig-card {            z-index: 90;
+
             @include simple-flex(row, nowrap, $around);
             @include align-();
             background-color: $EXTRA-2;
@@ -125,9 +127,10 @@
             margin: rem(15);
             height: rem(75);
             width: 25%;
-            &:hover {
-                background-color: lighten($TERTIARY, 20%);
-            }
+        }
+        .runnig-card:hover {
+            z-index: 90;
+            background: lighten($TERTIARY, 15%);
         }
         .runnig-card--ennum {
             background-color: $PRIMARY;
@@ -331,94 +334,68 @@
             }
         }
 		.thumbnail-container {  
-            //@include simple-flex(column, nowrap, $around); 
             @include display(flex);
             @include center-block();
-            width: 95%;
+            width: 97%;
 			.thumbnail--box {
-                @include simple-flex(row, nowrap, $around);
 				@include text-(start);   
-                overflow: hidden; 
+                display: flex;
+                overflow: hidden;
                 transform: translateY(2rem);
                 opacity: 0;
 				background-color: rgb(255, 255, 255);
 				border-radius: 15px;
 				box-shadow: 0px 3px 8px rgb(207 207 207);
-				margin: 5% 0;
+				margin-top: 5%;
 				height: 75px;  
-                animation: 1000ms ease-in-out 0s forwards moveToUp;    
+                animation: 1200ms ease-in-out 0s forwards moveToUp;    
                 @for $increment from 1 through 20 {
                     &:nth-of-type(#{$increment}) {
                         animation-delay: 0.2s*$increment;
                     }
                 }
 				&:hover {
-					filter: drop-shadow(15px 15px 15px lighten($QUATERNARY, 45%));
+					filter: drop-shadow(15px 15px 15px lighten($QUATERNARY, 5%));
 				}
-
-
 				._text {      						  
-                    @include simple-flex(column, nowrap, $around);
-                    flex-shrink: 2;
+                    padding: 10px;
                     width: 100%;
-                    ._anim {               padding: 15px;                 
-                        white-space: nowrap;
-                        overflow: hidden;
+                    overflow: hidden;
+                    ._anim {               
                         text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
                     }					
                     ._content {
-						._name {
-							@include simple-flex(row, nowrap, $between);
-                            width: 100%;
-                            ._anim {                          padding: 15px;   
-                                white-space: nowrap;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                            }
-						}
+						@include simple-flex(row, nowrap, $between);
+                        ._anim {                          
+                            @extend ._anim;
+                        }
 					}
 				}
-
-
                 .check-box { 
                     @include text-(center);
                     flex-shrink: 0;
                     overflow: hidden;
                     background-color: $EXTRA;
                     border-radius: 0px 15px 15px 0; 
-                    transition: margin 300ms, width 300ms;;
+                    transition: margin 450ms, width 450ms;;
                     width: 0;
                     margin: 0;
                     .check-circle { 
                         color: white;
-                        padding: rem(20);
+                        margin: 28px 5px
                     }
                 }
                 &:hover {   
-
-                    ._text {      		
-		  
-                        ._anim {                             
-                            white-space: nowrap;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                        }	
-                        ._content {
-
-                            ._name { 
-                               ._annim {
-                                    white-space: nowrap;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                                }
-                            }
-                        }
-                    }
+                    .thumbnail--box:hover .check {
+                        width: 100px;
+                      }
                     .check-box {                        
                         width: 75px;
                     }
                     .check-circle {
-                        animation: rotate-icon 300ms ease-in;
+                        animation: rotate-icon 350ms .15s ease-in;
                         font-size: convert(25, px, rem)
                     }
                 }  
@@ -505,7 +482,7 @@
             .btn--explore {
                 @include btn;
             }
-        }
+        } 
     }
 
     /*--------------------------------------------*\
@@ -600,7 +577,7 @@
 				}
 				.border {  
 					margin: -2% 0 0 3%;
-                    width: rem(60);
+                    width: rem(40);
 				}
 			}
         }

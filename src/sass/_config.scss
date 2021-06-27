@@ -4,7 +4,14 @@
 @import 'mixins';
 @import 'function';
 
+
 /*-----------------------------*\
+            · Z-INDEX ·
+\*-----------------------------*/
+body {
+    z-index: 100;
+}
+/*--------------------------*\
         · DYNAMIC CONFIG ·
 \*-----------------------------*/
 html,
@@ -41,12 +48,12 @@ button {
 /*-----------------------------*\
         · generic-style ·
 \*-----------------------------*/
-a {
+a, .a {
     text-decoration: none;
     color: $TEXT-COLOR;
     margin: 0%;
     &:hover {
-        color: lighten($TEXT-COLOR, 100%)!important;
+        color: lighten($TEXT-COLOR, 30%)!important;
     }
 }
 
